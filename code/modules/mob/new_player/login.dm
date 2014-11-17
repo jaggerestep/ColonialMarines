@@ -29,5 +29,4 @@
 	new_player_panel()
 	spawn(40)
 		if(client)
-			client.showchanges()
 			client.playtitlemusic()

@@ -38,47 +38,6 @@ var/limit = 15 // Putting it here so it can be accessed easier later.
 
 	showchanges()
 
-/client/proc/addchange()
-	set name = "Add A Changelog Entry."
-	set category  = "Special Verbs"
-
-	if(!check_rights(R_DEBUG,0))	return
-
-	var/changes = input("Add your changelog entry. Supports basic html.","Changelog entry", null) as message|null
-	if(!changes)	return
-
-	var/uversion = input("Revision","Revision:",0) as num|null
-	if(!uversion)	return
-
-	var/DBQuery/r_query = dbcon.NewQuery("INSERT INTO `changelog` (`changes`, `bywho`, `version`) VALUES ('[changes]', '[usr.key]', '[uversion]')")
-	if(!r_query.Execute())
-		world << "Failed-[r_query.ErrorMsg()]"
-	else
-		world << "\blue <b>The changelog has been updated!</b>"
-		log_admin("[key_name_admin(src)] added a changelog entry for revision [uversion].")
-		message_admins("[key_name_admin(src)] added a changelog entry for revision [uversion].", 1)
-		changelogmysql = null
-
-
-/client/proc/removechange()
-	set name = "Remove Changelog Entry"
-	set category = "Special Verbs"
-
-	if(!check_rights(R_DEBUG,0))	return
-
-	var/revision = input("Changelog revision to delete","Revision:",0) as num|null
-	if(!revision)	return
-
-	var/DBQuery/r_query = dbcon.NewQuery("DELETE FROM `changelog` WHERE `version`=[revision]")
-	if(!r_query.Execute())
-		world << "Failed-[r_query.ErrorMsg()]"
-	else
-	//	usr << "<b>Changelog updated successfully.</b>"
-		log_admin("[key_name_admin(src)] deleted a changelog entry for revision [revision].")
-		message_admins("[key_name_admin(src)] deleted changelog entry for revision [revision].", 1)
-		changelogmysql = null
-
-
 /*
 This proc is currently bugged, just remove and remake a changelog entry if you need to modify it for now.
 

@@ -397,7 +397,6 @@ var/list/slot_equipment_priority = list( \
 /client/verb/changes()
 	set name = "Changelog"
 	set category = "OOC"
-	showchanges()
 	//src << browse('html/changelog.html', "window=changes;size=675x650")
 	if(prefs.lastchangelog != changelog_hash)
 		prefs.lastchangelog = changelog_hash
