@@ -36,5 +36,6 @@ Badmin			+@ +POSSESS +BUILDMODE +FUN
 Game Admin		+@ +STEALTH +DEBUG
 Head Moderator 	+@
 Head Admin		+EVERYTHING
+Auditor			+@
 Retired Admin	+ADMIN +STEALTH
 Host			+EVERYTHING
