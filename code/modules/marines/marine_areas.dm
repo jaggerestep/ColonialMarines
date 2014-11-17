@@ -2,31 +2,25 @@
 /area/sulaco
 	name = "\improper Sulaco"
 	icon_state = "centcom"
-	requires_power = 0
 /area/sulaco/medical/general
 	name = "\improper Sulaco Medbay"
 	icon_state = "centcom"
-	requires_power = 0
-	
+
 /area/sulaco/general/main_hall
 	name = "\improper Sulaco Hallway"
 	icon_state = "bridge"
-	requires_power = 0
 
 /area/sulaco/aft
 	name = "\improper Sulaco Aft"
 	icon_state = "centcom"
-	requires_power = 0
 
 /area/sulaco/fore
 	name = "\improper Sulaco Fore"
 	icon_state = "centcom"
-	requires_power = 0
 
 /area/sulaco/hangar
 	name = "\improper Sulaco Hangar"
 	icon_state = "centcom"
-	requires_power = 0
 
 
 
