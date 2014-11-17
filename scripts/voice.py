@@ -1,6 +1,5 @@
 #!/usr/bin/env python2
 import sys
-sys.exit()
 import HTMLParser
 h = HTMLParser.HTMLParser()
 import urllib
@@ -21,4 +20,3 @@ text = urllib.urlencode(command) + "\n"
 f = open("C:/Users/Administrator/Desktop/Sulaco/scripts/voicequeue.txt", "a")
 f.write(text)
 f.close()
-sys.exit()

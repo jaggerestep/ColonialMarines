@@ -9,11 +9,8 @@ felkvir - Head Admin
 0darkshadow0 - Game Admin
 Gasfornuisje - Game Admin
 Masterblade007 - Game Admin
-Purp13 - Game Admin
-Abusivetoaster - Game Admin
-Dre9889 - Game Admin
+Dre9889 - Auditor
 minimike1220 - Trial Admin
-coroneljones - Moderator
 sir octagon - Game Admin
 TruckingTrungledoor - Trial Admin
 jaggerestep - Host
@@ -25,9 +22,12 @@ Apophis775 - Trial Admin
 HereticChurch - Moderator
 Void00 - Moderator 
 lucyz - Head Moderator
-allan1234 - Moderator
 gavinator9 - Moderator
 caryl - Moderator
 codeyday - Moderator
+Allan1234 - Moderator
 julinova - Moderator
 rebelution - Moderator
+speedybst - Moderator
+coroneljones - Game Admin
+unknownmurder - Moderator

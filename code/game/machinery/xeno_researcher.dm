@@ -2,6 +2,9 @@
 #define ACID			2
 #define STRUCTURE		3
 
+
+
+
 /obj/machinery/xeno_analyzer
 	name = "lifeform analyzer"
 	desc = "Extracts lifeform data for weaponizing."

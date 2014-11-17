@@ -8,3 +8,4 @@ lestatanderson: Ryder Mitchell: /obj/item/clothing/suit/storage/marine/fluff/cia
 kilinger: Danny Barrett: /obj/item/clothing/head/helmet/marine/fluff/goldshieldberet
 commandercookies: Elliot Renold: /obj/item/clothing/head/helmet/marine/fluff/elliotberet
 commandercookies: Elliot Renold: /obj/item/clothing/suit/storage/marine/fluff/armorammo
+sasoperative: Joseph Skinner: /obj/item/clothing/mask/gas/swat
