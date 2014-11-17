@@ -1,6 +1,6 @@
 /datum/job/captain
 	title = "Commander"
-	flag = CAPTAIN
+	flag = COMMANDER
 	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 1
@@ -59,7 +59,7 @@
 
 /datum/job/military_officer
 	title = "Military Police"
-	flag = OFFICER
+	flag = MPOLICE
 	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 2
@@ -87,6 +87,7 @@
 	spawn_positions = 3
 	supervisors = "the commander"
 	selection_color = "#ffeeee"
+	idtype = /obj/item/weapon/card/id/silver
 	access = list(access_logistics, access_sulaco_brig, access_sulaco_cells)
 	minimal_access = list(access_logistics, access_sulaco_brig, access_sulaco_cells)
 	minimal_player_age = 7
