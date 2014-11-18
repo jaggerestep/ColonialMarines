@@ -5,7 +5,7 @@
 	name = "riot shield"
 	desc = "A shield adept at blocking blunt objects from connecting with the torso of the shield wielder."
 	icon = 'icons/obj/weapons.dmi'
-	icon_state = "metal"
+	icon_state = "riot"
 	flags = FPRINT | TABLEPASS| CONDUCT
 	slot_flags = SLOT_BACK
 	force = 5.0
