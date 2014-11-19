@@ -1,0 +1,2 @@
+<prosody pitch="107%">Equuipment</prosody>  <prosody pitch="121%">storage
+</prosody> 

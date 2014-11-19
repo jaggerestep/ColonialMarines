@@ -1,8 +1,7 @@
-#!/usr/bin/env python2
 import sys
-import HTMLParser
-h = HTMLParser.HTMLParser()
-import urllib
+from html.parser import HTMLParser
+h = HTMLParser()
+import urllib.parse
 
 accent = sys.argv[1]
 voice = sys.argv[2]
@@ -15,7 +14,7 @@ type = sys.argv[8]
 
 command = {"text":text, "a":accent, "v":voice, "p":pitch, "e":echo, "s":speed, "k":ckey, "t":type}
 
-text = urllib.urlencode(command) + "\n"
+text = urllib.parse.urlencode(command) + "\n"
 
 f = open("C:/Users/Administrator/Desktop/Sulaco/scripts/voicequeue.txt", "a")
 f.write(text)
