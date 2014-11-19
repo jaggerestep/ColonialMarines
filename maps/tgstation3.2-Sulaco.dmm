@@ -9386,7 +9386,7 @@
 "dyz" = (/obj/machinery/telecomms/processor/marine_four,/obj/structure/window/reinforced{dir = 4},/turf/simulated/floor/engine,/area/sulaco/aft{icon_state = "green"})
 "dyA" = (/obj/machinery/telecomms/bus/marine_three,/turf/simulated/floor/engine,/area/sulaco/aft{icon_state = "green"})
 "dyB" = (/obj/machinery/telecomms/processor/marine_three,/obj/structure/window/reinforced{dir = 4},/turf/simulated/floor/engine,/area/sulaco/aft{icon_state = "green"})
-"dyC" = (/obj/machinery/light/small{tag = "icon-bulb1 (NORTH)"; icon_state = "bulb1"; dir = 1},/obj/machinery/power/smes/magical{chargelevel = 200000; unacidable = 1},/obj/structure/cable{icon_state = "0-4"; d2 = 4},/turf/simulated/floor/engine,/area/sulaco/aft{icon_state = "green"})
+"dyC" = (/obj/machinery/light/small{tag = "icon-bulb1 (NORTH)"; icon_state = "bulb1"; dir = 1},/obj/machinery/power/smes/magical{chargelevel = 200000; output = 120000; unacidable = 1},/obj/structure/cable{icon_state = "0-4"; d2 = 4},/turf/simulated/floor/engine,/area/sulaco/aft{icon_state = "green"})
 "dyD" = (/obj/machinery/telecomms/server/marine/charlie,/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/simulated/floor/engine,/area/sulaco/aft{icon_state = "green"})
 "dyE" = (/obj/machinery/telecomms/server/marine/bravo,/turf/simulated/floor/engine,/area/sulaco/aft{icon_state = "green"})
 "dyF" = (/obj/machinery/telecomms/server/marine/alpha,/turf/simulated/floor/engine,/area/sulaco/aft{icon_state = "green"})
