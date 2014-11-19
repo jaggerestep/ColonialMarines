@@ -48,13 +48,9 @@
 /obj/machinery/smartfridge/blood
 	name = "\improper Blood Pack Storage"
 	desc = "A refrigerated storage unit for blood packs"
-	item_quants = list(/obj/item/weapon/reagent_containers/blood/APlus = 2,/obj/item/weapon/reagent_containers/blood/AMinus = 2,
-						/obj/item/weapon/reagent_containers/blood/BPlus = 2,/obj/item/weapon/reagent_containers/blood/BMinus = 2,
-						/obj/item/weapon/reagent_containers/blood/OPlus = 2,/obj/item/weapon/reagent_containers/blood/OMinus = 3,
-						/obj/item/weapon/reagent_containers/blood/empty = 10)
 
 
-/obj/machinery/smartfridge/extract/accept_check(var/obj/item/O as obj)
+/obj/machinery/smartfridge/blood/accept_check(var/obj/item/O as obj)
 	if(istype(O,/obj/item/weapon/reagent_containers/blood))
 		return 1
 	return 0
