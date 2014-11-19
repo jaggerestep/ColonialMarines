@@ -13,7 +13,7 @@ obj/machinery/recharger
 obj/machinery/recharger/attackby(obj/item/weapon/G as obj, mob/user as mob)
 	if(istype(user,/mob/living/silicon))
 		return
-	if(istype(G, /obj/item/weapon/gun/energy) || istype(G, /obj/item/weapon/melee/baton) || istype(G, /obj/item/weapon/melee/stunprod))
+	if(istype(G, /obj/item/weapon/gun/energy) || istype(G, /obj/item/weapon/melee/baton) || istype(G, /obj/item/weapon/melee/stunprod) || istype(G, /obj/item/weapon/melee/defibrillator))
 		if(charging)
 			return
 
@@ -79,6 +79,25 @@ obj/machinery/recharger/process()
 				use_power(150)
 			else
 				icon_state = "recharger2"
+			return
+		if(istype(charging, /obj/item/weapon/melee/stunprod))
+			var/obj/item/weapon/melee/stunprod/B = charging
+			if(B.charges < initial(B.charges))
+				B.charges++
+				icon_state = "recharger1"
+				use_power(150)
+			else
+				icon_state = "recharger2"
+
+			return
+		if(istype(charging, /obj/item/weapon/melee/defibrillator))
+			var/obj/item/weapon/melee/defibrillator/B = charging
+			if(B.charges < initial(B.charges))
+				B.charges++
+				icon_state = "wrecharger1"
+				use_power(150)
+			else
+				icon_state = "wrecharger2"
 
 obj/machinery/recharger/emp_act(severity)
 	if(stat & (NOPOWER|BROKEN) || !anchored)
@@ -128,6 +147,8 @@ obj/machinery/recharger/wallcharger/process()
 				use_power(150)
 			else
 				icon_state = "wrecharger2"
+
+
 
 obj/machinery/recharger/wallcharger/update_icon()
 	if(charging)
