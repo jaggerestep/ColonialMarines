@@ -3,7 +3,7 @@
 /mob/living/carbon/alien/larva
 
 	var/temperature_alert = 0
-	
+
 	New()
 		..()
 		workobj()
@@ -226,7 +226,7 @@ FUCK YOU MORE FAT CODE -Hawk*/
 			blinded = 1
 			silent = 0
 		else				//ALIVE. LIGHTS ARE ON
-			if(health < -25 || brain_op_stage == 4.0)
+			if(health <= -24 || brain_op_stage == 4.0)
 				death()
 				blinded = 1
 				silent = 0
