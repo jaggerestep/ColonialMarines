@@ -339,6 +339,7 @@
 	update_icons()	//apply the now updated overlays to the mob
 
 
+
 //Throwing stuff
 
 /mob/living/carbon/proc/toggle_throw_mode()
@@ -349,11 +350,13 @@
 
 /mob/living/carbon/proc/throw_mode_off()
 	src.in_throw_mode = 0
-	src.throw_icon.icon_state = "act_throw_off"
+	if(src.throw_icon) //in case we don't have the HUD and we use the hotkey
+		src.throw_icon.icon_state = "act_throw_off"
 
 /mob/living/carbon/proc/throw_mode_on()
 	src.in_throw_mode = 1
-	src.throw_icon.icon_state = "act_throw_on"
+	if(src.throw_icon)
+		src.throw_icon.icon_state = "act_throw_on"
 
 /mob/proc/throw_item(atom/target)
 	return
@@ -414,7 +417,8 @@
 */
 
 
-		item.throw_at(target, item.throw_range, item.throw_speed)
+		item.throw_at(target, item.throw_range, item.throw_speed, src)
+
 
 /mob/living/carbon/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	..()
@@ -445,6 +449,7 @@
 	else
 	 ..()
 
+	return
 	return
 
 /mob/living/carbon/show_inv(mob/living/carbon/user as mob)
