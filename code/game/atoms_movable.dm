@@ -7,6 +7,8 @@
 	var/l_move_time = 1
 	var/m_flag = 1
 	var/throwing = 0
+	var/turf/throw_source = null
+	var/thrower
 	var/throw_speed = 2
 	var/throw_range = 7
 	var/moved_recently = 0
@@ -58,11 +60,13 @@
 					src.throw_impact(A,speed)
 					src.throwing = 0
 
-/atom/movable/proc/throw_at(atom/target, range, speed)
+/atom/movable/proc/throw_at(atom/target, range, speed, thrower)
 	if(!target || !src)	return 0
 	//use a modified version of Bresenham's algorithm to get from the atom's current position to that of the target
 
 	src.throwing = 1
+	src.thrower = thrower
+	src.throw_source = get_turf(src)	//store the origin turf
 
 	if(usr)
 		if(HULK in usr.mutations)
@@ -149,9 +153,10 @@
 			a = get_area(src.loc)
 
 	//done throwing, either because it hit something or it finished moving
-	src.throwing = 0
 	if(isobj(src)) src.throw_impact(get_turf(src),speed)
-
+	src.throwing = 0
+	src.thrower = null
+	src.throw_source = null
 
 //Overlays
 /atom/movable/overlay
