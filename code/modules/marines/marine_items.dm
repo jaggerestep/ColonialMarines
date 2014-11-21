@@ -110,6 +110,12 @@
 	keyslot2 = new /obj/item/device/encryptionkey/mbra
 	frequency = 1461
 
+/obj/item/device/radio/headset/msulaco
+	name = "marine radio headset"
+	desc = "A standard Sulaco radio headset"
+	icon_state = "cargo_headset"
+	item_state = "headset"
+	frequency = 1461
 
 /obj/item/device/radio/headset/mcharliel
 	name = "marine charlie leader radio headset"
