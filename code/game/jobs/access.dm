@@ -594,7 +594,7 @@
 			access_bravo_prep, access_bravo_mprep, access_bravo_eprep, access_bravo_sprep, access_bravo_leader,
 			access_delta_prep, access_delta_mprep, access_delta_eprep, access_delta_sprep, access_delta_leader,
 			access_logistics, access_xeno_containment,
-			access_sulaco_brig, access_sulaco_cells,access_medical_surgery,access_medical_storage)
+			access_sulaco_brig, access_sulaco_cells,access_medical_bay,access_medical_chem,access_medical_genetics,access_medical_surgery,access_medical_storage)
 
 /proc/get_marine_region_accesses_name(var/code)
 	switch(code)
