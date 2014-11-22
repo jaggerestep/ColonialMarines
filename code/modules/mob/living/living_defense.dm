@@ -157,5 +157,57 @@
 		T = get_step(T,direction)
 
 	return 0
+//this proc handles being hit by a thrown atom
+/mob/living/hitby(atom/movable/AM as mob|obj,var/speed = 5)//Standardization and logging -Sieve
+	if(istype(AM,/obj/))
+		var/obj/O = AM
+		var/dtype = BRUTE
+		if(istype(O,/obj/item/weapon))
+			var/obj/item/weapon/W = O
+			dtype = W.damtype
+		var/throw_damage = O.throwforce*(speed/5)
+
+		var/miss_chance = 15
+		if (O.throw_source)
+			var/distance = get_dist(O.throw_source, loc)
+			miss_chance = min(15*(distance-2), 0)
+
+		if (prob(miss_chance))
+			visible_message("\blue \The [O] misses [src] narrowly!")
+			return
+
+		src.visible_message("\red [src] has been hit by [O].")
+		var/armor = run_armor_check(null, "melee")
+
+		if(armor < 2)
+			apply_damage(throw_damage, dtype, null, armor, O)
+
+		O.throwing = 0		//it hit, so stop moving
+
+		if(ismob(O.thrower))
+			var/mob/M = O.thrower
+			var/client/assailant = M.client
+			if(assailant)
+				src.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been hit with a [O], thrown by [M.name] ([assailant.ckey])</font>")
+				M.attack_log += text("\[[time_stamp()]\] <font color='red'>Hit [src.name] ([src.ckey]) with a thrown [O]</font>")
+				if(!istype(src,/mob/living/simple_animal/mouse))
+					msg_admin_attack("[src.name] ([src.ckey]) was hit by a [O], thrown by [M.name] ([assailant.ckey]) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)")
+
+		// Begin BS12 momentum-transfer code.
+		if(O.throw_source && speed >= 15)
+			var/obj/item/weapon/W = O
+			var/momentum = speed/2
+			var/dir = get_dir(O.throw_source, src)
+
+			visible_message("\red [src] staggers under the impact!","\red You stagger under the impact!")
+			src.throw_at(get_edge_target_turf(src,dir),1,momentum)
+
+			if(!W || !src) return
+
+			if(W.sharp) //Projectile is suitable for pinning.
+				//Handles embedding for non-humans and simple_animals.
+				O.loc = src
+				src.embedded += O
+
 
 // End BS12 momentum-transfer code.
