@@ -226,7 +226,7 @@ FUCK YOU MORE FAT CODE -Hawk*/
 			blinded = 1
 			silent = 0
 		else				//ALIVE. LIGHTS ARE ON
-			if(health <= -24 || brain_op_stage == 4.0)
+			if(health <= -20 || brain_op_stage == 4.0)
 				death()
 				blinded = 1
 				silent = 0
