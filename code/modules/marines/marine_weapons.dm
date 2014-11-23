@@ -49,13 +49,14 @@
 //AMMO BOXES
 
 /obj/item/ammo_magazine/m45s
-	name = "ammo box (.45-S)"
-	desc = "A box of .45 special ammo"
-	icon_state = "9mm"
+	name = "magazine (.45-S)"
+	desc = "A magazine with .45 special ammo"
+	icon_state = "45-10a"
 	ammo_type = "/obj/item/ammo_casing/mpistol"
 	max_ammo = 12
 
 /obj/item/ammo_magazine/m45s/empty
+	icon_state = "45-0a"
 	max_ammo = 0
 
 /obj/item/ammo_magazine/m38s
