@@ -22,7 +22,7 @@
 		H.equip_to_slot_or_del(BPK, slot_back,1)
 		H.equip_to_slot_or_del(U, slot_w_uniform)
 		H.equip_to_slot_or_del(new /obj/item/device/pda/captain(H), slot_l_store)
-		H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/marine/full/New()(H), slot_belt)
+		H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/marine/full(H), slot_belt)
 		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/marinechief/commander(H), slot_shoes)
 		H.equip_to_slot_or_del(new /obj/item/clothing/head/beret/marine/commander(H), slot_head)
 		var/obj/item/weapon/implant/loyalty/L = new/obj/item/weapon/implant/loyalty(H)
@@ -76,7 +76,7 @@
 		H.equip_to_slot_or_del(new /obj/item/clothing/under/marine/mp(H), slot_w_uniform)
 		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/marine(H), slot_shoes)
 		H.equip_to_slot_or_del(new /obj/item/device/pda(H), slot_l_store)
-		H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/marine/full/New()(H), slot_belt)
+		H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/marine/full(H), slot_belt)
 		return 1
 
 
@@ -101,5 +101,5 @@
 		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/marine(H), slot_shoes)
 		H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/marine(H), slot_wear_suit)
 		H.equip_to_slot_or_del(new /obj/item/device/pda(H), slot_l_store)
-		H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/marine/full/New()(H), slot_belt)
+		H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/marine/full(H), slot_belt)
 		return 1
