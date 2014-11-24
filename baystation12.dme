@@ -1424,5 +1424,5 @@
 #include "code\ZAS\Zone.dm"
 #include "interface\interface.dm"
 #include "interface\skin.dmf"
-#include "maps\tgstation3.2.dmm"
+#include "maps\tgstation3.2-Sulaco.dmm"
 // END_INCLUDE

@@ -51,12 +51,12 @@
 /obj/item/ammo_magazine/m45s
 	name = "magazine (.45-S)"
 	desc = "A magazine with .45 special ammo"
-	icon_state = "45-10a"
+	icon_state = ".45a"
 	ammo_type = "/obj/item/ammo_casing/mpistol"
 	max_ammo = 12
 
 /obj/item/ammo_magazine/m45s/empty
-	icon_state = "45-0a"
+	icon_state = ".45a0"
 	max_ammo = 0
 
 /obj/item/ammo_magazine/m38s
@@ -81,12 +81,14 @@
 /obj/item/ammo_magazine/m10mms
 	name = "magazine (10mm-S)"
 	desc = "A 10mm special magazine"
-	icon_state = "m309"
+	icon_state = "m309a"
 	ammo_type = "/obj/item/ammo_casing/mrifle"
 	max_ammo = 30
 
 /obj/item/ammo_magazine/m10mms/empty
 	max_ammo = 0
+	icon_state = "m309a0"
+
 
 /obj/item/weapon/storage/box/mshotguns
 	name = "box of special shotgun shells"
@@ -108,7 +110,7 @@
 /obj/item/weapon/gun/projectile/pistol/colt1911
 	name = "\improper Colt 1911"
 	desc = "Colt 1911. Uses .45 special rounds."
-	icon_state = "pistol"
+	icon_state = "colt"
 	max_shells = 12
 	caliber = "45s"
 	ammo_type = "/obj/item/ammo_casing/mpistol"
@@ -140,6 +142,8 @@
 /obj/item/weapon/gun/projectile/automatic/mp5
 	name = "\improper H&K MP5"
 	desc = "Heckler & Koch MP5. Uses 9mm rounds."
+	icon_state = "smg"
+	item_state = "c20r"
 	max_shells = 30
 	caliber = "9mms"
 	ammo_type = "/obj/item/ammo_casing/msmg"
@@ -153,7 +157,7 @@
 /obj/item/weapon/gun/twohanded/projectile/c20r/m41a
 	name = "\improper M41A Rifle"
 	desc = "M41A Pulse Rifle. Uses 10mm special ammunition."
-	icon_state = "m41a"
+	icon_state = "m41a0"
 	item_state = "m41a"
 	w_class = 3.0
 	max_shells = 30
@@ -180,9 +184,9 @@
 	update_icon()
 		..()
 		if(empty_mag)
-			icon_state = "m41a0"
-		else
 			icon_state = "m41a"
+		else
+			icon_state = "m41a0"
 		return
 
 //SHOTGUN: High damage 80, low ammo 8, two-handed, recoil, pump.
