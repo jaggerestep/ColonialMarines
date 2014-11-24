@@ -13,15 +13,16 @@
 /area/sulaco/aft
 	name = "\improper Sulaco Aft"
 	icon_state = "centcom"
+	music = null
 
 /area/sulaco/fore
 	name = "\improper Sulaco Fore"
 	icon_state = "centcom"
-
+	music = null
 /area/sulaco/hangar
 	name = "\improper Sulaco Hangar"
 	icon_state = "centcom"
-
+	music = null
 
 
 
