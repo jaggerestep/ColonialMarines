@@ -3,12 +3,12 @@
 /obj/structure/closet/secure_closet/marine
 	name = "Marine's Locker"
 	req_access = list()
-	icon_state = "sec1"
-	icon_closed = "sec"
-	icon_locked = "sec1"
-	icon_opened = "secopen"
-	icon_broken = "secbroken"
-	icon_off = "secoff"
+	icon_state = "standard_locked"
+	icon_closed = "standard_unlocked"
+	icon_locked = "standard_locked"
+	icon_opened = "squad_open"
+	icon_broken = "standard_emmaged"
+	icon_off = "standard_off"
 
 	New()
 		sleep(2)
@@ -27,12 +27,12 @@
 /obj/structure/closet/secure_closet/marine/marine_commander
 	name = "Marine Commander's Locker"
 	req_access = list()
-	icon_state = "sec1"
-	icon_closed = "sec"
-	icon_locked = "sec1"
-	icon_opened = "secopen"
-	icon_broken = "secbroken"
-	icon_off = "secoff"
+	icon_state = "capsecure1"
+	icon_closed = "capsecure"
+	icon_locked = "capsecure1"
+	icon_opened = "capsecureopen"
+	icon_broken = "capsecurebroken"
+	icon_off = "capsecureoff"
 
 	New()
 		sleep(2)
@@ -143,12 +143,12 @@
 /obj/structure/closet/secure_closet/marine/marine_alpha_equipment
 	name = "Alpha Equipment Locker"
 	req_access = list()
-	icon_state = "sec1"
-	icon_closed = "sec"
-	icon_locked = "sec1"
-	icon_opened = "secopen"
-	icon_broken = "secbroken"
-	icon_off = "secoff"
+	icon_state = "squad_alpha_locked"
+	icon_closed = "squad_alpha_unlocked"
+	icon_locked = "squad_alpha_locked"
+	icon_opened = "squad_open"
+	icon_broken = "squad_alpha_emmaged"
+	icon_off = "squad_alpha_off"
 
 	New()
 		sleep(2)
@@ -167,12 +167,12 @@
 /obj/structure/closet/secure_closet/marine/marine_bravo_equipment
 	name = "Bravo Equipment Locker"
 	req_access = list()
-	icon_state = "sec1"
-	icon_closed = "sec"
-	icon_locked = "sec1"
-	icon_opened = "secopen"
-	icon_broken = "secbroken"
-	icon_off = "secoff"
+	icon_state = "squad_bravo_locked"
+	icon_closed = "squad_bravo_unlocked"
+	icon_locked = "squad_bravo_locked"
+	icon_opened = "squad_open"
+	icon_broken = "squad_bravo_emmaged"
+	icon_off = "squad_bravo_off"
 
 	New()
 		sleep(2)
@@ -191,12 +191,12 @@
 /obj/structure/closet/secure_closet/marine/marine_charlie_equipment
 	name = "Charlie Equipment Locker"
 	req_access = list()
-	icon_state = "sec1"
-	icon_closed = "sec"
-	icon_locked = "sec1"
-	icon_opened = "secopen"
-	icon_broken = "secbroken"
-	icon_off = "secoff"
+	icon_state = "squad_charlie_locked"
+	icon_closed = "squad_charlie_unlocked"
+	icon_locked = "squad_charlie_locked"
+	icon_opened = "squad_open"
+	icon_broken = "squad_charlie_emmaged"
+	icon_off = "squad_charlie_off"
 
 	New()
 		sleep(2)
@@ -215,12 +215,12 @@
 /obj/structure/closet/secure_closet/marine/marine_delta_equipment
 	name = "Delta Equipment Locker"
 	req_access = list()
-	icon_state = "sec1"
-	icon_closed = "sec"
-	icon_locked = "sec1"
-	icon_opened = "secopen"
-	icon_broken = "secbroken"
-	icon_off = "secoff"
+	icon_state = "squad_delta_locked"
+	icon_closed = "squad_delta_unlocked"
+	icon_locked = "squad_delta_locked"
+	icon_opened = "squad_open"
+	icon_broken = "squad_delta_emmaged"
+	icon_off = "squad_delta_off"
 
 	New()
 		sleep(2)
