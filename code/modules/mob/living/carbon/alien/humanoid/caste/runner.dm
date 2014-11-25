@@ -1,11 +1,11 @@
 /mob/living/carbon/alien/humanoid/runner
 	name = "alien runner"
-	caste = "r"
+	caste = "Runner"
 	maxHealth = 150
 	health = 150
 	storedPlasma = 50
 	max_plasma = 100
-	icon_state = "alienr_s"
+	icon_state = "Runner Walking"
 	move_delay_add = -2
 	plasma_rate = 10
 	damagemin = 27

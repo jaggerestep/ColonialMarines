@@ -1,10 +1,10 @@
 /mob/living/carbon/alien/humanoid/hivelord
 	name = "alien hivelord"
-	caste = "hl"
+	caste = "Hivelord"
 	maxHealth = 320
 	health = 320
-	icon = 'icons/mob/alien64.dmi'
-	icon_state = "alienhl_s"
+	icon = 'icons/Xeno/2x2_Xenos.dmi'
+	icon_state = "Hivelord Walking"
 	plasma_rate = 50
 	heal_rate = 6
 	storedPlasma = 100
