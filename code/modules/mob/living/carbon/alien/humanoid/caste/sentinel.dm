@@ -1,11 +1,11 @@
 /mob/living/carbon/alien/humanoid/sentinel
 	name = "alien sentinel"
-	caste = "s"
+	caste = "Sentinel"
 	maxHealth = 240
 	health = 240
 	storedPlasma = 100
 	max_plasma = 250
-	icon_state = "aliens_s"
+	icon_state = "Sentinal Walking"
 	plasma_rate = 10
 	damagemin = 34
 	damagemax = 40

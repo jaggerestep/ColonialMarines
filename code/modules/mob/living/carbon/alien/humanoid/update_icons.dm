@@ -18,23 +18,23 @@
 	if(stat == DEAD)
 		//If we mostly took damage from fire
 		if(fireloss > 125)
-			icon_state = "alien[caste]_husked"
+			icon_state = "[caste] Dead"
 		else
-			icon_state = "alien[caste]_dead"
+			icon_state = "[caste] Dead"
 		for(var/image/I in overlays_lying)
 			overlays += I
 	else if(lying)
 		if(resting)
-			icon_state = "alien[caste]_sleep"
+			icon_state = "[caste] Sleeping"
 		else if(stat == UNCONSCIOUS)
-			icon_state = "alien[caste]_unconscious"
+			icon_state = "[caste] Knocked Down"
 		else
-			icon_state = "alien[caste]_l"
+			icon_state = "[caste] Knocked Down"
 		for(var/image/I in overlays_lying)
 			overlays += I
 	else
-		if(m_intent == "run")		icon_state = "alien[caste]_running"
-		else						icon_state = "alien[caste]_s"
+		if(m_intent == "run")		icon_state = "[caste] Running"
+		else						icon_state = "[caste] Walking"
 		for(var/image/I in overlays_standing)
 			overlays += I
 

@@ -1,11 +1,11 @@
 /mob/living/carbon/alien/humanoid/hunter
 	name = "alien warrior"
-	caste = "h"
+	caste = "Hunter"
 	maxHealth = 210
 	health = 210
 	storedPlasma = 100
 	max_plasma = 150
-	icon_state = "alienh_s"
+	icon_state = "Hunter Walking"
 	plasma_rate = 7
 	damagemin = 25
 	damagemax = 33
