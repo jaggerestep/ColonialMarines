@@ -1,15 +1,15 @@
 /mob/living/carbon/alien/humanoid/ravager
 	name = "alien ravager"
-	caste = "r"
+	caste = "Ravager"
 	maxHealth = 500
 	health = 500
 	storedPlasma = 50
 	max_plasma = 50
-	icon_state = "alienr_s"
+	icon_state = "Ravager Running"
 	plasma_rate = 6
 	damagemin = 50
 	damagemax = 75
-	icon = 'icons/mob/alien64.dmi'
+	icon = 'icons/Xeno/2x2_Xenos.dmi'
 	var/usedcharge = 0
 	var/CHARGESPEED = 1
 	var/CHARGECOOLDOWN = 6 // in seconds
