@@ -1,10 +1,10 @@
 /mob/living/carbon/alien/humanoid/corroder
 	name = "alien corroder"
-	caste = "Corroder"
+	caste = "c"
 	maxHealth = 100
 	health = 100
-	icon = 'icons/Xeno/2x2_Xenos.dmi'
-	icon_state = "Corroder Walking"
+	icon = 'icons/mob/alien64.dmi'
+	icon_state = "alienc_s"
 	plasma_rate = 18
 	heal_rate = 2
 	storedPlasma = 80

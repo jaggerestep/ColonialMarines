@@ -1,11 +1,11 @@
 /mob/living/carbon/alien/humanoid/carrier
 	name = "alien carrier"
-	caste = "Drone"
+	caste = "d"
 	maxHealth = 180
 	health = 180
 	storedPlasma = 50
 	max_plasma = 50
-	icon_state = "Drone Walking"
+	icon_state = "aliend_s"
 	plasma_rate = 5
 	heal_rate = 1
 	var/facehuggers = 0

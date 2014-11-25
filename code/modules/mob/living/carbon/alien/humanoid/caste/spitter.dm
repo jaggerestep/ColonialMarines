@@ -1,11 +1,11 @@
 /mob/living/carbon/alien/humanoid/spitter
 	name = "alien spitter"
-	caste = "Spitter"
+	caste = "sp"
 	maxHealth = 190
 	health = 190
 	storedPlasma = 150
 	max_plasma = 450
-	icon_state = "Spitter Walking"
+	icon_state = "aliensp_s"
 	plasma_rate = 30
 	var/progress = 0
 	var/progressmax = 2000

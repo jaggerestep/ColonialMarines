@@ -2,9 +2,9 @@
 	name = "alien hunter"
 	desc = "Hiss!"
 	icon = 'icons/mob/alien.dmi'
-	icon_state = "Hunter Running"
-	icon_living = "Hunter Walking"
-	icon_dead = "Hunter Dead"
+	icon_state = "alienh_running"
+	icon_living = "alienh_running"
+	icon_dead = "alien_l"
 	icon_gib = "syndicate_gib"
 	response_help = "pokes the"
 	response_disarm = "shoves the"
@@ -37,18 +37,18 @@
 
 /mob/living/simple_animal/hostile/alien/drone
 	name = "alien drone"
-	icon_state = "Drone Running"
-	icon_living = "Drone Walking"
-	icon_dead = "Drone Dead"
+	icon_state = "aliend_running"
+	icon_living = "aliend_running"
+	icon_dead = "aliend_l"
 	health = 60
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 
 /mob/living/simple_animal/hostile/alien/sentinel
 	name = "alien sentinel"
-	icon_state = "Sentinal Running"
-	icon_living = "Sentinal Running"
-	icon_dead = "Sentinal Dead"
+	icon_state = "aliens_running"
+	icon_living = "aliens_running"
+	icon_dead = "aliens_l"
 	health = 120
 	melee_damage_lower = 15
 	melee_damage_upper = 15

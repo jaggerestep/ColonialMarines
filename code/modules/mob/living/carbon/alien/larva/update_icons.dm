@@ -4,19 +4,19 @@
 	update_icons()
 
 /mob/living/carbon/alien/larva/update_icons()
-	var/state = "Bloody"
+	var/state = 0
 	if(amount_grown > 150)
-		state = "Normal"
+		state = 2
 	else if(amount_grown > 50)
-		state = "Normal"
+		state = 1
 
 	if(stat == DEAD)
-		icon_state = "[state] Larva Dead"
+		icon_state = "larva[state]_dead"
 	else if (handcuffed || legcuffed)
-		icon_state = "[state] Larva Cuff"
+		icon_state = "larva[state]_cuff"
 	else if (stunned)
-		icon_state = "[state] Larva Stunned"
+		icon_state = "larva[state]_stun"
 	else if(lying || resting)
-		icon_state = "[state] Larva Sleeping"
+		icon_state = "larva[state]_sleep"
 	else
-		icon_state = "[state] Larva"
+		icon_state = "larva[state]"

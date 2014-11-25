@@ -1,8 +1,6 @@
-
-//NOT SURE WHAT THE FUCK ALIEN THIS IS SO TEMP LINKING TO SENTINAL FINDCODE: APOP1
 /mob/living/carbon/alien/humanoid
 	name = "alien"
-	icon_state = "Sentinal Walking"
+	icon_state = "alien_s"
 
 	var/obj/item/clothing/suit/wear_suit = null		//TODO: necessary? Are they even used? ~Carn
 	var/obj/item/clothing/head/head = null			//

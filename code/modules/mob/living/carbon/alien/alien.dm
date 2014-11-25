@@ -6,7 +6,7 @@
 	name = "alien"
 	voice_name = "alien"
 	speak_emote = list("hisses")
-	icon = 'icons/Xeno/1x1_Accurate_Xenos.dmi'
+	icon = 'icons/mob/alien.dmi'
 	gender = NEUTER
 	dna = null
 

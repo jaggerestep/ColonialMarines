@@ -1,16 +1,16 @@
 /mob/living/carbon/alien/humanoid/queen
 	name = "alien queen"
-	caste = "Accurate Queen"
+	caste = "q"
 	maxHealth = 700
 	health = 700
-	icon_state = "Accurate Queen Running"
+	icon_state = "alienq_s"
 	status_flags = CANPARALYSE
 	heal_rate = 7
 	plasma_rate = 20
 	var/usedscreech = 0
 	damagemin = 30
 	damagemax = 35
-	icon = 'icons/Xeno/2x2_Xenos.dmi'
+	icon = 'icons/mob/alien64.dmi'
 
 /datum/hive_controller
 	var/mob/living/carbon/alien/humanoid/queen/active_queen
