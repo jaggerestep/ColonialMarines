@@ -173,7 +173,7 @@ var/list/squad_colors = list(rgb(255,0,0), rgb(255,255,0), rgb(160,32,240), rgb(
 	New(loc)
 		..(loc)
 		update_armor()
-		icon_state = "[rand(1,6)]"
+		icon_state = "[rand(1,4)]"
 		item_state = icon_state
 
 	equipped(var/mob/living/carbon/human/mob, slot)
