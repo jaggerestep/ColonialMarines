@@ -1,9 +1,9 @@
 /mob/living/carbon/alien/humanoid/drone
 	name = "alien drone"
-	caste = "d"
+	caste = "Drone"
 	maxHealth = 205
 	health = 205
-	icon_state = "aliend_s"
+	icon_state = "Drone Walking"
 	damagemin = 26
 	damagemax = 32
 	heal_rate = 4

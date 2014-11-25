@@ -4,8 +4,8 @@
 /obj/item/alien_embryo
 	name = "alien embryo"
 	desc = "All slimy and yuck."
-	icon = 'icons/mob/alien.dmi'
-	icon_state = "larva0_dead"
+	icon = 'icons/Xeno/1x1_Accurate_Xenos.dmi'
+	icon_state = "Bloody Larva Dead"
 	var/mob/living/affected_mob
 	var/stage = 0
 	var/stage_age = 0
