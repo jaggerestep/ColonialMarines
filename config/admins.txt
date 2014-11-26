@@ -9,14 +9,6 @@ Caryl - Trial Admin
 HereticChurch - Moderator
 Allan1234 - Moderator
 julinova - Moderator
-<<<<<<< HEAD
-speedyabst - Moderator
+speedybast - Moderator
 unknownmurder - Moderator
 Dre9889 - Auditor
-=======
-rebelution - Moderator
-speedybst - Moderator
-coroneljones - Game Admin
-unknownmurder - Moderator
-Caryl - Trial Admin
->>>>>>> upstream/master
