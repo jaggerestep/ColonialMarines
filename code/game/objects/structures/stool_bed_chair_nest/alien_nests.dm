@@ -6,6 +6,40 @@
 	icon = 'icons/mob/alien.dmi'
 	icon_state = "nest"
 	var/health = 100
+	var/resisting = 0
+	var/buckletime = 0
+	var/buckletimemax = 0
+
+
+/obj/structure/stool/bed/nest/proc/process_unbuckle()
+	spawn while(1)
+		if(!istype(buckled_mob))
+			resisting = 0
+			buckletime = 0
+			buckletimemax = 0
+		if(istype(buckled_mob) && resisting)
+			if(buckletimemax == 0)
+				buckletimemax = world.timeofday + 1200
+			buckletime += 50
+			if(buckletime >= buckletimemax)
+				if(buckled_mob)
+					buckled_mob.pixel_y = 0
+					buckled_mob.nested = null
+					buckled_mob.visible_message(\
+						"<span class='warning'><b>[buckled_mob.name] manages to break free of the gelatinous resin!</b></span>",\
+						"<span class='warning'>You manage to break free from the gelatinous resin!</span>",\
+						"<span class='notice'>You hear squelching...</span>")
+					unbuckle()
+
+		sleep(50)
+/obj/structure/stool/bed/nest/New()
+	process_unbuckle()
+
+/obj/structure/stool/bed/nest/unbuckle()
+	..()
+	resisting = 0
+	buckletime = 0
+	buckletimemax = 0
 
 /obj/structure/stool/bed/nest/manual_unbuckle(mob/user as mob)
 /*	if(buckled_mob == user)
@@ -26,15 +60,8 @@
 					"<span class='warning'>[buckled_mob.name] struggles to break free of the gelatinous resin...</span>",\
 					"<span class='warning'>You struggle to break free from the gelatinous resin...</span>",\
 					"<span class='notice'>You hear squelching...</span>")
-				spawn(1200)
-					if(user && buckled_mob && user.buckled == src)
-						buckled_mob.pixel_y = 0
-						buckled_mob.nested = null
-						buckled_mob.visible_message(\
-					"<span class='warning'><b>[buckled_mob.name] manages to break free of the gelatinous resin!</b></span>",\
-					"<span class='warning'>You manage to break free from the gelatinous resin!</span>",\
-					"<span class='notice'>You hear squelching...</span>")
-						unbuckle()
+				buckletime = world.timeofday
+				resisting = 1
 
 			src.add_fingerprint(user)
 	return

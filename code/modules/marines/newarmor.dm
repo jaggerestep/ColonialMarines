@@ -60,6 +60,7 @@ var/list/squad_colors = list(rgb(255,0,0), rgb(255,255,0), rgb(160,32,240), rgb(
 
 	proc/get_squad(var/obj/item/weapon/card/id/card)
 		rank = 0
+		squad = 0
 		if(findtext(card.assignment, "Leader") != 0)
 			rank = 1
 		if(findtext(card.assignment, "Alpha") != 0)
@@ -73,7 +74,7 @@ var/list/squad_colors = list(rgb(255,0,0), rgb(255,255,0), rgb(160,32,240), rgb(
 
 		return
 
-	proc/update_armor()
+	proc/update_helmet()
 		spawn while(1)
 			if(istype(wornby) && src.loc == wornby)
 				var/obj/item/weapon/card/id/card = wornby.wear_id
@@ -87,10 +88,10 @@ var/list/squad_colors = list(rgb(255,0,0), rgb(255,255,0), rgb(160,32,240), rgb(
 
 	New(loc)
 		..(loc)
-		update_armor()
+		update_helmet()
 
 	equipped(var/mob/living/carbon/human/mob, slot)
-		if(slot == slot_wear_suit)
+		if(slot == slot_head)
 			wornby = mob
 			if(istype(markingoverlay))
 				mob.overlays_standing += markingoverlay
