@@ -19,7 +19,7 @@
 			buckletimemax = 0
 		if(istype(buckled_mob) && resisting)
 			if(buckletimemax == 0)
-				buckletimemax = world.timeofday + 3600
+				buckletimemax = world.timeofday + 1200
 			buckletime += 50
 			if(buckletime >= buckletimemax)
 				if(buckled_mob)
