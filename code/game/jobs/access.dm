@@ -518,7 +518,7 @@
 			access_charlie_prep, access_charlie_mprep, access_charlie_eprep, access_charlie_sprep, access_charlie_leader,
 			access_bravo_prep, access_bravo_mprep, access_bravo_eprep, access_bravo_sprep, access_bravo_leader,
 			access_delta_prep, access_delta_mprep, access_delta_eprep, access_delta_sprep, access_delta_leader,
-			access_logistics, access_xeno_containment,access_medical_storage)
+			access_logistics, access_xeno_containment,access_medical_storage, access_robotics)
 		if("Researcher")
 			return list(access_xeno_containment, access_robotics)
 		if("Sulaco Medic")
