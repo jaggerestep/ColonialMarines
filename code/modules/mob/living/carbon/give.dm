@@ -2,6 +2,9 @@
 	set category = "IC"
 	set name = "Give"
 	set src in view(1)
+	if(src.alien_talk_understand)
+		usr << "\red Why would you give an alien anything?  It hates you."
+		return
 	if(src.stat == 2 || usr.stat == 2 || src.client == null)
 		return
 	if(src == usr)
