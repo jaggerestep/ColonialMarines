@@ -3,16 +3,16 @@
 //BULLETS
 
 /obj/item/projectile/bullet/mpistol
-	damage = 20
+	damage = 21
 
 /obj/item/projectile/bullet/mrevolver
 	damage = 40
 
 /obj/item/projectile/bullet/msmg
-	damage = 10
+	damage = 13
 
 /obj/item/projectile/bullet/mrifle
-	damage = 25
+	damage = 27
 
 /obj/item/projectile/bullet/mshotgun
 	damage = 70
