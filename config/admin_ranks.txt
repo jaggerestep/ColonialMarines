@@ -34,8 +34,9 @@ Moderator		+@ +SERVER +REJUV +BAN
 Trial Admin		+@ +ADMIN +SPAWN +VAREDIT +SOUND
 Badmin			+@ +POSSESS +BUILDMODE +FUN
 Game Admin		+@ +STEALTH +DEBUG
-Head Moderator 	+@
+Head Moderator 	        +@
 Head Admin		+EVERYTHING
 Auditor			+@
-Retired Admin	+ADMIN +STEALTH
+Retired Admin	        +ADMIN +STEALTH
 Host			+EVERYTHING
+Developer               +EVERYTHING
