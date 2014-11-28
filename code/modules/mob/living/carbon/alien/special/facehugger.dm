@@ -2,8 +2,8 @@
 
 //TODO: Make these simple_animals
 
-var/const/MIN_IMPREGNATION_TIME = 100 //time it takes to impregnate someone
-var/const/MAX_IMPREGNATION_TIME = 150
+var/const/MIN_IMPREGNATION_TIME = 200 //time it takes to impregnate someone
+var/const/MAX_IMPREGNATION_TIME = 250
 
 var/const/MIN_ACTIVE_TIME = 150 //time between being dropped and going idle
 var/const/MAX_ACTIVE_TIME = 250
@@ -236,7 +236,7 @@ var/const/MAX_ACTIVE_TIME = 250
 
 		target.equip_to_slot(src, slot_wear_mask)
 
-		if(!sterile) L.Weaken(MAX_IMPREGNATION_TIME/10) //something like 25 ticks = 20 seconds with the default settings
+		if(!sterile) L.Sleeping(MAX_IMPREGNATION_TIME/10) //something like 25 ticks = 20 seconds with the default settings
 	else if (iscorgi(M))
 		var/mob/living/simple_animal/corgi/C = M
 		src.loc = C
