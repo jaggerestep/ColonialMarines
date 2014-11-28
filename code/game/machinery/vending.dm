@@ -209,6 +209,9 @@
 	if(stat & (BROKEN|NOPOWER))
 		return
 	user.set_machine(src)
+	if(istype(user, /mob/living/carbon/alien))
+		visible_message("\red [user] stares cluelessly at [src].")
+		return
 
 	if(src.seconds_electrified != 0)
 		if(src.shock(user, 100))
