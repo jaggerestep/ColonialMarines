@@ -48,18 +48,22 @@
 			updatehealth()
 
 		if("disarm")
-			if (prob(25))
+			if(weakened)
+				if (prob(20))
+					playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
+					Weaken(rand(3,5))
+					for(var/mob/O in viewers(src, null))
+						if ((O.client && !( O.blinded )))
+							O.show_message(text("\red <B>[] has tackled down []!</B>", M, src), 1)
+				else
+					playsound(loc, 'sound/weapons/punchmiss.ogg', 50, 1, -1)
+					visible_message(text("\red <B>[] tried to tackle [], but they're already down!</B>", M, src))
+
+			else
 				playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 				Weaken(rand(3,5))
 				for(var/mob/O in viewers(src, null))
 					if ((O.client && !( O.blinded )))
 						O.show_message(text("\red <B>[] has tackled down []!</B>", M, src), 1)
-			else
-				if (prob(80))
-					playsound(loc, 'sound/weapons/slash.ogg', 25, 1, -1)
-					drop_item()
-					visible_message(text("\red <B>[] disarmed []!</B>", M, src))
-				else
-					playsound(loc, 'sound/weapons/slashmiss.ogg', 50, 1, -1)
-					visible_message(text("\red <B>[] has tried to disarm []!</B>", M, src))
+
 	return
