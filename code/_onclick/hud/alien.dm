@@ -139,6 +139,9 @@
 	using.layer = 19
 	src.adding += using
 
+
+///////////////TEMP REMOVAL OF POCKETS
+/*
 	//pocket 1
 	inv_box = new /obj/screen/inventory()
 	inv_box.name = "storage1"
@@ -158,6 +161,9 @@
 	inv_box.slot_id = slot_r_store
 	inv_box.layer = 19
 	src.adding += inv_box
+*/
+
+
 
 	//head
 	inv_box = new /obj/screen/inventory()
