@@ -739,6 +739,7 @@
 /obj/machinery/vending/marine
 	name = "ColMarTech"
 	desc = "A marine equipment vendor"
+	req_access = list(access_alpha_prep, access_bravo_prep, access_charlie_prep, access_delta_prep)
 	product_ads = "If it moves, it's hostile!;How many enemies have you killed today?;Shoot first, perform autopsy later!;Your ammo is right here.;Guns!;Die, scumbag!;Don't shoot me bro!;Shoot them, bro.;Why not have a donut?"
 	products = list(/obj/item/weapon/reagent_containers/food/snacks/donut/normal = 500,
 
