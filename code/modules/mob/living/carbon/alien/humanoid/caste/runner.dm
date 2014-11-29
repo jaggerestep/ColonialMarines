@@ -10,7 +10,7 @@
 	plasma_rate = 10
 	damagemin = 27
 	damagemax = 29
-	heal_rate = 6
+	heal_rate = 4
 	psychiccost = 16
 
 /mob/living/carbon/alien/humanoid/runner/New()

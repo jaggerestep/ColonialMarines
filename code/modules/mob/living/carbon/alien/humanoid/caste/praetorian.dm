@@ -9,7 +9,7 @@
 	plasma_rate = 10
 	damagemin = 36
 	damagemax = 43
-	heal_rate = 7
+	heal_rate = 5
 	icon = 'icons/Xeno/2x2_Xenos.dmi'
 	var/progress = 0
 	var/progressmax = 500

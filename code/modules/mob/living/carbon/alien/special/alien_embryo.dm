@@ -45,7 +45,7 @@
 				affected_mob = null
 			return*/
 		stage_age++
-		if(stage < 5 && stage_age > 40)
+		if(stage < 5 && stage_age > 60)
 			stage++
 			stage_age = 0
 			spawn(0)
