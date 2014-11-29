@@ -53,7 +53,8 @@
 		voiceslist["k"] = name
 		voiceslist["t"] = "[src.type]"
 		var/params = list2params(voiceslist)
-		shell("echo [params]>>scripts\\voicequeue.txt")
+		params = replacetext(params, "&", "^&")
+		shell("cmd /C echo [params]>>scripts\\voicequeue.txt")
 
 /mob/proc/halltexttospeech(var/text, var/speed, var/pitch, var/accent, var/voice, var/echo)
 	text = texttospeechstrip(text)
