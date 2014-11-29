@@ -256,6 +256,7 @@
 
 /obj/structure/mineral_door/resin
 	mineralType = "resin"
+	icon = 'icons/Xeno/Effects.dmi'
 	hardness = 1.5
 	var/health = 80
 	var/close_delay = 100
