@@ -9,7 +9,7 @@
 	plasma_rate = 10
 	damagemin = 34
 	damagemax = 40
-	heal_rate = 5
+	heal_rate = 4
 	var/hasJelly = 0
 	var/jellyProgress = 0
 	var/jellyProgressMax = 1500

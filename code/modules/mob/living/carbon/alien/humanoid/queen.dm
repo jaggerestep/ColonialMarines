@@ -5,7 +5,7 @@
 	health = 700
 	icon_state = "Accurate Queen Running"
 	status_flags = CANPARALYSE
-	heal_rate = 7
+	heal_rate = 4
 	plasma_rate = 20
 	var/usedscreech = 0
 	damagemin = 30
