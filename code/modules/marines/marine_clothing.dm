@@ -242,13 +242,13 @@ v
 
 /obj/item/clothing/gloves/marine/charlie
 	name = "alpha squad gloves"
-	icon_state = "blue"
-	item_state = "bluegloves"
+	icon_state = "purple"
+	item_state = "purplegloves"
 
 /obj/item/clothing/gloves/marine/delta
 	name = "alpha squad gloves"
-	icon_state = "purple"
-	item_state = "purplegloves"
+	icon_state = "blue"
+	item_state = "bluegloves"
 
 /obj/item/clothing/gloves/marine/officer
 	name = "officer gloves"
@@ -279,10 +279,37 @@ v
 /obj/item/clothing/shoes/marine
 	name = "marine combat boots"
 	desc = "Standard issue combat boots for combat scenarios or combat situations. All combat, all the time."
-	icon_state = "jackboots"
-	item_state = "jackboots"
+	icon_state = "jackboots-0"
+	item_state = "jackbootsh"
 	armor = list(melee = 10, bullet = 80, laser = 10,energy = 10, bomb = 10, bio = 10, rad = 0)
 	siemens_coefficient = 0.7
+	var/obj/item/weapon/combat_knife/knife //Thank you Apo and LLA~~
+
+	//Knife slot
+	attack_hand(var/mob/living/M)
+		if(knife)
+			knife.loc = get_turf(src)
+			if(M.put_in_active_hand(knife))
+				M << "<div class='notice'>You slide the [knife] out of the [src].</div>"
+				knife = 0
+				update_icon()
+			return
+		..()
+
+	attackby(var/obj/item/I, var/mob/living/M)
+		if(istype(I, /obj/item/weapon/combat_knife))
+			if(knife)	return
+			M.drop_item()
+			knife = I
+			I.loc = src
+			M << "<div class='notice'>You slide the [I] into the [src].</div>"
+			update_icon()
+
+	update_icon()
+		if(knife)
+			icon_state = "jackboots-1"
+		else
+			icon_state = initial(icon_state)
 
 /obj/item/clothing/shoes/marinechief
 	name = "chief officer shoes"

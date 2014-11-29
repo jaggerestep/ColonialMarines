@@ -148,6 +148,7 @@
 	caliber = "9mms"
 	ammo_type = "/obj/item/ammo_casing/msmg"
 	fire_delay = 0
+	force = 9.0
 
 	isHandgun()
 		return 0
@@ -165,6 +166,7 @@
 	ammo_type = "/obj/item/ammo_casing/mrifle"
 	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
 	load_method = 2
+	force = 10.0
 
 	New()
 		..()
@@ -199,3 +201,26 @@
 	caliber = "12gs"
 	ammo_type = "/obj/item/ammo_casing/mshotgun"
 	recoil = 1
+	force = 10.0
+
+//KNIFE
+
+/obj/item/weapon/combat_knife
+	name = "Combat Knife"
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "combat_knife"
+	desc = "When shits gets serious!"
+	flags = FPRINT | TABLEPASS | CONDUCT
+	sharp = 1
+	force = 23.0
+	w_class = 1.0
+	throwforce = 18.0
+	throw_speed = 3
+	throw_range = 6
+	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+
+	suicide_act(mob/user)
+		viewers(user) << pick("\red <b>[user] is slitting \his wrists with the [src.name]! It looks like \he's trying to commit suicide.</b>", \
+							"\red <b>[user] is slitting \his throat with the [src.name]! It looks like \he's trying to commit suicide.</b>", \
+							"\red <b>[user] is slitting \his stomach open with the [src.name]! It looks like \he's trying to commit seppuku.</b>")
+		return (BRUTELOSS)
