@@ -279,8 +279,8 @@ v
 /obj/item/clothing/shoes/marine
 	name = "marine combat boots"
 	desc = "Standard issue combat boots for combat scenarios or combat situations. All combat, all the time."
-	icon_state = "jackboots-0"
-	item_state = "jackbootsh"
+	icon_state = "jackboots"
+	item_state = "jackboots"
 	armor = list(melee = 10, bullet = 80, laser = 10,energy = 10, bomb = 10, bio = 10, rad = 0)
 	siemens_coefficient = 0.7
 	var/obj/item/weapon/combat_knife/knife //Thank you Apo and LLA~~
@@ -290,7 +290,7 @@ v
 		if(knife)
 			knife.loc = get_turf(src)
 			if(M.put_in_active_hand(knife))
-				M << "<div class='notice'>You slide the [knife] out of the [src].</div>"
+				M << "<div class='notice'>You slide the [knife] out of [src].</div>"
 				knife = 0
 				update_icon()
 			return
@@ -302,7 +302,7 @@ v
 			M.drop_item()
 			knife = I
 			I.loc = src
-			M << "<div class='notice'>You slide the [I] into the [src].</div>"
+			M << "<div class='notice'>You slide the [I] into [src].</div>"
 			update_icon()
 
 	update_icon()
