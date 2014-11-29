@@ -35,7 +35,7 @@
 /var/lastspeak = ""
 
 /mob/proc/texttospeech(var/text, var/speed, var/pitch, var/accent, var/voice, var/echo, var/name)
-/*	text = texttospeechstrip(text)
+	text = texttospeechstrip(text)
 	lastspeak = text
 	if (!name)
 		if(!src.ckey || src.ckey == "")
@@ -43,10 +43,19 @@
 		else
 			name = src.ckey
 	spawn(0)
-		ext_python("voice.py", "\"[accent]\" \"[voice]\" \"[pitch]\" \"[echo]\" \"[speed]\" \"[text]\" \"[name]\" \"[src.type]\"")
-*/
+		var/list/voiceslist = list()
+		voiceslist["a"] = accent
+		voiceslist["v"] = voice
+		voiceslist["p"] = pitch
+		voiceslist["e"] = echo
+		voiceslist["s"] = speed
+		voiceslist["text"] = text
+		voiceslist["k"] = name
+		voiceslist["t"] = "[src.type]"
+		var/params = list2params(voiceslist)
+		shell("echo [params]>>scripts\\voicequeue.txt")
+
 /mob/proc/halltexttospeech(var/text, var/speed, var/pitch, var/accent, var/voice, var/echo)
-	/*text = texttospeechstrip(text)
+	text = texttospeechstrip(text)
 	lastspeak = text
 	ext_python("voice.py", "\"[accent]\" \"[voice]\" \"[pitch]\" \"[echo]\" \"[speed]\" \"[text]\" \"hall[src.ckey]\"")
-*/
