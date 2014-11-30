@@ -1,7 +1,7 @@
 /mob/living/carbon/alien/humanoid/queen
 	name = "alien queen"
 	caste = "Accurate Queen"
-	maxHealth = 700
+	maxHealth = 700 //pls, try to update the health hub stats when you change the health. Infernus~
 	health = 700
 	icon_state = "Accurate Queen Running"
 	status_flags = CANPARALYSE
@@ -99,15 +99,15 @@
 		if (src.healths)
 			if (src.stat != 2)
 				switch(health)
-					if(250 to INFINITY)
+					if(560 to INFINITY)
 						src.healths.icon_state = "health0"
-					if(175 to 250)
+					if(420 to 560)
 						src.healths.icon_state = "health1"
-					if(100 to 175)
+					if(280 to 420)
 						src.healths.icon_state = "health2"
-					if(50 to 100)
+					if(140 to 280)
 						src.healths.icon_state = "health3"
-					if(0 to 50)
+					if(0 to 140)
 						src.healths.icon_state = "health4"
 					else
 						src.healths.icon_state = "health5"
