@@ -9517,7 +9517,7 @@
 "dBa" = (/obj/machinery/portable_atmospherics/scrubber,/turf/simulated/floor{tag = "icon-darkbluecorners2 (EAST)"; icon_state = "darkbluecorners2"; dir = 4},/area/sulaco/aft{icon_state = "green"})
 "dBb" = (/obj/structure/disposalpipe/segment,/obj/machinery/atmospherics/pipe/simple{pipe_color = "blue"; icon_state = "intact-b-f"; level = 1; name = "pipe"},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0; tag = ""},/turf/simulated/floor{tag = "icon-neutralcorner (NORTH)"; icon_state = "neutralcorner"; dir = 1},/area/sulaco/aft{icon_state = "green"})
 "dBc" = (/obj/structure/table/woodentable,/obj/item/weapon/storage/fancy/cigarettes/dromedaryco,/turf/simulated/floor/wood,/area/sulaco/aft{icon_state = "green"})
-"dBd" = (/obj/structure/table/woodentable,/obj/item/clothing/mask/cigarette/cigar/havana,/turf/simulated/floor/wood,/area/sulaco/aft{icon_state = "green"})
+"dBd" = (/obj/structure/table/woodentable,/obj/item/clothing/mask/cigarette/cigar/havana,/obj/item/weapon/melee/chainofcommand,/turf/simulated/floor/wood,/area/sulaco/aft{icon_state = "green"})
 "dBe" = (/obj/structure/table/woodentable,/obj/item/device/flashlight/lamp,/turf/simulated/floor/wood,/area/sulaco/aft{icon_state = "green"})
 "dBf" = (/obj/machinery/atmospherics/pipe/simple{pipe_color = "blue"; icon_state = "intact-b-f"; level = 1; name = "pipe"},/turf/simulated/floor/wood,/area/sulaco/aft{icon_state = "green"})
 "dBg" = (/obj/structure/table/woodentable,/obj/machinery/recharger{power_channel = 0; use_power = 0},/obj/item/weapon/gun/energy/gun,/turf/simulated/floor/wood,/area/sulaco/aft{icon_state = "green"})

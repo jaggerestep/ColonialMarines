@@ -1,11 +1,11 @@
 /obj/item/weapon/melee/chainofcommand
 	name = "chain of command"
-	desc = "A tool used by great men to placate the frothing masses."
+	desc = "A tool used to punish Marines"
 	icon_state = "chain"
 	item_state = "chain"
 	flags = FPRINT | TABLEPASS | CONDUCT
 	slot_flags = SLOT_BELT
-	force = 10
+	force = 1
 	throwforce = 7
 	w_class = 3
 	origin_tech = "combat=4"
