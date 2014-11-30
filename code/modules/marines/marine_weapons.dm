@@ -154,7 +154,7 @@
 
 //RIFLE: Medium damage 25, high ammo 30, two-handed, no recoil.
 
-/obj/item/weapon/gun/twohanded/projectile/c20r/m41a
+/obj/item/weapon/gun/twohanded/projectile/Assault/m41a
 	name = "\improper M41A Rifle"
 	desc = "M41A Pulse Rifle. Uses 10mm special ammunition."
 	icon_state = "m41a0"

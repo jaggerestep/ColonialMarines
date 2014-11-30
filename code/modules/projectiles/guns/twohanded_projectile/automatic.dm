@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/twohanded/projectile/c20r
+/obj/item/weapon/gun/twohanded/projectile/Assault
 	name = "\improper C-20r SMG"
 	desc = "A standard issue assault rifle. Uses 12mm ammunition."
 	icon_state = "c20r"
@@ -11,6 +11,7 @@
 	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
 	load_method = 2
 	fire_delay = 2
+	var/gun_light = 7 // Defines how bright the light on the flashlight will be
 
 
 	New()
@@ -38,6 +39,40 @@
 			icon_state = "c20r"
 		return
 
+///////NEW FANCY FLASHLIGHT CODE MADE OF HOPES AND DREAMS./
+
+
+/obj/item/weapon/gun/twohanded/projectile/Assault/verb/toggle_light()
+	set name = "Toggle Flashlight"
+	set category = "Weapon"
+
+	if(haslight && !islighton) //Turns the light on
+		usr << "\blue You turn the flashlight on."
+		usr.SetLuminosity(gun_light)
+		islighton = 1
+	else if(haslight && islighton) //Turns the light off
+		usr << "\blue You turn the flashlight off."
+		usr.SetLuminosity(0)
+		islighton = 0
+	else if(!haslight) //Points out how stupid you are
+		usr << "\red You foolishly look at where the flashlight would be, if it was attached..."
+
+/obj/item/weapon/gun/twohanded/projectile/Assault/pickup(mob/user)//Transfers the lum to the user when picked up
+	if(islighton)
+		SetLuminosity(0)
+		usr.SetLuminosity(gun_light)
+
+/obj/item/weapon/gun/twohanded/projectile/Assault/dropped(mob/user)//Transfers the Lum back to the gun when dropped
+	if(islighton)
+		SetLuminosity(gun_light)
+		usr.SetLuminosity(0)
+
+
+
+
+
+/*	OLD FLASHLIGHT CODE THAT NOBODY LIKES CAUSE IT DON'T WERK  DELETE 01DEC2014
+
 	verb/toggle_light()
 		set name = "Toggle Flashlight"
 		set category = "Weapon"
@@ -45,12 +80,16 @@
 
 		if(haslight && !islighton)
 			usr << "\blue You turn the flashlight on."
-			luminosity = 4
+			SetLuminosity(4)
 			islighton = 1
 		else if(haslight && islighton)
 			usr << "\blue You turn the flashlight off."
-			luminosity = 0
+			SetLuminosity(0)
 			islighton = 0
 		else if(!haslight)
 			usr << "\red There is no flashlight attached!"
 
+
+
+
+*/

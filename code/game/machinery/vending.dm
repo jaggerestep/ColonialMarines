@@ -763,7 +763,7 @@
 					/obj/item/weapon/gun/projectile/pistol/colt1911 = 5,
 					/obj/item/weapon/gun/projectile/victory = 5,
 					/obj/item/weapon/gun/projectile/automatic/mp5 = 5,
-					/obj/item/weapon/gun/twohanded/projectile/c20r/m41a = 5,
+					/obj/item/weapon/gun/twohanded/projectile/Assault/m41a = 5,
 					/obj/item/weapon/gun/twohanded/projectile/shotgun/pump/remington870 = 5,
 					/obj/item/weapon/gun/projectile/twohanded/automatic/l6_saw = 2,
 					//obj/item/weapon/gun/projectile/detective = 5,
