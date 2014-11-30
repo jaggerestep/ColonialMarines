@@ -5,3 +5,5 @@
 *.dmb
 *.lk
 data/
+maps/tgstation3.2-Sulaco.dmm
+code/game/machinery/vending.dm
