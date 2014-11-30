@@ -66,6 +66,10 @@
 		"/obj/item/ammo_magazine/a357",
 		"/obj/item/ammo_magazine/c38",
 		"/obj/item/weapon/melee/baton",
+		"/obj/item/weapon/melee/stunprod",
+		"/obj/item/weapon/restraints",
+		"/obj/item/weapon/handcuffs",
+		"/obj/item/weapon/combat_knife",
 		"/obj/item/ammo_magazine/m45s",
 		"/obj/item/ammo_magazine/m38s",
 		"/obj/item/ammo_magazine/m9mms",
@@ -103,7 +107,7 @@
 		new /obj/item/weapon/storage/box/beanbags(src)
 		new /obj/item/device/flashlight(src)
 		new /obj/item/clothing/glasses/sunglasses(src)
-		new /obj/item/device/radio/headset/mcom(src)
+		new /obj/item/device/radio/headset/mmpo(src)
 		new /obj/item/weapon/gun/twohanded/projectile/shotgun/pump/riot(src)
 		new /obj/item/weapon/melee/baton(src)
 		return
@@ -130,7 +134,7 @@
 		new /obj/item/weapon/storage/box/beanbags(src)
 		new /obj/item/device/flashlight(src)
 		new /obj/item/clothing/glasses/sunglasses(src)
-		new /obj/item/device/radio/headset/mcom(src)
+		new /obj/item/device/radio/headset/mmpo(src)
 		new /obj/item/weapon/gun/twohanded/projectile/shotgun/pump/riot(src)
 		new /obj/item/weapon/shield/riot(src)
 		new /obj/item/weapon/shield/riot(src)
