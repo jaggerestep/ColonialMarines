@@ -65,10 +65,10 @@
 		return
 
 	if(status)
-		H.weakened = 5
+		H.weakened = 8
 		user.lastattacked = M
 		H.lastattacker = user
-		charges -= 5
+		charges -= 2
 		H.visible_message("<span class='danger'>[M] has been prodded with the [src] by [user]!</span>")
 
 		user.attack_log += "\[[time_stamp()]\]<font color='red'> Stunned [H.name] ([H.ckey]) with [src.name]</font>"
