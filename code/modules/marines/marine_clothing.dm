@@ -236,17 +236,17 @@ v
 	item_state = "redgloves"
 
 /obj/item/clothing/gloves/marine/bravo
-	name = "alpha squad gloves"
+	name = "bravo squad gloves"
 	icon_state = "yellow"
 	item_state = "ygloves"
 
 /obj/item/clothing/gloves/marine/charlie
-	name = "alpha squad gloves"
+	name = "charlie squad gloves"
 	icon_state = "purple"
 	item_state = "purplegloves"
 
 /obj/item/clothing/gloves/marine/delta
-	name = "alpha squad gloves"
+	name = "delta squad gloves"
 	icon_state = "blue"
 	item_state = "bluegloves"
 
