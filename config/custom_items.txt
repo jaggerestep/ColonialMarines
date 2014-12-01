@@ -2,7 +2,7 @@ lucyz: Lucy Isherwood: /obj/item/clothing/suit/storage/labcoat/cmo
 lucyz: Lucy Isherwood: /obj/item/clothing/under/dress/dress_hop
 sandcom: Jenna 'Love' Black: /obj/item/clothing/under/dress/dress_firepink
 theflagbearer: Lee Everett: /obj/item/clothing/under/leeeverett
-ningajai: Maj. Anthony Carmine: /obj/item/clothing/head/helmet/marine/fluff/anthonycarmine
+ningajai: Anthony Carmine: /obj/item/clothing/head/helmet/marine/fluff/anthonycarmine
 wrightthewrong: John Wright: /obj/item/clothing/under/fluff/turtleneck
 lestatanderson: Ryder Mitchell: /obj/item/clothing/suit/storage/marine/fluff/cia
 kilinger: Danny Barrett: /obj/item/clothing/head/helmet/marine/fluff/goldshieldberet
