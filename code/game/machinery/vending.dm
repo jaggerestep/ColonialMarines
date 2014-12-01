@@ -773,6 +773,7 @@
 					//obj/item/weapon/gun/twohanded/projectile/c20r = 10,
 					//obj/item/weapon/gun/twohanded/projectile/shotgun/pump = 10,
 					//obj/item/weapon/gun/projectile/shotgun/pump/combat = 5,
+					/obj/item/weapon/combat_knife = 5,
 					)
 	contraband = list(/obj/item/weapon/storage/fancy/donut_box = 5,
 					/obj/item/ammo_magazine/a357 = 5,
