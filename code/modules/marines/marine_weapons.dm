@@ -211,7 +211,7 @@
 	name = "Combat Knife"
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "combat_knife"
-	icon_state = "knife"
+	item_state = "knife"
 	desc = "When shits gets serious!"
 	flags = FPRINT | TABLEPASS | CONDUCT
 	sharp = 1
