@@ -52,15 +52,15 @@
 		if (healths)
 			if (stat != 2)
 				switch(health)
-					if(125 to INFINITY)
+					if(320 to INFINITY)
 						healths.icon_state = "health0"
-					if(100 to 125)
+					if(240 to 320)
 						healths.icon_state = "health1"
-					if(75 to 100)
+					if(160 to 240)
 						healths.icon_state = "health2"
-					if(25 to 75)
+					if(80 to 160)
 						healths.icon_state = "health3"
-					if(0 to 25)
+					if(0 to 80)
 						healths.icon_state = "health4"
 					else
 						healths.icon_state = "health5"

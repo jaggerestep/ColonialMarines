@@ -766,6 +766,7 @@
 					/obj/item/weapon/gun/twohanded/projectile/Assault/m41a = 5,
 					/obj/item/weapon/gun/twohanded/projectile/shotgun/pump/remington870 = 5,
 					/obj/item/weapon/gun/projectile/twohanded/automatic/l6_saw = 2,
+					/obj/item/weapon/combat_knife = 5,
 					//obj/item/weapon/gun/projectile/detective = 5,
 					//obj/item/weapon/gun/projectile/silenced = 10,
 					//obj/item/weapon/gun/projectile/pistol = 10,

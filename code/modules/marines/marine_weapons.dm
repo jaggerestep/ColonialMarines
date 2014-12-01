@@ -92,7 +92,9 @@
 
 /obj/item/weapon/storage/box/mshotguns
 	name = "box of special shotgun shells"
-	desc = "It has a picture of a marine combat shotgun and several warning symbols on the front."
+	desc = "It has a picture of a marine combat shotgun shells."
+	icon_state = "shells"
+	w_class = 2 //Can fit in belts
 	New()
 		..()
 		new /obj/item/ammo_casing/mshotgun(src)
@@ -209,6 +211,7 @@
 	name = "Combat Knife"
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "combat_knife"
+	icon_state = "knife"
 	desc = "When shits gets serious!"
 	flags = FPRINT | TABLEPASS | CONDUCT
 	sharp = 1
@@ -217,6 +220,7 @@
 	throwforce = 18.0
 	throw_speed = 3
 	throw_range = 6
+	hitsound = 'sound/weapons/slash.ogg'
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 
 	suicide_act(mob/user)
