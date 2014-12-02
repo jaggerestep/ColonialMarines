@@ -344,6 +344,8 @@
 	return
 
 /obj/effect/equip_e/human/process()
+	var/message=null
+
 	if (item)
 		item.add_fingerprint(source)
 	else
@@ -398,12 +400,16 @@
 
 	var/list/L = list( "syringe", "pill", "drink", "dnainjector", "fuel")
 	if ((item && !( L.Find(place) )))
-		if(isrobot(source) && place != "handcuff")
+		if(isalien(source))
+			message = "\red <B>[source] is trying to put \a [item] onto [target], but is an alien, and has no clue what they are doing."
+			var/mob/M
+			M.show_message(message, 1)
+			return
+		else if(isrobot(source) && place != "handcuff")
 			del(src)
 		for(var/mob/O in viewers(target, null))
 			O.show_message("\red <B>[source] is trying to put \a [item] on [target]</B>", 1)
 	else
-		var/message=null
 		switch(place)
 			if("syringe")
 				message = "\red <B>[source] is trying to inject [target]!</B>"

@@ -19,12 +19,12 @@ Doesn't work on other aliens/AI.*/
 	else	return 1
 
 /mob/living/carbon/alien/humanoid/verb/plant()
-	set name = "Plant Weeds (50)"
+	set name = "Plant Weeds (75)"
 	set desc = "Plants some alien weeds"
 	set category = "Alien"
 
-	if(powerc(50,1))
-		adjustToxLoss(-50)
+	if(powerc(75,1))
+		adjustToxLoss(-75)
 		for(var/mob/O in viewers(src, null))
 			O.show_message(text("\green <B>[src] has planted some alien weeds!</B>"), 1)
 		new /obj/effect/alien/weeds/node(loc)
