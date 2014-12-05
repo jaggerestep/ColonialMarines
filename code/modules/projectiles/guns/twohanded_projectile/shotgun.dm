@@ -26,7 +26,7 @@
 
 
 	proc/pump_gun(mob/M as mob)
-		playsound(M, 'sound/weapons/shotgun_pump.ogg', 60, 1)
+		playsound(loc, 'sound/weapons/shotgun_pump.ogg', 60, 1, -1)
 		pumped = 0
 		if(current_shell)//We have a shell in the chamber
 			current_shell.loc = get_turf(src)//Eject casing

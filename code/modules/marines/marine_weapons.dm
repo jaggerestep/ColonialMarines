@@ -3,7 +3,7 @@
 //BULLETS
 
 /obj/item/projectile/bullet/mpistol
-	damage = 21
+	damage = 23
 
 /obj/item/projectile/bullet/mrevolver
 	damage = 40
@@ -169,6 +169,7 @@
 	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
 	load_method = 2
 	force = 10.0
+	slot_flags = SLOT_BACK
 
 	New()
 		..()
@@ -212,12 +213,12 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "combat_knife"
 	item_state = "knife"
-	desc = "When shits gets serious!"
+	desc = "When shits gets serious! You can slide this knife into your boots."
 	flags = FPRINT | TABLEPASS | CONDUCT
 	sharp = 1
-	force = 23.0
+	force = 25
 	w_class = 1.0
-	throwforce = 18.0
+	throwforce = 20
 	throw_speed = 3
 	throw_range = 6
 	hitsound = 'sound/weapons/slash.ogg'

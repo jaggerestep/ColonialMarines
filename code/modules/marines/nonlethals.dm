@@ -5,10 +5,10 @@
 	item_state = "baton"
 	flags = FPRINT | TABLEPASS
 	slot_flags = SLOT_BELT
-	force = 10
+	force = 12
 	throwforce = 7
 	w_class = 3
-	var/charges = 10
+	var/charges = 12
 	var/status = 0
 	var/mob/foundmob = "" //Used in throwing proc.
 
@@ -65,7 +65,7 @@
 		return
 
 	if(status)
-		H.weakened = 8
+		H.weakened = 6
 		user.lastattacked = M
 		H.lastattacker = user
 		charges -= 2
