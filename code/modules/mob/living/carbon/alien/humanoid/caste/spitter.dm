@@ -11,6 +11,9 @@
 	var/progressmax = 2000
 	damagemin = 24
 	damagemax = 27
+	tacklemin = 3
+	tacklemax = 5
+	tackle_chance = 65 //Should not be above 100%
 	heal_rate = 3
 	psychiccost = 16
 

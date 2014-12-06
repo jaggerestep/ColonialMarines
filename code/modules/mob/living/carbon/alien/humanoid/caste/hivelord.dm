@@ -11,6 +11,9 @@
 	max_plasma = 1000
 	damagemin = 10
 	damagemax = 15
+	tacklemin = 4
+	tacklemax = 7
+	tackle_chance = 90 //Should not be above 100%
 	psychiccost = 32
 
 /mob/living/carbon/alien/humanoid/hivelord/New()

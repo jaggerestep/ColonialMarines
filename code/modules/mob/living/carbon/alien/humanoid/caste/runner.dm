@@ -10,6 +10,9 @@
 	plasma_rate = 10
 	damagemin = 27
 	damagemax = 29
+	tacklemin = 2
+	tacklemax = 5
+	tackle_chance = 80 //Should not be above 100%
 	heal_rate = 4
 	psychiccost = 16
 

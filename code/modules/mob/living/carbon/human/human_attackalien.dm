@@ -51,7 +51,7 @@
 			if(weakened)
 				if (prob(20))
 					playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
-					Weaken(rand(3,5))
+					Weaken(rand(M.tacklemin,M.tacklemax))//Min and max tackle strenght. They are located in individual caste files.
 					for(var/mob/O in viewers(src, null))
 						if ((O.client && !( O.blinded )))
 							O.show_message(text("\red <B>[] has tackled down []!</B>", M, src), 1)
@@ -60,10 +60,13 @@
 					visible_message(text("\red <B>[] tried to tackle [], but they're already down!</B>", M, src))
 
 			else
-				playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
-				Weaken(rand(3,5))
-				for(var/mob/O in viewers(src, null))
-					if ((O.client && !( O.blinded )))
-						O.show_message(text("\red <B>[] has tackled down []!</B>", M, src), 1)
-
+				if (prob(M.tackle_chance)) //Tackle_chance is now a special var for each caste.
+					playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
+					Weaken(rand(M.tacklemin,M.tacklemax))
+					for(var/mob/O in viewers(src, null))
+						if ((O.client && !( O.blinded )))
+							O.show_message(text("\red <B>[] has tackled down []!</B>", M, src), 1)
+				else
+					playsound(loc, 'sound/weapons/punchmiss.ogg', 50, 1, -1)
+					visible_message(text("\red <B>[] tried to tackle []!</B>", M, src))
 	return

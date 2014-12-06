@@ -10,6 +10,11 @@
 	var/obj/item/weapon/l_store = null
 	var/damagemin = 10
 	var/damagemax = 19
+
+	var/tacklemin = 3
+	var/tacklemax = 5
+	var/tackle_chance = 100 //Should not be above 100%
+
 	var/caste = ""
 	update_icon = 1
 	norecoil = 1
