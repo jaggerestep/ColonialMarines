@@ -23,7 +23,7 @@
 /obj/item/ammo_casing/m4a3 //45 Pistol
 	desc = "A .45 special bullet casing."
 	caliber = "45s"
-	projectile_type = "/obj/item/projectile/bullet/m45"
+	projectile_type = "/obj/item/projectile/bullet/m4a3"
 
 /obj/item/ammo_casing/m38s //.38 Special
 	desc = "A .38 special bullet casing."
@@ -38,7 +38,7 @@
 /obj/item/ammo_casing/m41 //M41Assault Rifle
 	desc = "A 10mm special bullet casing."
 	caliber = "10mms"
-	projectile_type = "/obj/item/projectile/bullet/mrifle"
+	projectile_type = "/obj/item/projectile/bullet/m41"
 
 /obj/item/ammo_casing/m37 //M37 Pump Shotgun
 	name = "Shotgun shell"
@@ -56,13 +56,13 @@
 	ammo_type = "/obj/item/ammo_casing/m4a3"
 	max_ammo = 12
 
-/obj/item/ammo_magazine/m4a3/empty //45 Pistol
+/obj/item/ammo_magazine/m4a3e/empty //45 Pistol
 	icon_state = ".45a0"
 	max_ammo = 0
 
 /obj/item/weapon/gun/projectile/pistol/m4a3/New() //45 Pistol
 	..()
-	empty_mag = new /obj/item/ammo_magazine/m4a3/empty(src) //45 Pistol
+	empty_mag = new /obj/item/ammo_magazine/m4a3e/empty(src) //45 Pistol
 	return
 
 /obj/item/ammo_magazine/m38s //.38 Special
