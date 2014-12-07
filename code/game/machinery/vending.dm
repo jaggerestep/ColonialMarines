@@ -739,7 +739,7 @@
 					/obj/item/weapon/reagent_containers/food/snacks/donut/normal = 12,/obj/item/weapon/storage/box/evidence = 6)
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,/obj/item/weapon/storage/fancy/donut_box = 2)
 
-/obj/machinery/vending/marine
+/*/obj/machinery/vending/marine  // MOVED TO THE MARINES MODULE.  DELETE 10DEC2014 -APOP
 	name = "ColMarTech"
 	desc = "A marine equipment vendor"
 	product_ads = "If it moves, it's hostile!;How many enemies have you killed today?;Shoot first, perform autopsy later!;Your ammo is right here.;Guns!;Die, scumbag!;Don't shoot me bro!;Shoot them, bro.;Why not have a donut?"
@@ -790,7 +790,7 @@
 					/obj/item/ammo_magazine/a357 = 42,
 					/obj/item/ammo_magazine/a50 = 42,
 					/obj/item/ammo_magazine/a762 = 125,*/
-				)
+				)*/
 
 /obj/machinery/vending/hydronutrients
 	name = "NutriMax"

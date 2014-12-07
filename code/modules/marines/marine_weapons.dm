@@ -1,7 +1,7 @@
-/**********************Marine Ammo**************************/
+/**********************Marine Ammo**************************/     //CONSOLDIATED INTO MARINE_WEAPONS_V2 DELETE ON 10DEC2014
 
 //BULLETS
-
+/*
 /obj/item/projectile/bullet/mpistol
 	damage = 23
 
@@ -104,9 +104,10 @@
 		new /obj/item/ammo_casing/mshotgun(src)
 		new /obj/item/ammo_casing/mshotgun(src)
 		new /obj/item/ammo_casing/mshotgun(src)
+		*/
 
 /**********************Marine Weapons**************************/
-
+/*
 //PISTOL: Low/Med damage 20, medium ammo 12, one-handed, no recoil.
 
 /obj/item/weapon/gun/projectile/pistol/colt1911
@@ -228,4 +229,4 @@
 		viewers(user) << pick("\red <b>[user] is slitting \his wrists with the [src.name]! It looks like \he's trying to commit suicide.</b>", \
 							"\red <b>[user] is slitting \his throat with the [src.name]! It looks like \he's trying to commit suicide.</b>", \
 							"\red <b>[user] is slitting \his stomach open with the [src.name]! It looks like \he's trying to commit seppuku.</b>")
-		return (BRUTELOSS)
+		return (BRUTELOSS)*/

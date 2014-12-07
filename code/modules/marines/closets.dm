@@ -72,7 +72,7 @@
 		"/obj/item/weapon/combat_knife",
 		"/obj/item/device/flashlight/flare",
 		"/obj/item/ammo_magazine/m45s",
-		"/obj/item/ammo_magazine/m38s",
+		"/obj/item/ammo_magazine/38s",
 		"/obj/item/ammo_magazine/m9mms",
 		"/obj/item/ammo_magazine/m10mms",
 		"/obj/item/weapon/storage/box/mshotguns",
@@ -81,9 +81,9 @@
 
 /obj/item/weapon/storage/belt/marine/full/New()
 	..()
-	new /obj/item/weapon/gun/projectile/pistol/colt1911(src)
-	new /obj/item/ammo_magazine/m45s(src)
-	new /obj/item/ammo_magazine/m45s(src)
+	new /obj/item/weapon/gun/projectile/pistol/m4a3(src)
+	new /obj/item/ammo_magazine/m4a3(src)
+	new /obj/item/ammo_magazine/m4a3(src)
 
 
 
