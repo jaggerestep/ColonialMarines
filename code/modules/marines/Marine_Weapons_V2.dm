@@ -4,19 +4,19 @@
 
 ///***Bullets***///
 /obj/item/projectile/bullet/m4a3 //Colt 45 Pistol
-	damage = 23
+	damage = 25
 
 /obj/item/projectile/bullet/m38s //.38 Special Peacemaker
-	damage = 40
+	damage = 50
 
 /obj/item/projectile/bullet/m39 // M39 SMG
-	damage = 13
+	damage = 20
 
 /obj/item/projectile/bullet/m41 //M41 Assault Rifle
-	damage = 27
+	damage = 30
 
 /obj/item/projectile/bullet/m37 //M37 Pump Shotgun
-	damage = 70
+	damage = 80
 
 ///***Ammo***///
 
