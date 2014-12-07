@@ -53,9 +53,9 @@
 	desc = "A standard issue toolbelt for Nanotrasen military forces."
 	icon_state = "securitybelt"
 	item_state = "security"//Could likely use a better one.
-	storage_slots = 7
+	storage_slots = 7 //5
 	max_w_class = 3
-	max_combined_w_class = 21
+	max_combined_w_class = 10
 	can_hold = list(
 		"/obj/item/weapon/gun/projectile/pistol",
 		"/obj/item/ammo_magazine/a12mm",
@@ -70,6 +70,7 @@
 		"/obj/item/weapon/restraints",
 		"/obj/item/weapon/handcuffs",
 		"/obj/item/weapon/combat_knife",
+		"/obj/item/device/flashlight/flare",
 		"/obj/item/ammo_magazine/m45s",
 		"/obj/item/ammo_magazine/m38s",
 		"/obj/item/ammo_magazine/m9mms",

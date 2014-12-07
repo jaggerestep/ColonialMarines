@@ -743,7 +743,7 @@
 	name = "ColMarTech"
 	desc = "A marine equipment vendor"
 	product_ads = "If it moves, it's hostile!;How many enemies have you killed today?;Shoot first, perform autopsy later!;Your ammo is right here.;Guns!;Die, scumbag!;Don't shoot me bro!;Shoot them, bro.;Why not have a donut?"
-	products = list(/obj/item/weapon/reagent_containers/food/snacks/donut/normal = 500,
+	products = list(/obj/item/weapon/reagent_containers/food/snacks/donut/normal = 25,
 
 					/obj/item/ammo_magazine/m45s = 25,
 					/obj/item/ammo_magazine/m38s =25,
@@ -751,14 +751,7 @@
 					/obj/item/ammo_magazine/m10mms = 25,
 					/obj/item/weapon/storage/box/mshotguns = 25,
 					/obj/item/ammo_magazine/a762 = 10,
-
-					//obj/item/ammo_magazine/c38 = 25,
-					//obj/item/weapon/storage/box/beanbags = 25,
-					//obj/item/ammo_magazine/mc9mm = 25,
-					//obj/item/weapon/storage/box/shotguns = 25,
 					/obj/item/ammo_magazine/a12mm = 25,
-					//obj/item/ammo_magazine/c45 = 25,
-					//obj/item/ammo_magazine/c9mm = 25,
 
 					/obj/item/weapon/gun/projectile/pistol/colt1911 = 5,
 					/obj/item/weapon/gun/projectile/victory = 5,
@@ -766,15 +759,9 @@
 					/obj/item/weapon/gun/twohanded/projectile/Assault/m41a = 5,
 					/obj/item/weapon/gun/twohanded/projectile/shotgun/pump/remington870 = 5,
 					/obj/item/weapon/gun/projectile/twohanded/automatic/l6_saw = 2,
+
 					/obj/item/weapon/combat_knife = 5,
-					//obj/item/weapon/gun/projectile/detective = 5,
-					//obj/item/weapon/gun/projectile/silenced = 10,
-					//obj/item/weapon/gun/projectile/pistol = 10,
-					///obj/item/weapon/gun/projectile/automatic/mini_uzi = 5,
-					//obj/item/weapon/gun/twohanded/projectile/c20r = 10,
-					//obj/item/weapon/gun/twohanded/projectile/shotgun/pump = 10,
-					//obj/item/weapon/gun/projectile/shotgun/pump/combat = 5,
-					/obj/item/weapon/combat_knife = 5,
+					/obj/item/device/flashlight/flare = 10,
 					)
 	contraband = list(/obj/item/weapon/storage/fancy/donut_box = 5,
 					/obj/item/ammo_magazine/a357 = 5,
