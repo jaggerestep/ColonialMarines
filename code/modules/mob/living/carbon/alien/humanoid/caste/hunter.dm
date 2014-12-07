@@ -113,11 +113,22 @@
 				src.m_intent = "run"
 				src.hud_used.move_intent.icon_state = "running"
 			src.loc = targloc
-			src.canmove = 0
-			src.frozen = 1
-			target.Weaken(3)
 			usedpounce = 12
-			adjustToxLoss(-100)
+			adjustToxLoss(-50)
+			if(target.r_hand && istype(target.r_hand, /obj/item/weapon/shield/riot) || target.l_hand && istype(target.l_hand, /obj/item/weapon/shield/riot))
+				if (prob(35))	// If the human has riot shield in his hand
+					src.weakened = 1.5//Stun the fucker instead
+					visible_message("\red <B>[target] blocked [src] with his shield!</B>")
+				else
+					src.canmove = 0
+					src.frozen = 1
+					target.Weaken(3)
+					spawn(30)
+						src.frozen = 0
+			else
+				src.canmove = 0
+				src.frozen = 1
+				target.Weaken(3)
 
 			spawn(30)
 				src.frozen = 0

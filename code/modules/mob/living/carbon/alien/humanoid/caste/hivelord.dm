@@ -110,7 +110,30 @@
 
 
 
+/mob/living/carbon/alien/humanoid/hivelord
 
+
+	handle_regular_hud_updates()
+
+		..() //-Yvarov
+
+		if (healths)
+			if (stat != 2)
+				switch(health)
+					if(264 to INFINITY)
+						healths.icon_state = "health0"
+					if(196 to 264)
+						healths.icon_state = "health1"
+					if(128 to 196)
+						healths.icon_state = "health2"
+					if(64 to 128)
+						healths.icon_state = "health3"
+					if(0 to 64)
+						healths.icon_state = "health4"
+					else
+						healths.icon_state = "health5"
+			else
+				healths.icon_state = "health6"
 
 //hivelords use the same base as generic humanoids.
 //hivelord verbs
