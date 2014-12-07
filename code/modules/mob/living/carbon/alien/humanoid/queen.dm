@@ -10,6 +10,9 @@
 	var/usedscreech = 0
 	damagemin = 30
 	damagemax = 35
+	tacklemin = 3
+	tacklemax = 8
+	tackle_chance = 90 //Should not be above 100%
 	icon = 'icons/Xeno/2x2_Xenos.dmi'
 
 /datum/hive_controller

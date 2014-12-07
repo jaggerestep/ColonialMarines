@@ -11,6 +11,9 @@
 	max_plasma = 150
 	damagemin = 10
 	damagemax = 15
+	tacklemin = 3
+	tacklemax = 6
+	tackle_chance = 60 //Should not be above 100%
 	var/SPITCOOLDOWN = 10
 	var/usedspit = 0
 	psychiccost = 32
