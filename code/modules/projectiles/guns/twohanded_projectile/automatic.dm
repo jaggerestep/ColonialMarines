@@ -68,28 +68,3 @@
 		usr.SetLuminosity(0)
 
 
-
-
-
-/*	OLD FLASHLIGHT CODE THAT NOBODY LIKES CAUSE IT DON'T WERK  DELETE 01DEC2014
-
-	verb/toggle_light()
-		set name = "Toggle Flashlight"
-		set category = "Weapon"
-	//	var/obj/item/device/flashlight/F
-
-		if(haslight && !islighton)
-			usr << "\blue You turn the flashlight on."
-			SetLuminosity(4)
-			islighton = 1
-		else if(haslight && islighton)
-			usr << "\blue You turn the flashlight off."
-			SetLuminosity(0)
-			islighton = 0
-		else if(!haslight)
-			usr << "\red There is no flashlight attached!"
-
-
-
-
-*/
