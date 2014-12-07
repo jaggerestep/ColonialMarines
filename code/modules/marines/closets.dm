@@ -48,42 +48,7 @@
 		new /obj/item/device/radio/headset/mcom(src)
 		return
 
-/obj/item/weapon/storage/belt/marine
-	name = "marine belt"
-	desc = "A standard issue toolbelt for Nanotrasen military forces."
-	icon_state = "securitybelt"
-	item_state = "security"//Could likely use a better one.
-	storage_slots = 7 //5
-	max_w_class = 3
-	max_combined_w_class = 10
-	can_hold = list(
-		"/obj/item/weapon/gun/projectile/pistol",
-		"/obj/item/ammo_magazine/a12mm",
-		"/obj/item/ammo_magazine/c45",
-		"/obj/item/ammo_magazine/mc9mm",
-		"/obj/item/ammo_magazine/a50",
-		"/obj/item/ammo_magazine/c9mm",
-		"/obj/item/ammo_magazine/a357",
-		"/obj/item/ammo_magazine/c38",
-		"/obj/item/weapon/melee/baton",
-		"/obj/item/weapon/melee/stunprod",
-		"/obj/item/weapon/restraints",
-		"/obj/item/weapon/handcuffs",
-		"/obj/item/weapon/combat_knife",
-		"/obj/item/device/flashlight/flare",
-		"/obj/item/ammo_magazine/m45s",
-		"/obj/item/ammo_magazine/38s",
-		"/obj/item/ammo_magazine/m9mms",
-		"/obj/item/ammo_magazine/m10mms",
-		"/obj/item/weapon/storage/box/mshotguns",
-		"/obj/item/ammo_casing/mshotgun",
-		)
 
-/obj/item/weapon/storage/belt/marine/full/New()
-	..()
-	new /obj/item/weapon/gun/projectile/pistol/m4a3(src)
-	new /obj/item/ammo_magazine/m4a3(src)
-	new /obj/item/ammo_magazine/m4a3(src)
 
 
 
