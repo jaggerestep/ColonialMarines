@@ -897,6 +897,7 @@
 #include "code\modules\marines\marine_clothing.dm"
 #include "code\modules\marines\marine_items.dm"
 #include "code\modules\marines\marine_weapons.dm"
+#include "code\modules\marines\Marine_Weapons_V2.dm"
 #include "code\modules\marines\newarmor.dm"
 #include "code\modules\marines\nonlethals.dm"
 #include "code\modules\marines\restraints.dm"
