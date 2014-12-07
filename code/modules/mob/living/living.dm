@@ -257,8 +257,13 @@
 	buckled = initial(src.buckled)
 	if(iscarbon(src))
 		var/mob/living/carbon/C = src
-		C.handcuffed = initial(C.handcuffed)
 
+		if (C.handcuffed && !initial(C.handcuffed))
+			C.update_inv_handcuffed()
+
+		if (C.legcuffed && !initial(C.legcuffed))
+			C.update_inv_legcuffed()
+	
 /mob/living/proc/rejuvenate()
 
 	// shut down various types of badness
