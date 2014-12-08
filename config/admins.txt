@@ -1,7 +1,7 @@
 jaggerestep - Host
 felkvir - Head Admin
 lucyz - Head Moderator
-Apophis775 - Developer
+Apophis775 - Head Developer
 sir octagon - Game Admin
 Gasfornuisje - Game Admin
 coroneljones - Game Admin
@@ -14,3 +14,4 @@ speedybast - Moderator
 unknownmurder - Moderator
 Chaznoodles - Moderator
 Dre9889 - Auditor
+Rhalzel - Coder

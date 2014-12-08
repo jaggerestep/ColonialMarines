@@ -17,7 +17,7 @@
 	var/hasJelly = 0
 	var/jellyProgress = 0
 	var/jellyProgressMax = 1500
-	psychiccost = 8
+	psychiccost = 16
 	Stat()
 		..()
 		stat(null, "Jelly Progress: [jellyProgress]/[jellyProgressMax]")
@@ -168,7 +168,7 @@
 	return
 */
 
-
+/* //////////////////EVOLVING IS TEMP DISABLED
 /mob/living/carbon/alien/humanoid/hunter/verb/evolve2() // -- TLE
 	set name = "Evolve (Jelly)"
 	set desc = "Evolve into a Runner"
@@ -200,3 +200,4 @@
 
 
 	return
+*/
