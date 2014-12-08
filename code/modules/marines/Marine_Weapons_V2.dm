@@ -7,7 +7,7 @@
 	damage = 25
 
 /obj/item/projectile/bullet/m38s //.38 Special Peacemaker
-	damage = 40
+	damage = 45
 
 /obj/item/projectile/bullet/m39 // M39 SMG
 	damage = 20
