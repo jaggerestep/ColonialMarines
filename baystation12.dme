@@ -38,6 +38,7 @@
 #define FILE_DIR "icons/obj/machines"
 #define FILE_DIR "icons/obj/pipes"
 #define FILE_DIR "icons/pda_icons"
+#define FILE_DIR "icons/Predator"
 #define FILE_DIR "icons/spideros_icons"
 #define FILE_DIR "icons/Testing"
 #define FILE_DIR "icons/turf"
