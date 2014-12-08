@@ -7,13 +7,15 @@
 	max_plasma = 100
 	icon_state = "Runner Walking"
 	plasma_rate = 10
-	damagemin = 27
-	damagemax = 29
-	tacklemin = 2
+	damagemin = 23 //OLD DAMAGE WAS 26
+	damagemax = 28 //OLD DAMAGE WAS 29
+	tacklemin = 3 //OLD MIN WAS 2
 	tacklemax = 5
 	tackle_chance = 80 //Should not be above 100%
 	heal_rate = 4
 	psychiccost = 8
+
+	//RUNNERS NOW USE JELLY, SINCE THEY EVOLVE INTO HUNTERS
 	var/hasJelly = 0
 	var/jellyProgress = 0
 	var/jellyProgressMax = 1500
