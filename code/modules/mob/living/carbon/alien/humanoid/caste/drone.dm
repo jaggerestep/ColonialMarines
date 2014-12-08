@@ -4,13 +4,15 @@
 	maxHealth = 205
 	health = 205
 	icon_state = "Drone Walking"
-	damagemin = 26
-	damagemax = 32
+	storedPlasma = 350   //OLD STORED: 100
+	max_plasma = 750 //OLD MAX: 500
+	damagemin = 20 //OLD MIN 26
+	damagemax = 20 //OLD MAX 32
 	heal_rate = 4
 	plasma_rate = 12
 	tacklemin = 2
-	tacklemax = 5
-	tackle_chance = 50 //Should not be above 100%
+	tacklemax = 4 //old max 5
+	tackle_chance = 40 //Should not be above 100% old chance 50
 	var/hasJelly = 0
 	var/jellyProgress = 0
 	var/jellyProgressMax = 1200
@@ -49,7 +51,7 @@
 //Drone verbs
 
 /mob/living/carbon/alien/humanoid/drone/verb/evolve() // -- TLE
-	set name = "Evolve (500)"
+	set name = "Evolve (750)"
 	set desc = "Produce an interal egg sac capable of spawning children. Only one queen can exist at a time."
 	set category = "Alien"
 
@@ -73,6 +75,8 @@
 			src << "<span class='notice'>We already have an alive queen.</span>"
 	return
 
+
+/*/////// EVOLVING IS TEMP DISABLED.
 /mob/living/carbon/alien/humanoid/drone/verb/evolve2() // -- TLE
 	set name = "Evolve (Jelly)"
 	set desc = "Evolve into a Spitter"
@@ -104,3 +108,4 @@
 
 
 	return
+*///

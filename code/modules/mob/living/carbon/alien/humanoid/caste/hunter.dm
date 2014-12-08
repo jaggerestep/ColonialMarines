@@ -1,23 +1,26 @@
 /mob/living/carbon/alien/humanoid/hunter
 	name = "alien warrior"
 	caste = "Hunter"
-	maxHealth = 210
-	health = 210
+	maxHealth = 250 //old maxhealth was 210
+	health = 250
 	storedPlasma = 100
 	max_plasma = 150
 	icon_state = "Hunter Walking"
-	plasma_rate = 7
+	plasma_rate = 8 //old plasma was 7
 	damagemin = 25
 	damagemax = 33
-	tacklemin = 3
+	tacklemin = 5 //old min tackle was 3
 	tacklemax = 7
 	tackle_chance = 90 //Should not be above 100%
 	heal_rate = 4
 	var/usedpounce = 0
+
+
+	/* TEMP DISABLED, SINCE HUNTERS DON'T NEED JELLY AT THE MOMENT
 	var/hasJelly = 0
 	var/jellyProgress = 0
 	var/jellyProgressMax = 1500
-	psychiccost = 8
+	psychiccost = 16
 	Stat()
 		..()
 		stat(null, "Jelly Progress: [jellyProgress]/[jellyProgressMax]")
@@ -33,7 +36,7 @@
 		if(jellyProgress < jellyProgressMax)
 			return 0
 		return 1
-
+	*/
 
 /mob/living/carbon/alien/humanoid/hunter/New()
 	var/datum/reagents/R = new/datum/reagents(100)
@@ -42,7 +45,7 @@
 	if(name == "alien warrior")
 		name = text("alien warrior ([rand(1, 1000)])")
 	real_name = name
-	growJelly()
+	// growJelly()
 	..()
 
 /mob/living/carbon/alien/humanoid/hunter
@@ -168,7 +171,7 @@
 	return
 */
 
-
+/* //////////////////EVOLVING IS TEMP DISABLED
 /mob/living/carbon/alien/humanoid/hunter/verb/evolve2() // -- TLE
 	set name = "Evolve (Jelly)"
 	set desc = "Evolve into a Runner"
@@ -200,3 +203,4 @@
 
 
 	return
+*/

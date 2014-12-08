@@ -45,7 +45,7 @@
 	growJelly()
 	..()
 
-
+/*////////////EVOLVING IS TEMP DISABLED
 /mob/living/carbon/alien/humanoid/sentinel/verb/evolve2() // -- TLE
 	set name = "Evolve (Jelly)"
 	set desc = "Evolve into a Praetorian"
@@ -102,3 +102,4 @@
 						healths.icon_state = "health5"
 			else
 				healths.icon_state = "health6"
+*///
