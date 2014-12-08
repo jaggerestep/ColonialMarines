@@ -73,6 +73,8 @@
 			src << "<span class='notice'>We already have an alive queen.</span>"
 	return
 
+
+/*/////// EVOLVING IS TEMP DISABLED.
 /mob/living/carbon/alien/humanoid/drone/verb/evolve2() // -- TLE
 	set name = "Evolve (Jelly)"
 	set desc = "Evolve into a Spitter"
@@ -104,3 +106,4 @@
 
 
 	return
+*///

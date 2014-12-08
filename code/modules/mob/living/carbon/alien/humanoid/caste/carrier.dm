@@ -64,14 +64,14 @@
 	set desc = "Throw one of your facehuggers"
 	set category = "Alien"
 	if(facehuggers <= 0)
-		src << "\red We don't have any facehuggers to throw!"
+		src << "\red You don't have any facehuggers to throw!"
 		return
 	if(usedthrow <= 0)
 		if(!T)
 			var/list/victims = list()
 			for(var/mob/living/carbon/human/C in oview(7))
 				victims += C
-			T = input(src, "Who should we throw at?") as null|anything in victims
+			T = input(src, "Who should you throw at?") as null|anything in victims
 
 		if(T)
 			var/obj/item/clothing/mask/facehugger/throw = new()
