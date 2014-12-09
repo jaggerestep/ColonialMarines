@@ -115,6 +115,7 @@ var/list/security_positions = list(
 
 var/list/marine_positions = list(
 	"Military Officer",
+	"Military Police",
 	"Logistics Officer",
 	"Marine"
 )
@@ -124,6 +125,30 @@ var/list/nonhuman_positions = list(
 	"pAI"
 )
 
+var/list/alpha_squad_positions = list(
+	"Alpha Squad Leader",
+	"Alpha Squad Medic",
+	"Alpha Squad Engineer",
+	"Alpha Squad Standard"
+)
+var/list/bravo_squad_positions = list(
+	"Bravo Squad Leader",
+	"Bravo Squad Medic",
+	"Bravo Squad Engineer",
+	"Bravo Squad Standard"
+)
+var/list/charlie_squad_positions = list(
+	"Charlie Squad Leader",
+	"Charlie Squad Medic",
+	"Charlie Squad Engineer",
+	"Charlie Squad Standard"
+)
+var/list/delta_squad_positions = list(
+	"Delta Squad Leader",
+	"Delta Squad Medic",
+	"Delta Squad Engineer",
+	"Delta Squad Standard"
+)
 
 /proc/guest_jobbans(var/job)
 	return ((job in command_positions) || (job in nonhuman_positions) || (job in security_positions))
