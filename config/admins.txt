@@ -1,6 +1,6 @@
 jaggerestep - Host
-Apophis775 - Developer
 felkvir - Head Admin
+Apophis775 - Developer
 lucyz - Head Moderator
 sir octagon - Game Admin
 Gasfornuisje - Game Admin
@@ -8,11 +8,13 @@ coroneljones - Game Admin
 minimike1220 - Trial Admin
 Caryl - Trial Admin
 Rahlzel - Coder
-Infernus - Coder
+Infernus - Mapper
 HereticChurch - Moderator
 Allan1234 - Moderator
 julinova - Moderator
 speedybast - Moderator
 unknownmurder - Moderator
 Chaznoodles - Moderator
+Void00 - Moderator
 Dre9889 - Auditor
+
