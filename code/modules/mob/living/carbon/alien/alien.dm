@@ -18,7 +18,7 @@
 	var/obj/item/weapon/card/id/wear_id = null // Fix for station bounced radios -- Skie
 	var/has_fine_manipulation = 0
 
-	var/move_delay_add = -1 // movement delay to add
+	var/move_delay_add = 0 // ADJUSTS MOVEMENT SPEED FOR ALL XENOS  Lower number, makes them faster, higher number makes them slower.
 
 	status_flags = CANPARALYSE|CANPUSH
 	var/heal_rate = 2

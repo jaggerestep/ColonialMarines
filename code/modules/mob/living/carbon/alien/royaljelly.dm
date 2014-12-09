@@ -40,10 +40,16 @@
 		sent.visible_message("[sent] drinks the royal jelly.")
 		del(src)
 		return
-	var/mob/living/carbon/alien/humanoid/hunter/hunt = user
+	/*var/mob/living/carbon/alien/humanoid/hunter/hunt = user
 	if(hunt && !hunt.hasJelly)
 		hunt.hasJelly = 1
 		hunt.visible_message("[hunt] drinks the royal jelly.")
+		del(src)
+		return*/
+	var/mob/living/carbon/alien/humanoid/runner/runner = user
+	if (runner && !runner.hasJelly)
+		runner.hasJelly = 1
+		runner.visible_message("[runner] drinks the royal jelly")
 		del(src)
 		return
 	var/mob/living/carbon/alien/humanoid/drone/drone = user

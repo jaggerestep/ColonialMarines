@@ -342,7 +342,7 @@ v
 	max_w_class = 3
 	max_combined_w_class = 10
 	can_hold = list(
-		"/obj/item/weapon/gun/projectile/M4a3",
+		"/obj/item/weapon/gun/projectile/m4a3",
 		"/obj/item/ammo_magazine/a12mm",
 		"/obj/item/ammo_magazine/c45",
 		"/obj/item/ammo_magazine/mc9mm",
