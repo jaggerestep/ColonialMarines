@@ -1,5 +1,4 @@
 jaggerestep - Host
-Rahlzel - Developer
 Apophis775 - Developer
 felkvir - Head Admin
 lucyz - Head Moderator
@@ -8,6 +7,8 @@ Gasfornuisje - Game Admin
 coroneljones - Game Admin
 minimike1220 - Trial Admin
 Caryl - Trial Admin
+Rahlzel - Coder
+Infernus - Coder
 HereticChurch - Moderator
 Allan1234 - Moderator
 julinova - Moderator

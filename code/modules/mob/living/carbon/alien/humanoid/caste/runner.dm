@@ -46,7 +46,6 @@
 	//M.Scale(1.15,1.1)
 	//src.transform = M
 	//pixel_y = 3
-	move_delay_add = -2
 	..()
 
 
