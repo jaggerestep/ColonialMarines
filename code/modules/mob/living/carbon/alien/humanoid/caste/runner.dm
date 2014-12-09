@@ -109,7 +109,7 @@
 
 	return
 
-/mob/living/carbon/alien/humanoid/hunter/verb/pounce()
+/mob/living/carbon/alien/humanoid/hunter/verb/runnerPounce()
 	set name = "Pounce (25)"
 	set desc = "Pounce onto your prey."
 	set category = "Alien"
