@@ -18,7 +18,7 @@
 	//RUNNERS NOW USE JELLY, SINCE THEY EVOLVE INTO HUNTERS
 	var/hasJelly = 0
 	var/jellyProgress = 0
-	var/jellyProgressMax = 1500
+	var/jellyProgressMax = 500
 	Stat()
 		..()
 		stat(null, "Jelly Progress: [jellyProgress]/[jellyProgressMax]")
