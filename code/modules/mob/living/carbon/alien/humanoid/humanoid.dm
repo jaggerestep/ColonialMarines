@@ -117,7 +117,7 @@
 	speed +=move_delay_add
 	if (locate(/obj/effect/alien/weeds) in T)
 		if (speed >0)
-			speed = speed*.8
+			speed = speed * 0.8
 		else if (speed == 0)
 			speed = -1
 		else if (speed< 0)
