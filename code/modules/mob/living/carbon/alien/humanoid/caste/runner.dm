@@ -1,12 +1,12 @@
 /mob/living/carbon/alien/humanoid/runner
 	name = "alien runner"
 	caste = "Runner"
-	maxHealth = 150
-	health = 150
+	maxHealth = 100
+	health = 100
 	storedPlasma = 50
 	max_plasma = 100
 	icon_state = "Runner Walking"
-	plasma_rate = 10
+	plasma_rate = 5 //old was 10
 	damagemin = 23 //OLD DAMAGE WAS 26
 	damagemax = 28 //OLD DAMAGE WAS 29
 	tacklemin = 3 //OLD MIN WAS 2
@@ -18,7 +18,7 @@
 	//RUNNERS NOW USE JELLY, SINCE THEY EVOLVE INTO HUNTERS
 	var/hasJelly = 0
 	var/jellyProgress = 0
-	var/jellyProgressMax = 1500
+	var/jellyProgressMax = 500
 	Stat()
 		..()
 		stat(null, "Jelly Progress: [jellyProgress]/[jellyProgressMax]")
@@ -106,5 +106,59 @@
 
 	del(src)
 
+
+	return
+
+/mob/living/carbon/alien/humanoid/hunter/verb/runnerPounce()
+	set name = "Pounce (25)"
+	set desc = "Pounce onto your prey."
+	set category = "Alien"
+
+	if(usedpounce >= 1)
+		src << "\red We must wait before pouncing again.."
+		return
+
+	if(powerc(25))
+		var/targets[] = list()
+		for(var/mob/living/carbon/human/M in oview())
+			if(M.stat)	continue//Doesn't target corpses or paralyzed persons.
+			targets.Add(M)
+
+		if(targets.len)
+			var/mob/living/carbon/human/target=pick(targets)
+			var/atom/targloc = get_turf(target)
+			if (!targloc || !istype(targloc, /turf) || get_dist(src.loc,targloc)>=3)
+				src << "We cannot reach our prey!"
+				return
+			if(src.weakened >= 1 || src.paralysis >= 1 || src.stunned >= 1)
+				src << "We cannot pounce if we are stunned.."
+				return
+
+			visible_message("\red <B>[src] pounces on [target]!</B>")
+			if(src.m_intent == "walk")
+				src.m_intent = "run"
+				src.hud_used.move_intent.icon_state = "running"
+			src.loc = targloc
+			usedpounce = 5
+			adjustToxLoss(-50)
+			if(target.r_hand && istype(target.r_hand, /obj/item/weapon/shield/riot) || target.l_hand && istype(target.l_hand, /obj/item/weapon/shield/riot))
+				if (prob(35))	// If the human has riot shield in his hand
+					src.weakened = 5//Stun the fucker instead
+					visible_message("\red <B>[target] blocked [src] with his shield!</B>")
+				else
+					src.canmove = 0
+					src.frozen = 1
+					target.Weaken(1)
+					spawn(30)
+						src.frozen = 0
+			else
+				src.canmove = 0
+				src.frozen = 1
+				target.Weaken(1)
+
+			spawn(30)
+				src.frozen = 0
+		else
+			src << "\red We sense no prey.."
 
 	return
