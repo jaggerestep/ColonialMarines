@@ -14,6 +14,7 @@
 	tackle_chance = 80 //Should not be above 100%
 	heal_rate = 4
 	psychiccost = 8
+	var/usedpounce = 0
 
 	//RUNNERS NOW USE JELLY, SINCE THEY EVOLVE INTO HUNTERS
 	var/hasJelly = 0
@@ -60,13 +61,13 @@
 		if (healths)
 			if (stat != 2)
 				switch(health)
-					if(125 to INFINITY)
+					if(100 to INFINITY)
 						healths.icon_state = "health0"
-					if(100 to 125)
-						healths.icon_state = "health1"
 					if(75 to 100)
+						healths.icon_state = "health1"
+					if(50 to 75)
 						healths.icon_state = "health2"
-					if(25 to 75)
+					if(25 to 50)
 						healths.icon_state = "health3"
 					if(0 to 25)
 						healths.icon_state = "health4"
@@ -109,7 +110,7 @@
 
 	return
 
-/mob/living/carbon/alien/humanoid/hunter/verb/runnerPounce()
+/mob/living/carbon/alien/humanoid/runner/verb/Pounce()
 	set name = "Pounce (25)"
 	set desc = "Pounce onto your prey."
 	set category = "Alien"
