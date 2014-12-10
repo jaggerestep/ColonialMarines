@@ -189,7 +189,9 @@ var/const/MAX_ACTIVE_TIME = 250
 		Attach(hit_atom)
 
 /obj/item/clothing/mask/facehugger/proc/Attach(mob/living/M as mob)
-	if( (!iscorgi(M) && !iscarbon(M)) || isalien(M) || M.status_flags & XENO_HOST)
+	if( (!iscorgi(M) && !iscarbon(M)) || isalien(M))
+		return
+	if(iscarbon(M) && M.status_flags & XENO_HOST)
 		visible_message("\red An alien tries to place a Facehugger on [M] but it refuses sloppy seconds!")
 		return
 	if(attached)
