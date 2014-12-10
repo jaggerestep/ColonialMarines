@@ -163,3 +163,11 @@
 			src << "\red We sense no prey.."
 
 	return
+
+
+/mob/living/carbon/alien/humanoid/runner/Life()
+	..()
+
+	if(usedpounce <= 0)
+		usedpounce = 0
+	usedpounce--
