@@ -9,3 +9,4 @@ kilinger: Danny Barrett: /obj/item/clothing/head/helmet/marine/fluff/goldshieldb
 commandercookies: Elliot Renold: /obj/item/clothing/head/helmet/marine/fluff/elliotberet
 commandercookies: Elliot Renold: /obj/item/clothing/suit/storage/marine/fluff/armorammo
 sasoperative: Joseph Skinner: /obj/item/clothing/mask/gas/swat
+sasoperative: Joseph SKinner: /obj/item/clothing/under/fluff/turtleneck
