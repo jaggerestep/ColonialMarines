@@ -525,6 +525,12 @@
 			return list(access_medical_bay, access_medical_surgery, access_medical_storage)
 		if("Military Officer")
 			return list(access_logistics, access_sulaco_brig, access_sulaco_cells)
+		if("Military Police") //disable this if you do not want MP editable by the ID computer
+			return list(access_logistics, access_sulaco_brig, access_sulaco_cells)
+		if("Logistics Officer")
+			return list(access_logistics, access_sulaco_brig, access_sulaco_cells)
+		if("Marine")
+			return list()
 
 
 /proc/get_marine_access_desc(A)

@@ -69,7 +69,6 @@
 	selection_color = "#ffeeee"
 	access = list(access_logistics, access_sulaco_brig, access_sulaco_cells)
 	minimal_access = list(access_logistics, access_sulaco_brig, access_sulaco_cells)
-	alt_titles = list("Military Police")
 	minimal_player_age = 7
 	equip(var/mob/living/carbon/human/H)
 		if(!H)	return 0
