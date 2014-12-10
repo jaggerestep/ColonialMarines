@@ -89,6 +89,9 @@
 	return (tally + move_delay_add + config.alien_delay)  //OR, IT COULD JUST RETURN THE DELAY FROM HERE, AND THE PREVIOUS DELAY AS A NUMBER
 
 *////////////////////////
+
+///////////////////////////NEW MOVEMENT CODE OF SEX
+
 /mob/living/carbon/alien/humanoid/movement_delay(var/turf/T)
 	var/speed = 0
 	T = src.loc
