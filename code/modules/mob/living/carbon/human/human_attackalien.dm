@@ -39,6 +39,8 @@
 
 			playsound(loc, 'sound/weapons/slice.ogg', 25, 1, -1)
 			visible_message("\red <B>[M] has slashed at [src]!</B>")
+			M.attack_log += text("\[[time_stamp()]\] <font color='red'>attacked [src.name] ([src.ckey])</font>")
+			src.attack_log += text("\[[time_stamp()]\] <font color='orange'>was attacked by [M.name] ([M.ckey])</font>")
 
 			apply_damage(damage, BRUTE, affecting, armor_block)
 /*			if (damage >= 20)
