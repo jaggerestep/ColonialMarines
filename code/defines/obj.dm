@@ -61,6 +61,10 @@
 		var/list/bot = new()
 		var/list/misc = new()
 		var/list/mar = new()
+		var/list/alpha = new() //alpha squad, etc
+		var/list/bravo = new()
+		var/list/charlie = new()
+		var/list/delta = new()
 		var/list/isactive = new()
 		var/dat = {"
 		<head><style>
@@ -104,6 +108,18 @@
 			if(real_rank in marine_positions)
 				mar[name] = rank
 				department = 1
+			if(real_rank in alpha_squad_positions)
+				alpha[name] = rank
+				department = 1
+			if(real_rank in bravo_squad_positions)
+				bravo[name] = rank
+				department = 1
+			if(real_rank in charlie_squad_positions)
+				charlie[name] = rank
+				department = 1
+			if(real_rank in delta_squad_positions)
+				delta[name] = rank
+				department = 1
 			if(real_rank in engineering_positions)
 				eng[name] = rank
 				department = 1
@@ -137,6 +153,26 @@
 			dat += "<tr><th colspan=3>Marines</th></tr>"
 			for(name in mar)
 				dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[mar[name]]</td><td>[isactive[name]]</td></tr>"
+				even = !even
+		if(alpha.len > 0)
+			dat += "<tr><th colspan=3>Alpha Squad</th></tr>"
+			for(name in alpha)
+				dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[alpha[name]]</td><td>[isactive[name]]</td></tr>"
+				even = !even
+		if(bravo.len > 0)
+			dat += "<tr><th colspan=3>Bravo Squad</th></tr>"
+			for(name in bravo)
+				dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[bravo[name]]</td><td>[isactive[name]]</td></tr>"
+				even = !even
+		if(charlie.len > 0)
+			dat += "<tr><th colspan=3><Charlie Squad</th><tr>"
+			for(name in charlie)
+				dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[charlie[name]]</td><td>[isactive[name]]</td></tr>"
+				even = !even
+		if(bravo.len > 0)
+			dat += "<tr><th colspan=3><Delta Squad</th><tr>"
+			for(name in delta)
+				dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[delta[name]]</td><td>[isactive[name]]</td></tr>"
 				even = !even
 		if(eng.len > 0)
 			dat += "<tr><th colspan=3>Engineering</th></tr>"

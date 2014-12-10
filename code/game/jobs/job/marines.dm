@@ -59,7 +59,7 @@
 
 
 /datum/job/military_officer
-	title = "Military Police"
+	title = "Military Officer"
 	flag = MPOLICE
 	department_flag = ENGSEC
 	faction = "Station"
