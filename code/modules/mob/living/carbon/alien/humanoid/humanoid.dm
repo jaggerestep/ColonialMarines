@@ -95,7 +95,7 @@
 	if (istype(src, /mob/living/carbon/alien/humanoid/drone))
 		speed = -1.5
 	else if (istype(src, /mob/living/carbon/alien/humanoid/queen))
-		speed = 1
+		speed = 2
 	else if (istype(src, /mob/living/carbon/alien/humanoid/hivelord))
 		speed = 2
 	else if (istype(src, /mob/living/carbon/alien/humanoid/carrier))
@@ -117,7 +117,7 @@
 	speed +=move_delay_add
 	if (locate(/obj/effect/alien/weeds) in T)
 		if (speed >0)
-			speed -=1
+			speed = speed * 0.8
 		else if (speed == 0)
 			speed = -1
 		else if (speed< 0)
