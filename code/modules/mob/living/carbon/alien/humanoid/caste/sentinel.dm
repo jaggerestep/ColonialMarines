@@ -7,11 +7,11 @@
 	max_plasma = 250
 	icon_state = "Sentinal Walking"
 	plasma_rate = 10
-	damagemin = 34
-	damagemax = 40
+	damagemin = 27 //old damage was 34
+	damagemax = 34 //old damage war 40
 	tacklemin = 2
-	tacklemax = 5
-	tackle_chance = 60 //Should not be above 100%
+	tacklemax = 4 //old max was 5
+	tackle_chance = 50 //Should not be above 100% old was 60
 	heal_rate = 4
 	var/hasJelly = 0
 	var/jellyProgress = 0
@@ -41,7 +41,7 @@
 	if(name == "alien sentinel")
 		name = text("alien sentinel ([rand(1, 1000)])")
 	real_name = name
-	verbs.Add(/mob/living/carbon/alien/humanoid/proc/corrosive_acid,/mob/living/carbon/alien/humanoid/proc/neurotoxin)
+	verbs.Add(/mob/living/carbon/alien/humanoid/proc/weak_acid,/mob/living/carbon/alien/humanoid/proc/weak_neurotoxin)
 	growJelly()
 	..()
 

@@ -319,6 +319,8 @@ Alien plants should do something if theres a lot of poison
 /*
  * Acid
  */
+
+//This will be Hivelord/Spitter/Queen Acid Normal melting speed.
 /obj/effect/alien/acid
 	name = "acid"
 	desc = "Burbling corrossive stuff. I wouldn't want to touch it."
@@ -343,6 +345,60 @@ Alien plants should do something if theres a lot of poison
 	tick()
 
 /obj/effect/alien/acid/proc/tick()
+	if(!target)
+		del(src)
+
+	ticks += 1
+
+	if(ticks >= target_strength)
+
+		for(var/mob/O in hearers(src, null))
+			O.show_message("\green <B>[src.target] collapses under its own weight into a puddle of goop and undigested debris!</B>", 1)
+
+		if(istype(target, /turf/simulated/wall)) // I hate turf code.
+			var/turf/simulated/wall/W = target
+			W.dismantle_wall(1)
+		else
+			del(target)
+		del(src)
+		return
+
+	switch(target_strength - ticks)
+		if(6)
+			visible_message("\green <B>[src.target] is holding up against the acid!</B>")
+		if(4)
+			visible_message("\green <B>[src.target]\s structure is being melted by the acid!</B>")
+		if(2)
+			visible_message("\green <B>[src.target] is struggling to withstand the acid!</B>")
+		if(0 to 1)
+			visible_message("\green <B>[src.target] begins to crumble under the acid!</B>")
+	spawn(rand(150, 200)) tick()
+
+//This is Sentinel/Drone acid.  Takes a VERY long time to melt stuff.
+/obj/effect/alien/weak_acid
+	name = "Weak Acid"
+	desc = "Burbling corrossive stuff. I wouldn't want to touch it."
+	icon_state = "Acid"
+
+	density = 0
+	opacity = 0
+	anchored = 1
+
+	var/atom/target
+	var/ticks = 0
+	var/target_strength = 0
+
+/obj/effect/alien/weak_acid/New(loc, target)
+	..(loc)
+	src.target = target
+
+	if(isturf(target)) // Turf take twice as long to take down.
+		target_strength = 16
+	else
+		target_strength = 8
+	tick()
+
+/obj/effect/alien/weak_acid/proc/tick()
 	if(!target)
 		del(src)
 
