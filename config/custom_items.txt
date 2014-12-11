@@ -10,3 +10,4 @@ commandercookies: Elliot Renold: /obj/item/clothing/head/helmet/marine/fluff/ell
 commandercookies: Elliot Renold: /obj/item/clothing/suit/storage/marine/fluff/armorammo
 sasoperative: Joseph Skinner: /obj/item/clothing/mask/gas/swat
 sasoperative: Joseph Skinner: /obj/item/clothing/under/fluff/turtleneck
+sasoperative: Joseph Skinner: /obj/item/clothing/suit/armor/reactive/deactive
