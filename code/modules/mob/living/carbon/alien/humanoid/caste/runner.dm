@@ -149,15 +149,15 @@
 				else
 					src.canmove = 0
 					src.frozen = 1
-					target.Weaken(1)
-					spawn(30)
+					target.Weaken(2)
+					spawn(15)
 						src.frozen = 0
 			else
 				src.canmove = 0
 				src.frozen = 1
-				target.Weaken(1)
+				target.Weaken(2)
 
-			spawn(30)
+			spawn(15)
 				src.frozen = 0
 		else
 			src << "\red We sense no prey.."

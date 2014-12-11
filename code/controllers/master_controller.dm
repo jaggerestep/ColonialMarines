@@ -69,8 +69,8 @@ datum/controller/game_controller/proc/setup()
 
 	transfer_controller = new
 
-	for(var/i=0, i<max_secret_rooms, i++)
-		make_mining_asteroid_secret()
+/*	for(var/i=0, i<max_secret_rooms, i++)
+		make_mining_asteroid_secret()*/
 
 	spawn(0)
 		if(ticker)

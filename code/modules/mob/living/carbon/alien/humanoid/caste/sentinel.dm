@@ -76,7 +76,7 @@
 	del(src)
 
 
-	return
+	return*/
 
 /mob/living/carbon/alien/humanoid/sentinel
 
@@ -102,4 +102,3 @@
 						healths.icon_state = "health5"
 			else
 				healths.icon_state = "health6"
-*///
