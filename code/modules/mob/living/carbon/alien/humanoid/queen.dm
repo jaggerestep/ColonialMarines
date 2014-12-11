@@ -1,8 +1,10 @@
 /mob/living/carbon/alien/humanoid/queen
 	name = "alien queen"
 	caste = "Accurate Queen"
-	maxHealth = 700 //pls, try to update the health hub stats when you change the health. Infernus~
+	maxHealth = 700
 	health = 700
+	storedPlasma = 300
+	max_plasma = 700
 	icon_state = "Accurate Queen Running"
 	status_flags = CANPARALYSE
 	heal_rate = 4

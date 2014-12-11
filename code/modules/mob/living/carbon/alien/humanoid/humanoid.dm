@@ -96,7 +96,7 @@
 	var/speed = 0
 	T = src.loc
 	if (istype(src, /mob/living/carbon/alien/humanoid/drone))
-		speed = -1.5
+		speed = -1
 	else if (istype(src, /mob/living/carbon/alien/humanoid/queen))
 		speed = 2
 	else if (istype(src, /mob/living/carbon/alien/humanoid/hivelord))
