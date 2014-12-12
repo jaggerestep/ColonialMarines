@@ -114,6 +114,23 @@
 	flags = FPRINT | TABLEPASS
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 
+/obj/item/clothing/suit/armor/reactive/deactive
+	name = "Deactivated Reactive Teleport Armor"
+	desc = "Someone seperated our Research Director from his own head!"
+	active = 0.0
+	icon_state = "reactiveoff"
+	item_state = "reactiveoff"
+	blood_overlay_type = "armor"
+	slowdown = 1
+	flags = FPRINT | TABLEPASS
+	armor = list(melee = 50, bullet = 80, laser = 50, energy = 10, bomb = 25, bio = 0, rad = 0)
+	siemens_coefficient = 0.7
+	allowed = list(/obj/item/weapon/gun/, /obj/item/weapon/tank/emergency_oxygen, /obj/item/device/flashlight,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton, /obj/item/weapon/melee/stunprod, /obj/item/weapon/handcuffs, /obj/item/weapon/restraints, /obj/item/weapon/storage/fancy/cigarettes,/obj/item/weapon/lighter,/obj/item/weapon/grenade, /obj/item/weapon/combat_knife)
+
+/obj/item/clothing/suit/armor/reactive/deactive/IsShield()
+	return 0
+
+
 /obj/item/clothing/suit/armor/reactive/IsShield()
 	if(active)
 		return 1
