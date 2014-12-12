@@ -161,11 +161,11 @@ Doesn't work on other aliens/AI.*/
 
 
 /mob/living/carbon/alien/humanoid/proc/corrosive_acid_super(O as obj|turf in oview(1)) //If they right click to corrode, an error will flash if its an invalid target./N
-	set name = "Corrossive Acid (Spitter) (150)"
+	set name = "Strong Corrosive Acid (300)"
 	set desc = "Drench an object in acid, destroying it over time."
 	set category = "Alien"
 
-	if(powerc(150))
+	if(powerc(300))
 		if(O in oview(1))
 			// OBJ CHECK
 			if(isobj(O))
@@ -187,7 +187,7 @@ Doesn't work on other aliens/AI.*/
 			else// Not a type we can acid.
 				return
 
-			adjustToxLoss(-150)
+			adjustToxLoss(-300)
 			new /obj/effect/alien/superacid(get_turf(O), O)
 			visible_message("\green <B>[src] vomits globs of vile stuff all over [O]. It begins to sizzle and melt under the bubbling mess of acid!</B>")
 		else
@@ -224,7 +224,7 @@ Doesn't work on other aliens/AI.*/
 			A.xo = targloc.x - curloc.x
 			adjustToxLoss(-100)
 			A.process()
-			usedneurotox = 4
+			usedneurotox = 2
 		else
 			src << "\red We see no prey.."
 	return
@@ -252,7 +252,7 @@ Doesn't work on other aliens/AI.*/
 				return
 			if (targloc == curloc)
 				return
-			var/obj/item/projectile/energy/neurotoxin/A = new /obj/item/projectile/energy/weak_neurotoxin(src.loc)
+			var/obj/item/projectile/energy/weak_neurotoxin/A = new /obj/item/projectile/energy/weak_neurotoxin(src.loc)
 			A.current = curloc
 			A.yo = targloc.y - curloc.y
 			A.xo = targloc.x - curloc.x
@@ -263,6 +263,38 @@ Doesn't work on other aliens/AI.*/
 			src << "\red We see no prey.."
 	return
 
+/mob/living/carbon/alien/humanoid/proc/super_neurotoxin()
+	set name = "Spit Super Neurotoxin (150)"
+	set desc = "Spits a weak neurotoxin at someone, paralyzing them for a short time if they are not wearing protective gear."
+	set category = "Alien"
+	if(usedneurotox >= 1)
+		src << "\red Our spit is not ready.."
+		return
+	//Stealing the ninja star code.
+	if(powerc(150))
+		var/targets[] = list()//So yo can shoot while yo throw dawg
+		for(var/mob/living/carbon/human/M in oview(loc))
+			if(M.stat)	continue//Doesn't target corpses or paralyzed persons.
+			targets.Add(M)
+		if(targets.len)
+			var/mob/living/carbon/human/target=pick(targets)//The point here is to pick a random, living mob in oview to shoot stuff at.
+
+			var/turf/curloc = src.loc
+			var/atom/targloc = get_turf(target)
+			if (!targloc || !istype(targloc, /turf) || !curloc)
+				return
+			if (targloc == curloc)
+				return
+			var/obj/item/projectile/energy/super_neurotoxin/A = new /obj/item/projectile/energy/super_neurotoxin(src.loc)
+			A.current = curloc
+			A.yo = targloc.y - curloc.y
+			A.xo = targloc.x - curloc.x
+			adjustToxLoss(-150)
+			A.process()
+			usedneurotox = 6
+		else
+			src << "\red We see no prey.."
+	return
 /*	if(powerc(100))
 		if(isalien(target))
 			src << "\green Your allies are not a valid target."

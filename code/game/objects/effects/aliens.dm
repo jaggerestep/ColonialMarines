@@ -483,6 +483,8 @@ Alien plants should do something if theres a lot of poison
 		if(0 to 1)
 			visible_message("\green <B>[src.target] begins to crumble under the acid!</B>")
 	spawn(rand(125, 150)) tick()
+
+
 /*
  * Egg
  */
