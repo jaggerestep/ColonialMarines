@@ -1,21 +1,21 @@
 /mob/living/carbon/alien/humanoid/spitter
 	name = "alien spitter"
 	caste = "Spitter"
-	maxHealth = 190
-	health = 190
+	maxHealth = 270
+	health = 270
 	storedPlasma = 150
 	max_plasma = 450
 	icon_state = "Spitter Walking"
 	plasma_rate = 30
 	var/progress = 0
-	var/progressmax = 2000
-	damagemin = 24
-	damagemax = 27
+	var/progressmax = 900 //was 1500
+	damagemin = 35 //old min was 24
+	damagemax = 40 //old max was 27
 	tacklemin = 3
 	tacklemax = 5
-	tackle_chance = 65 //Should not be above 100%
+	tackle_chance = 60 //Should not be above 100% old was 65
 	heal_rate = 3
-	psychiccost = 16
+	psychiccost = 20 //was 16
 
 /mob/living/carbon/alien/humanoid/spitter/Stat()
 	..()
@@ -33,14 +33,14 @@
 	if(name == "alien spitter")
 		name = text("alien spitter ([rand(1, 1000)])")
 	real_name = name
-	verbs.Add(/mob/living/carbon/alien/humanoid/proc/resin,/mob/living/carbon/alien/humanoid/proc/corrosive_acid_super,/mob/living/carbon/alien/humanoid/proc/neurotoxin)
+	verbs.Add(/mob/living/carbon/alien/humanoid/proc/weak_acid,/mob/living/carbon/alien/humanoid/proc/weak_neurotoxin,/mob/living/carbon/alien/humanoid/proc/corrosive_acid,/mob/living/carbon/alien/humanoid/proc/neurotoxin)
 	//var/matrix/M = matrix()
 	//M.Scale(1.15,1.1)
 	//src.transform = M
 	//pixel_y = 3
 	..()
 
-
+/*  EVOLUTION TEMP DISABLED - ADMIN ONLY
 /mob/living/carbon/alien/humanoid/spitter/verb/evolve() // -- TLE
 	set name = "Evolve"
 	set desc = "Evolve further into a new caste."
@@ -74,7 +74,7 @@
 
 	return
 
-
+*/
 
 /mob/living/carbon/alien/humanoid/spitter
 
@@ -86,15 +86,15 @@
 		if (healths)
 			if (stat != 2)
 				switch(health)
-					if(152 to INFINITY)
+					if(206 to INFINITY)
 						healths.icon_state = "health0"
-					if(114 to 152)
+					if(162 to 206)
 						healths.icon_state = "health1"
-					if(76 to 114)
+					if(108 to 162)
 						healths.icon_state = "health2"
-					if(38 to 76)
+					if(54 to 108)
 						healths.icon_state = "health3"
-					if(0 to 38)
+					if(0 to 54)
 						healths.icon_state = "health4"
 					else
 						healths.icon_state = "health5"
