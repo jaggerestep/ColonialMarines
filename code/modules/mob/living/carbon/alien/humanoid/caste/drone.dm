@@ -40,7 +40,7 @@
 	if(src.name == "alien drone")
 		src.name = text("alien drone ([rand(1, 1000)])")
 	src.real_name = src.name
-	verbs.Add(/mob/living/carbon/alien/humanoid/proc/resin,/mob/living/carbon/alien/humanoid/proc/corrosive_acid)
+	verbs.Add(/mob/living/carbon/alien/humanoid/proc/resin,/mob/living/carbon/alien/humanoid/proc/weak_acid)
 	growJelly()
 	/*var/matrix/M = matrix()
 	M.Scale(0.9,0.9)
