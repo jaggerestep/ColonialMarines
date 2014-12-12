@@ -43,6 +43,19 @@
 	siemens_coefficient = 0.5
 	health = 70
 
+/obj/item/clothing/head/helmet/swat/marine
+	name = "\improper SWAT helmet"
+	desc = "They're often used by highly trained Swat Members."
+	icon_state = "swat"
+	item_state = "swat"
+	flags_inv = HIDEEARS|HIDEEYES
+	cold_protection = HEAD
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECITON_TEMPERATURE
+	armor = list(melee = 50, bullet = 80, laser = 50,energy = 10, bomb = 25, bio = 0, rad = 0)
+	health = 5
+	flags = FPRINT|TABLEPASS|HEADCOVERSEYES|HEADCOVERSMOUTH|BLOCKHAIR
+	siemens_coefficient = 0.5
+
 /obj/item/clothing/head/helmet/thunderdome
 	name = "\improper Thunderdome helmet"
 	desc = "<i>'Let the battle commence!'</i>"

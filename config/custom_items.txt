@@ -11,4 +11,5 @@ commandercookies: Elliot Renold: /obj/item/clothing/suit/storage/marine/fluff/ar
 sasoperative: Joseph Skinner: /obj/item/clothing/mask/gas/swat
 sasoperative: Joseph Skinner: /obj/item/clothing/under/fluff/turtleneck
 sasoperative: Joseph Skinner: /obj/item/clothing/suit/armor/reactive/deactive
+sasoperative: Joseph Skinner: /obj/item/clothing/head/helmet/swat/marine
 tophatpenguin: Osalaa Wooki: /obj/item/clothing/head/helmet/space/santahat/marine
