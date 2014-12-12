@@ -16,6 +16,7 @@
 	psychiccost = 8
 	var/usedpounce = 0
 
+
 	//RUNNERS NOW USE JELLY, SINCE THEY EVOLVE INTO HUNTERS
 	var/hasJelly = 0
 	var/jellyProgress = 0
@@ -35,6 +36,16 @@
 		if(jellyProgress < jellyProgressMax)
 			return 0
 		return 1
+
+
+/mob/living/carbon/alien/humanoid/runner/Stat()
+	..()
+	stat(null, "Progress: [jellyProgress]/[jellyProgressMax]")
+
+/mob/living/carbon/alien/humanoid/runner/adjustToxLoss(amount)
+	if(stat != DEAD)
+		jellyProgress = min(jellyProgress + 1, jellyProgressMax)
+	..(amount)
 
 /mob/living/carbon/alien/humanoid/runner/New()
 	var/datum/reagents/R = new/datum/reagents(100)
