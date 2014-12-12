@@ -108,9 +108,9 @@
 	else if (istype(src, /mob/living/carbon/alien/humanoid/hunter))
 		speed = -2
 	else if (istype(src, /mob/living/carbon/alien/humanoid/praetorian))
-		speed = -1
-	else if (istype(src, /mob/living/carbon/alien/humanoid/ravager))
 		speed = 0
+	else if (istype(src, /mob/living/carbon/alien/humanoid/ravager))
+		speed = -1
 	else if (istype(src, /mob/living/carbon/alien/humanoid/sentinel))
 		speed = -1
 	else if (istype(src, /mob/living/carbon/alien/humanoid/spitter))
