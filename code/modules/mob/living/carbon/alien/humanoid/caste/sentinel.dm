@@ -15,8 +15,8 @@
 	heal_rate = 4
 	var/hasJelly = 0
 	var/jellyProgress = 0
-	var/jellyProgressMax = 1500
-	psychiccost = 8
+	var/jellyProgressMax = 500
+	psychiccost = 10
 	Stat()
 		..()
 		stat(null, "Jelly Progress: [jellyProgress]/[jellyProgressMax]")
@@ -45,10 +45,10 @@
 	growJelly()
 	..()
 
-/*////////////EVOLVING IS TEMP DISABLED
+
 /mob/living/carbon/alien/humanoid/sentinel/verb/evolve2() // -- TLE
 	set name = "Evolve (Jelly)"
-	set desc = "Evolve into a Praetorian"
+	set desc = "Evolve into a Spitter"
 	set category = "Alien"
 	if(!hivemind_check(psychiccost))
 		src << "\red Your queen's psychic strength is not powerful enough for you to evolve further."
@@ -62,11 +62,11 @@
 	if(src.stat != CONSCIOUS)
 		src << "You are unable to do that now."
 		return
-	src << "\blue <b>You are growing into a Praetorian!</b>"
+	src << "\blue <b>You are growing into a Spitter!</b>"
 
 	var/mob/living/carbon/alien/humanoid/new_xeno
 
-	new_xeno = new /mob/living/carbon/alien/humanoid/praetorian(loc)
+	new_xeno = new /mob/living/carbon/alien/humanoid/spitter(loc)
 	src << "\green You begin to evolve!"
 
 	for(var/mob/O in viewers(src, null))
@@ -76,7 +76,7 @@
 	del(src)
 
 
-	return*/
+	return
 
 /mob/living/carbon/alien/humanoid/sentinel
 

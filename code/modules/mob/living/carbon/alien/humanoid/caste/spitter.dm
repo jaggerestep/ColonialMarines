@@ -9,11 +9,11 @@
 	plasma_rate = 30
 	var/progress = 0
 	var/progressmax = 2000
-	damagemin = 24
-	damagemax = 27
+	damagemin = 30 //old min was 24
+	damagemax = 35 //old max was 27
 	tacklemin = 3
 	tacklemax = 5
-	tackle_chance = 65 //Should not be above 100%
+	tackle_chance = 60 //Should not be above 100% old was 60
 	heal_rate = 3
 	psychiccost = 16
 
@@ -33,14 +33,14 @@
 	if(name == "alien spitter")
 		name = text("alien spitter ([rand(1, 1000)])")
 	real_name = name
-	verbs.Add(/mob/living/carbon/alien/humanoid/proc/resin,/mob/living/carbon/alien/humanoid/proc/corrosive_acid_super,/mob/living/carbon/alien/humanoid/proc/neurotoxin)
+	verbs.Add(/mob/living/carbon/alien/humanoid/proc/resin,/mob/living/carbon/alien/humanoid/proc/corrosive_acid,/mob/living/carbon/alien/humanoid/proc/neurotoxin)
 	//var/matrix/M = matrix()
 	//M.Scale(1.15,1.1)
 	//src.transform = M
 	//pixel_y = 3
 	..()
 
-
+/*
 /mob/living/carbon/alien/humanoid/spitter/verb/evolve() // -- TLE
 	set name = "Evolve"
 	set desc = "Evolve further into a new caste."
@@ -74,7 +74,7 @@
 
 	return
 
-
+*/
 
 /mob/living/carbon/alien/humanoid/spitter
 
