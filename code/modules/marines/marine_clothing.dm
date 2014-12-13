@@ -21,10 +21,20 @@
 	desc = "A military black beret with a gold shield."
 	icon_state = "gberet"
 
+/obj/item/clothing/head/helmet/marine/fluff/goldtrimberet
+	name = "beret"
+	desc = "A maroon beret with gold trim"
+	icon_state = "gtberet"
+
 /obj/item/clothing/head/helmet/marine/fluff/elliotberet
 	name = "Elliots Beret"
 	desc = "A dark maroon beret"
 	icon_state = "eberet"
+
+/obj/item/clothing/head/helmet/marine/fluff/santahat
+	name = "Santa's hat"
+	desc = "Ho ho ho. Merrry X-mas!"
+	icon_state = "santahat"
 
 /obj/item/clothing/head/soft/marine
 	name = "marine sergeant cap"
@@ -168,7 +178,11 @@
 	armor = list(melee = 50, bullet = 80, laser = 50, energy = 10, bomb = 25, bio = 0, rad = 0)
 	siemens_coefficient = 0.7
 	allowed = list(/obj/item/weapon/gun/, /obj/item/weapon/tank/emergency_oxygen, /obj/item/device/flashlight,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/handcuffs,/obj/item/weapon/storage/fancy/cigarettes,/obj/item/weapon/lighter,/obj/item/weapon/grenade)
-
+/obj/item/clothing/suit/storage/marine/fluff/santa
+	name = "Santa's suit"
+	desc = "Festive!"
+	icon_state = "santa"
+	item_state = "santa"
 /obj/item/clothing/suit/storage/marine/fluff/cia
 	name = "CIA jacket"
 	desc = "An armored jacket with CIA on the back."
