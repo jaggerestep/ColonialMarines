@@ -162,6 +162,11 @@ proc/move_marine_b_shuttle()
 	if(..(user))
 		return
 
+	for(var/client/C in clients)	
+		if(is_special_character(C.mob))
+			C << "\red Access denied."
+			return
+	
 	if(disabled)
 		user << "This shuttle has been disabled."
 		return
@@ -270,6 +275,11 @@ proc/move_marine_b_shuttle()
 /obj/machinery/computer/marine_b_shuttle/attack_hand(user as mob)
 	if(..(user))
 		return
+	
+	for(var/client/C in clients)	
+		if(is_special_character(C.mob))
+			C << "\red Access denied."
+			return
 
 	if(disabled)
 		user << "This shuttle has been disabled."
