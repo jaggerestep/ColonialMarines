@@ -34,7 +34,7 @@
 		if(jellyProgress < jellyProgressMax)
 			return 0
 		return 1
-	*/
+
 
 /mob/living/carbon/alien/humanoid/hunter/New()
 	var/datum/reagents/R = new/datum/reagents(100)
