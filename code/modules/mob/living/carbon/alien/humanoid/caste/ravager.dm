@@ -126,6 +126,6 @@
 
 
 		else
-			src << "\blue You cannot throw at nothing!"
+			src << "\blue You cannot charge at nothing!"
 	else
 		src << "\red You need to wait before charging!"
