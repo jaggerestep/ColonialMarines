@@ -7,8 +7,8 @@
 	max_plasma = 150
 	icon_state = "Hunter Walking"
 	plasma_rate = 8 //old plasma was 7
-	damagemin = 25
-	damagemax = 33
+	damagemin = 30
+	damagemax = 35
 	tacklemin = 5 //old min tackle was 3
 	tacklemax = 7
 	tackle_chance = 90 //Should not be above 100%
@@ -18,7 +18,7 @@
 	var/hasJelly = 0
 	var/jellyProgress = 0
 	var/jellyProgressMax = 600
-	psychiccost = 16
+	psychiccost = 25
 	Stat()
 		..()
 		stat(null, "Jelly Progress: [jellyProgress]/[jellyProgressMax]")
@@ -169,10 +169,10 @@
 	return
 */
 
-/* //////////////////EVOLVING IS TEMP DISABLED
+
 /mob/living/carbon/alien/humanoid/hunter/verb/evolve2() // -- TLE
 	set name = "Evolve (Jelly)"
-	set desc = "Evolve into a Runner"
+	set desc = "Evolve into a Ravager"
 	set category = "Alien"
 	if(!hivemind_check(psychiccost))
 		src << "\red Your queen's psychic strength is not powerful enough for you to evolve further."
@@ -186,11 +186,11 @@
 	if(src.stat != CONSCIOUS)
 		src << "You are unable to do that now."
 		return
-	src << "\blue <b>You are growing into a Runner!</b>"
+	src << "\blue <b>You are growing into a Ravager!</b>"
 
 	var/mob/living/carbon/alien/humanoid/new_xeno
 
-	new_xeno = new /mob/living/carbon/alien/humanoid/runner(loc)
+	new_xeno = new /mob/living/carbon/alien/humanoid/ravager(loc)
 	src << "\green You begin to evolve!"
 
 	for(var/mob/O in viewers(src, null))
@@ -201,4 +201,3 @@
 
 
 	return
-*/

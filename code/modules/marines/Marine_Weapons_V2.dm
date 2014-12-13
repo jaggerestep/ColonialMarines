@@ -6,7 +6,7 @@
 /obj/item/projectile/bullet/m4a3 //Colt 45 Pistol
 	damage = 25
 
-/obj/item/projectile/bullet/m38s //.38 Special Peacemaker
+/obj/item/projectile/bullet/m44m //44 Magnum Peacemaker
 	damage = 45
 
 /obj/item/projectile/bullet/m39 // M39 SMG
@@ -25,8 +25,8 @@
 	caliber = "45s"
 	projectile_type = "/obj/item/projectile/bullet/m4a3"
 
-/obj/item/ammo_casing/m38s //.38 Special
-	desc = "A .38 special bullet casing."
+/obj/item/ammo_casing/m44m //44 Magnum Peacemaker
+	desc = "A 44 Magnul bullet casing."
 	caliber = "38s"
 	projectile_type = "/obj/item/projectile/bullet/m38s"
 
@@ -65,11 +65,11 @@
 	empty_mag = new /obj/item/ammo_magazine/m4a3e/empty(src) //45 Pistol
 	return
 
-/obj/item/ammo_magazine/m38s //.38 Special
+/obj/item/ammo_magazine/m44m // 44 Magnum Peacemaker
 	name = "Speed loader (.38-S)"
-	desc = "A .38 special rounds speed loader"
+	desc = "A 44 Magnum speed loader"
 	icon_state = "38"
-	ammo_type = "/obj/item/ammo_casing/m38s"
+	ammo_type = "/obj/item/ammo_casing/m44m"
 	max_ammo = 6
 	multiple_sprites = 1
 
@@ -130,12 +130,12 @@
 		empty_mag = null
 	return
 
-/obj/item/weapon/gun/projectile/m38s //.38 special
-	name = "\improper .38 Special"
-	desc = "Smith & Wesson .38 revolver. Uses .38 special ammo."
+/obj/item/weapon/gun/projectile/m44m //mm44 Magnum Peacemaker
+	name = "\improper 44 Magnum"
+	desc = "A 44 Magnum revolver. Uses 44 Magnum rounds"
 	icon_state = "mateba"
 	caliber = "38s"
-	ammo_type = "/obj/item/ammo_casing/m38s"
+	ammo_type = "/obj/item/ammo_casing/m44m"
 
 
 ///***SMGS***///
@@ -169,6 +169,7 @@
 	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
 	load_method = 2
 	force = 10.0
+	fire_delay = 4
 	slot_flags = SLOT_BACK
 
 	New()
@@ -242,7 +243,7 @@
 	products = list(/obj/item/weapon/reagent_containers/food/snacks/donut/normal = 25,
 
 					/obj/item/weapon/gun/projectile/pistol/m4a3 = 5,
-					/obj/item/weapon/gun/projectile/m38s = 5,
+					/obj/item/weapon/gun/projectile/m44m = 5,
 					/obj/item/weapon/gun/projectile/automatic/m39 = 5,
 					/obj/item/weapon/gun/twohanded/projectile/Assault/m41 = 5,
 					/obj/item/weapon/gun/twohanded/projectile/shotgun/pump/m37 = 5,
@@ -250,7 +251,7 @@
 
 
 					/obj/item/ammo_magazine/m4a3 = 25,
-					/obj/item/ammo_magazine/m38s =25,
+					/obj/item/ammo_magazine/m44m =25,
 					/obj/item/ammo_magazine/m39 = 25,
 					/obj/item/ammo_magazine/m41 = 25,
 					/obj/item/weapon/storage/box/m37 = 25,
