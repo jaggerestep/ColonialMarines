@@ -8,6 +8,7 @@
 	icon_state = "Spitter Walking"
 	plasma_rate = 30
 	var/progress = 0
+	var/hasJelly = 0
 	var/progressmax = 900 //was 1500
 	damagemin = 35 //old min was 24
 	damagemax = 40 //old max was 27
@@ -16,15 +17,19 @@
 	tackle_chance = 60 //Should not be above 100% old was 65
 	heal_rate = 3
 	psychiccost = 20 //was 16
+	proc/growJelly()
+		spawn while(1)
+			if(hasJelly)
+				if(progress < progressmax)
+					progress = min(progress + 1, progressmax)
+			sleep(10)
+	proc/canEvolve()
+		if(!hasJelly)
+			return 0
+		if(progress < progressmax)
+			return 0
+		return 1
 
-/mob/living/carbon/alien/humanoid/spitter/Stat()
-	..()
-	stat(null, "Progress: [progress]/[progressmax]")
-
-/mob/living/carbon/alien/humanoid/spitter/adjustToxLoss(amount)
-	if(stat != DEAD)
-		progress = min(progress + 1, progressmax)
-	..(amount)
 
 /mob/living/carbon/alien/humanoid/spitter/New()
 	var/datum/reagents/R = new/datum/reagents(100)
@@ -40,41 +45,40 @@
 	//pixel_y = 3
 	..()
 
-/*  EVOLUTION TEMP DISABLED - ADMIN ONLY
+
 /mob/living/carbon/alien/humanoid/spitter/verb/evolve() // -- TLE
-	set name = "Evolve"
-	set desc = "Evolve further into a new caste."
+	set name = "Evolve (Jelly)"
+	set desc = "Evolve into a Praetorian"
 	set category = "Alien"
 	if(!hivemind_check(psychiccost))
 		src << "\red Your queen's psychic strength is not powerful enough for you to evolve further."
 		return
+	if(!canEvolve())
+		if(hasJelly)
+			src << "You are not ready to evolve yet"
+		else
+			src << "You need a mature royal jelly to evolve"
+		return
 	if(src.stat != CONSCIOUS)
 		src << "You are unable to do that now."
 		return
-	if(progress >= progressmax)
-		src << "\blue <b>You are growing into a beautiful alien! It is time to choose a caste.</b>"
-		src << "\blue There are two to choose from:"
-		src << "<B>Corroders</B> \blue are deadly acid spitters whos acid can melt through walls, objects, armor, and flesh. For times when the hive needs to destroy a threat."
-		src << "<B>Hivelords</B> \blue are tasked with expanding the nest with their ability to create hardened resin walls and doors at a distance. They have massive plasma pools, far exceeding that of even queens."
-		var/alien_caste = alert(src, "Please choose which alien caste you shall belong to.",,"Corroder","Hivelord")
+	src << "\blue <b>You are growing into a Praetorian!</b>"
 
-		var/mob/living/carbon/alien/humanoid/new_xeno
-		switch(alien_caste)
-			if("Corroder")
-				new_xeno = new /mob/living/carbon/alien/humanoid/corroder(loc)
-			if("Hivelord")
-				new_xeno = new /mob/living/carbon/alien/humanoid/hivelord(loc)
-		src << "\green You begin to evolve!"
-		for(var/mob/O in viewers(src, null))
-			O.show_message(text("\green <B>[src] begins to twist and contort!</B>"), 1)
-		if(mind)	mind.transfer_to(new_xeno)
+	var/mob/living/carbon/alien/humanoid/new_xeno
 
-		del(src)
+	new_xeno = new /mob/living/carbon/alien/humanoid/praetorian(loc)
+	src << "\green You begin to evolve!"
+
+	for(var/mob/O in viewers(src, null))
+		O.show_message(text("\green <B>[src] begins to twist and contort!</B>"), 1)
+	if(mind)	mind.transfer_to(new_xeno)
+
+	del(src)
 
 
 	return
 
-*/
+
 
 /mob/living/carbon/alien/humanoid/spitter
 

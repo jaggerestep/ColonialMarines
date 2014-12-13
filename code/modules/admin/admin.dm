@@ -129,7 +129,7 @@ var/global/floorIsLava = 0
 				<A href='?src=\ref[src];simplemake=queen;mob=\ref[M]'>Queen</A>,
 				<A href='?src=\ref[src];simplemake=sentinel;mob=\ref[M]'>Sentinel</A>,
 				<A href='?src=\ref[src];simplemake=spitter;mob=\ref[M]'>Spitter</A>
-				<A href='?src=\ref[src];simplemake=Praetorian;mob=\ref[M]'>Praetorian</A>\]
+				<A href='?src=\ref[src];simplemake=praetorian;mob=\ref[M]'>Praetorian</A>\]
 				<A href='?src=\ref[src];simplemake=human;mob=\ref[M]'>Human</A>
 				\[ slime: <A href='?src=\ref[src];simplemake=slime;mob=\ref[M]'>Baby</A>,
 				<A href='?src=\ref[src];simplemake=adultslime;mob=\ref[M]'>Adult</A> \]
