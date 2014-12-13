@@ -15,11 +15,9 @@
 	heal_rate = 4
 	var/usedpounce = 0
 
-
-	/* TEMP DISABLED, SINCE HUNTERS DON'T NEED JELLY AT THE MOMENT
 	var/hasJelly = 0
 	var/jellyProgress = 0
-	var/jellyProgressMax = 1500
+	var/jellyProgressMax = 600
 	psychiccost = 16
 	Stat()
 		..()
