@@ -18,7 +18,7 @@
 	var/progressmax = 500
 	psychiccost = 16
 
-
+/*
 /mob/living/carbon/alien/humanoid/praetorian/Stat()
 	..()
 	stat(null, "Progress: [progress]/[progressmax]")
@@ -27,7 +27,7 @@
 	if(stat != DEAD)
 		progress = min(progress + 1, progressmax)
 	..(amount)
-
+*/
 
 
 /mob/living/carbon/alien/humanoid/praetorian/New()
