@@ -127,6 +127,8 @@ var/global/floorIsLava = 0
 				<A href='?src=\ref[src];simplemake=hunter;mob=\ref[M]'>Hunter</A>,
 				<A href='?src=\ref[src];simplemake=ravager;mob=\ref[M]'>Ravager/A>,
 				<A href='?src=\ref[src];simplemake=drone;mob=\ref[M]'>Drone</A>,
+				<A href='?src=\ref[src];simplemake=hivelord;mob=\ref[M]'>Hivelord</A>,
+				<A href='?src=\ref[src];simplemake=carrier;mob=\ref[M]'>Carrier</A>,
 				<A href='?src=\ref[src];simplemake=queen;mob=\ref[M]'>Queen</A>,
 				<A href='?src=\ref[src];simplemake=sentinel;mob=\ref[M]'>Sentinel</A>,
 				<A href='?src=\ref[src];simplemake=spitter;mob=\ref[M]'>Spitter</A>

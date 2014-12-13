@@ -1,18 +1,18 @@
 /mob/living/carbon/alien/humanoid/carrier
 	name = "alien carrier"
 	caste = "Drone"
-	maxHealth = 180
-	health = 180
+	maxHealth = 200
+	health = 200
 	storedPlasma = 50
 	max_plasma = 50
 	icon_state = "Drone Walking"
 	plasma_rate = 5
-	heal_rate = 1
+	heal_rate = 2
 	var/facehuggers = 0
 	var/usedthrow = 0
 	color = "#967d00"
-	damagemin = 15
-	damagemax = 20
+	damagemin = 20
+	damagemax = 30
 	tacklemin = 3
 	tacklemax = 5
 	tackle_chance = 60 //Should not be above 100%
@@ -95,15 +95,15 @@
 	if (healths)
 		if (stat != 2)
 			switch(health)
-				if(150 to INFINITY)
+				if(160 to INFINITY)
 					healths.icon_state = "health0"
-				if(100 to 150)
+				if(120 to 160)
 					healths.icon_state = "health1"
-				if(50 to 100)
+				if(80 to 120)
 					healths.icon_state = "health2"
-				if(25 to 50)
+				if(40 to 80)
 					healths.icon_state = "health3"
-				if(0 to 25)
+				if(0 to 40)
 					healths.icon_state = "health4"
 				else
 					healths.icon_state = "health5"
