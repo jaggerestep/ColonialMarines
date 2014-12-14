@@ -16,7 +16,7 @@
 	var/hasJelly = 0
 	var/jellyProgress = 0
 	var/jellyProgressMax = 1200
-	psychiccost = 8
+	psychiccost = 30
 	Stat()
 		..()
 		stat(null, "Jelly Progress: [jellyProgress]/[jellyProgressMax]")
@@ -76,10 +76,10 @@
 	return
 
 
-/*/////// EVOLVING IS TEMP DISABLED.
+
 /mob/living/carbon/alien/humanoid/drone/verb/evolve2() // -- TLE
 	set name = "Evolve (Jelly)"
-	set desc = "Evolve into a Spitter"
+	set desc = "Evolve into your next form"
 	set category = "Alien"
 	if(!hivemind_check(psychiccost))
 		src << "\red Your queen's psychic strength is not powerful enough for you to evolve further."
@@ -93,22 +93,29 @@
 	if(src.stat != CONSCIOUS)
 		src << "You are unable to do that now."
 		return
-	src << "\blue <b>You are growing into a Spitter!</b>"
+	if(jellyProgress >= jellyProgressMax)	//TODO ~Carn
+		//green is impossible to read, so i made these blue and changed the formatting slightly
+		src << "<B>Hivelord</B> \blue The ULTIMATE hive construction alien.  Capable of building massive hives, that's to it's tremendous Plasma reserve.  However, it is very slow and weak."
+		src << "<B>Carrier</B> \blue The latest advance in Alien Evolution.  Capable of holding upto 6 runners, and throwing them a far distance, directly to someones face."
+		var/alien_caste = alert(src, "Please choose which alien caste you shall belong to.",,"Hivelord","Carrier")
 
-	var/mob/living/carbon/alien/humanoid/new_xeno
-
-	new_xeno = new /mob/living/carbon/alien/humanoid/spitter(loc)
-	src << "\green You begin to evolve!"
-
-	for(var/mob/O in viewers(src, null))
-		O.show_message(text("\green <B>[src] begins to twist and contort!</B>"), 1)
-	if(mind)	mind.transfer_to(new_xeno)
+		var/mob/living/carbon/alien/humanoid/new_xeno
+		switch(alien_caste)
+			if("Hivelord")
+				new_xeno = new /mob/living/carbon/alien/humanoid/hivelord(loc)
+			if("Carrier")
+				new_xeno = new /mob/living/carbon/alien/humanoid/carrier(loc)
+		if(mind)	mind.transfer_to(new_xeno)
+		del(src)
+		return
+	else
+		src << "\red You are not ready to evolve."
+		return
 
 	del(src)
 
 
 	return
-*///
 
 
 
