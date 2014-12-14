@@ -125,7 +125,7 @@ var/global/floorIsLava = 0
 				\[ Alien: <A href='?src=\ref[src];simplemake=larva;mob=\ref[M]'>Larva</A>,
 				<A href='?src=\ref[src];simplemake=runner;mob=\ref[M]'>Runner</A>,
 				<A href='?src=\ref[src];simplemake=hunter;mob=\ref[M]'>Hunter</A>,
-				<A href='?src=\ref[src];simplemake=ravager;mob=\ref[M]'>Ravager/A>,
+				<A href='?src=\ref[src];simplemake=ravager;mob=\ref[M]'>Ravager</A>,
 				<A href='?src=\ref[src];simplemake=drone;mob=\ref[M]'>Drone</A>,
 				<A href='?src=\ref[src];simplemake=hivelord;mob=\ref[M]'>Hivelord</A>,
 				<A href='?src=\ref[src];simplemake=carrier;mob=\ref[M]'>Carrier</A>,
