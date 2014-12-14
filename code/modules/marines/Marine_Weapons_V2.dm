@@ -28,7 +28,7 @@
 /obj/item/ammo_casing/m44m //44 Magnum Peacemaker
 	desc = "A 44 Magnul bullet casing."
 	caliber = "38s"
-	projectile_type = "/obj/item/projectile/bullet/m38s"
+	projectile_type = "/obj/item/projectile/bullet/m44m"
 
 /obj/item/ammo_casing/m39 // M39 SMG
 	desc = "A .9mm special bullet casing."
@@ -66,7 +66,7 @@
 	return
 
 /obj/item/ammo_magazine/m44m // 44 Magnum Peacemaker
-	name = "Speed loader (.38-S)"
+	name = "Speed loader (44 Mag)"
 	desc = "A 44 Magnum speed loader"
 	icon_state = "38"
 	ammo_type = "/obj/item/ammo_casing/m44m"
