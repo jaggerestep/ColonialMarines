@@ -136,7 +136,7 @@ proc/move_marine_b_shuttle()
 		user << "\red You can not use this yet. Please wait another [round((32000-world.time)/600)] minutes before trying again."
 		return
 	if(istype(user,/mob/living/carbon/alien) && !istype(user,/mob/living/carbon/alien/humanoid/queen))
-		user << "\red You can't understand the markings. Only the queen can access this"
+		user << "\red You can't understand the markings. Only the queen can access this."
 		return
 	if(disabled)
 		user << "This shuttle has been disabled."
@@ -242,7 +242,9 @@ proc/move_marine_b_shuttle()
 	if(world.time < 32000)
 		user << "\red You can not use this yet. Please wait another [round((32000-world.time)/600)] minutes before trying again."
 		return
-
+	if(istype(user,/mob/living/carbon/alien) && !istype(user,/mob/living/carbon/alien/humanoid/queen))
+		user << "\red You can't understand the markings. Only the queen can access this."
+		return
 	if(disabled)
 		user << "This shuttle has been disabled."
 		return
