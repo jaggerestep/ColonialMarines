@@ -32,7 +32,7 @@
 	pixel_x = -16
 	..()
 
-
+/*
 /mob/living/carbon/alien/humanoid/hivelord/ClickOn(var/atom/A, params)
 
 	var/list/modifiers = params2list(params)
@@ -50,7 +50,7 @@
 			if(get_dist(src, select) <= 3)
 				resin2(select)
 				return
-	..()
+	..()*/
 
 /mob/living/carbon/alien/humanoid/hivelord/proc/check_floor(var/turf/location)
 	if(istype(location, /turf/simulated/wall) || istype(location, /turf/unsimulated/wall))
@@ -60,7 +60,7 @@
 			return 1
 
 	return 0
-
+/*
 /mob/living/carbon/alien/humanoid/hivelord/verb/resin2(var/turf/location = src.loc) // -- TLE
 	set name = "Secrete Hardened Resin (75)"
 	set desc = "Secrete tough malleable resin."
@@ -113,7 +113,7 @@
 	return
 
 
-
+*/
 /mob/living/carbon/alien/humanoid/hivelord
 
 
