@@ -5,7 +5,7 @@
 	health = 500
 	storedPlasma = 50
 	max_plasma = 50
-	icon_state = "Ravager Running"
+	icon_state = "Ravager Walking"
 	plasma_rate = 6
 	damagemin = 50
 	damagemax = 75

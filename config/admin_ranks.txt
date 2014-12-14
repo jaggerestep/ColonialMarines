@@ -29,8 +29,8 @@
 # +EVERYTHING (or +HOST or +ALL) = Simply gives you everything without having to type every flag
 
 Donator 	+COLOR
-Moderator 	+@ +MOD +SERVER +REJUV +BAN +VAREDIT
-Trial Admin 	+@ +ADMIN +SPAWN  +SOUND +POSSESS +BUILDMODE +FUN +STEALTH
+Moderator 	+@ +MOD +SERVER +REJUV +BAN 
+Trial Admin 	+@ +ADMIN +SPAWN  +SOUND +POSSESS +BUILDMODE +FUN +STEALTH +VAREDIT
 Developer	+@ +DEBUG
 Badmin 		+@
 Game Admin 	+@ 
