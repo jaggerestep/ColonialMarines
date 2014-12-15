@@ -15,7 +15,7 @@
 	heal_rate = 4
 	var/usedpounce = 0
 
-	var/hasJelly = 0
+	var/hasJelly = 1
 	var/jellyProgress = 0
 	var/jellyProgressMax = 600
 	psychiccost = 25

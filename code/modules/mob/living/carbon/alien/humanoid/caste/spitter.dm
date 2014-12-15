@@ -8,7 +8,7 @@
 	icon_state = "Spitter Walking"
 	plasma_rate = 30
 	var/progress = 0
-	var/hasJelly = 0
+	var/hasJelly = 1
 	var/progressmax = 900 //was 1500
 	damagemin = 35 //old min was 24
 	damagemax = 40 //old max was 27
@@ -17,6 +17,9 @@
 	tackle_chance = 60 //Should not be above 100% old was 65
 	heal_rate = 3
 	psychiccost = 20 //was 16
+	Stat()
+		..()
+		stat(null, "Jelly Progress: [progress]/[progressmax]")
 	proc/growJelly()
 		spawn while(1)
 			if(hasJelly)
@@ -43,7 +46,9 @@
 	//M.Scale(1.15,1.1)
 	//src.transform = M
 	//pixel_y = 3
+	growJelly()
 	..()
+
 
 
 /mob/living/carbon/alien/humanoid/spitter/verb/evolve() // -- TLE
