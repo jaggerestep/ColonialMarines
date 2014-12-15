@@ -998,3 +998,9 @@ rahlzel has banned wizard1012. - Reason: Griefer - This will be removed in 1440 
 rahlzel has banned bearwhale. - Reason: Griefing, numerous negative player notes of griefings, bans, warnings. 1 month ban. - This will be removed in 43829 minutes.
 <a href='?priv_msg=[0x5000018]'>Apophis775</a>/(Gon Freeces) unbanned bearwhale
 apophis775 has banned trollarch. - Reason: Just tried to kill another marine, then logged off when an MP caught him and arrested him. This guy needs to be perma'd ASAP - This will be removed in 4320 minutes.
+apophis775 has banned darkepsilon. - Reason: RuleBreaking - Assigned himself custom job and almost all-access - This will be removed in 1440 minutes.
+apophis775 has banned hoarfrost. - Reason: Griefing - Injecting Marines with Chloral - This will be removed in 1440 minutes.
+<a href='?priv_msg=[0x5000008]'>Apophis775</a>/(Gon Freeces) unbanned hoarfrost
+apophis775 has banned cerusserenade. - Reason: Griefing - Chloraling Marines - This will be removed in 1440 minutes.
+Apophis775/(Gon Freeces) edited cerusserenade's ban. Reason: BAN EVADE ATTEMPT - UPGRADED TO PERMA Duration: Perma
+apophis775 has permabanned cerusserenade. - Reason: BAN EVADE ATTEMPTED - PERMABANNED - This is a permanent ban.
