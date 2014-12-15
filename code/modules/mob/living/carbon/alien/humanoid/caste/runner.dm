@@ -37,7 +37,8 @@
 			return 0
 		return 1
 
-
+//TEST fix of runners getting plasma without jelly
+/*
 /mob/living/carbon/alien/humanoid/runner/Stat()
 	..()
 	stat(null, "Progress: [jellyProgress]/[jellyProgressMax]")
@@ -45,7 +46,7 @@
 /mob/living/carbon/alien/humanoid/runner/adjustToxLoss(amount)
 	if(stat != DEAD)
 		jellyProgress = min(jellyProgress + 1, jellyProgressMax)
-	..(amount)
+	..(amount)*/
 
 /mob/living/carbon/alien/humanoid/runner/New()
 	var/datum/reagents/R = new/datum/reagents(100)
