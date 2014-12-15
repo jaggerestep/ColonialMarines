@@ -270,3 +270,14 @@ for reference:
 		explosion(src.loc,-1,-1,0)
 		if(src)
 			del(src)
+
+//ALIUM SLASHING CODE SUPER MEGA TEMP GHETTO FIX OF GHETTONESS or maybe permanentness...
+
+/obj/structure/barricade/wooden/attack_alien(mob/user)
+	visible_message("<span class='danger'>[user] slices [src] apart!</span>")
+	if(health < 1)
+		new /obj/item/stack/sheet/wood(get_turf(src))
+		new /obj/item/stack/sheet/wood(get_turf(src))
+		new /obj/item/stack/sheet/wood(get_turf(src))
+		del(src)
+	health -= 20
