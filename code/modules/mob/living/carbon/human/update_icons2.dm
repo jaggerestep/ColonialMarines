@@ -428,14 +428,14 @@ proc/get_damage_icon_part(damage_state, body_part)
 	if(update_icons)   update_icons()
 
 /mob/living/carbon/human/update_mutations(var/update_icons=1)
-	var/fat
-	if(FAT in mutations)
-		fat = "fat"
+	//var/fat
+	//if(FAT in mutations)
+		//fat = "fat"
 
 	var/image/standing	= image("icon" = 'icons/effects/genetics.dmi')
 	var/add_image = 0
-	var/g = "m"
-	if(gender == FEMALE)	g = "f"
+	//var/g = "m"
+	//if(gender == FEMALE)	g = "f"
 	// DNA2 - Drawing underlays.
 	/*for(var/datum/dna/gene/gene in dna_genes)
 		if(!gene.block)
