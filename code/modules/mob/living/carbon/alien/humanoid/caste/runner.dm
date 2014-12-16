@@ -55,6 +55,7 @@
 	if(name == "alien runner")
 		name = text("alien runner ([rand(1, 1000)])")
 	real_name = name
+	verbs -= /atom/movable/verb/pull
 	//var/matrix/M = matrix()
 	//M.Scale(1.15,1.1)
 	//src.transform = M

@@ -183,7 +183,7 @@
 	icon = 'icons/obj/projectiles.dmi'
 	var/damage = 0.0
 	var/range = 10.0
-
+	pass_flags = PASSTABLE
 
 /obj/effect/list_container
 	name = "list container"
@@ -241,6 +241,7 @@
 	name = "Projection"
 	desc = "This looks like a projection of something."
 	anchored = 1.0
+	pass_flags = PASSTABLE
 
 
 /obj/effect/shut_controller
