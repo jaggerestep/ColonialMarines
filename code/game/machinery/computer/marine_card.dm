@@ -264,8 +264,8 @@
 					for(var/jobtype in typesof(/datum/job))
 						var/datum/job/J = new jobtype
 						if(ckey(J.title) == ckey(t1))
-							var/datum/job/jobdatum
-							jobdatum = J
+							//var/datum/job/jobdatum
+							//jobdatum = J
 							break
 					//if(!jobdatum)
 					//	usr << "\red No log exists for this job."
