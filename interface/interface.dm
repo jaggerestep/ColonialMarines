@@ -37,7 +37,7 @@
 	set desc = "Show Server Rules."
 	set hidden = 1
 	//src << browse(file(RULES_FILE), "window=rules;size=480x320")
-	src << link("http://newedenstation.com/showthread.php?tid=463&pid=1704")
+	src << link("http://newedenstation.com/showthread.php?tid=558&pid=2356#pid2356")
 #undef RULES_FILE
 
 /client/verb/donate()
