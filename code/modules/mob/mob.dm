@@ -397,7 +397,7 @@ var/list/slot_equipment_priority = list( \
 /client/verb/changes()
 	set name = "Changelog"
 	set category = "OOC"
-	src << link("http://newedenstation.com/showthread.php?tid=830")
+	src << link("http://newedenstation.com/showthread.php?tid=569")
 /* 	if(prefs.lastchangelog != changelog_hash)
 		prefs.lastchangelog = changelog_hash
 		prefs.save_preferences()

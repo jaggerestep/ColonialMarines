@@ -87,7 +87,8 @@
 			for(var/client/C in admins)
 				if(R_ADMIN & C.holder.rights)
 					C << "<span class=\"admin\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[usr] has requested a heavy infantry team. Emergency: [input]</span>"
-					usr << "\blue Heavy Infantry request recieved by Nanotrasen's Special Forces department."
+					C << 'sound/effects/sos-morse-code.ogg'
+					usr << "\blue Heavy Infantry request sent to CentCom Special Forces department."
 		if("swipeidseclevel")
 			var/mob/M = usr
 			var/obj/item/weapon/card/id/I = M.get_active_hand()
