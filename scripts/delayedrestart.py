@@ -5,9 +5,10 @@ from subprocess import call
 
 
 print("Restarting Server")
-time.sleep(1)
+
 
 os.system("taskkill /F /im ddaemon.exe")
+time.sleep(5)
 call("pythonw \"C:/Users/Administrator/Desktop/Launch Marines.py\"", shell=True)
 
 sys.exit()	
