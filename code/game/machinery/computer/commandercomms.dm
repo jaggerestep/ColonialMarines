@@ -83,12 +83,20 @@
 				if(istype(A, /area/sulaco))
 					A.readyreset()
 		if("callhiv")
-			var/input = stripped_input(usr, "What is the nature of your emergency?.", "What?")
+			var/input = stripped_input(usr, "What is the nature of your emergency?", "Request Heavy Infantry Team")
 			for(var/client/C in admins)
 				if(R_ADMIN & C.holder.rights)
-					C << "<span class=\"admin\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[usr] has requested a heavy infantry team. Emergency: [input]</span>"
+					C << "<span class=\"admin\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[usr] has requested a Heavy Infantry Team. Emergency: [input]</span>"
 					C << 'sound/effects/sos-morse-code.ogg'
 					usr << "\blue Heavy Infantry request sent to CentCom Special Forces department."
+		if("callshuttle2")
+			var/input = stripped_input(usr, "What is the nature of your emergency?", "Request Emergency Shuttle")
+			for(var/client/C in admins)
+				if(R_ADMIN & C.holder.rights)
+					C << "<span class=\"admin\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[usr] has requested an emergency shuttle. Emergency: [input]</span>"
+					C << 'sound/effects/sos-morse-code.ogg'
+					usr << "\blue Emergency Shuttle request sent to CentCom."
+
 		if("swipeidseclevel")
 			var/mob/M = usr
 			var/obj/item/weapon/card/id/I = M.get_active_hand()
@@ -136,12 +144,12 @@
 			src.state = STATE_DEFAULT
 			if(src.authenticated)
 				src.state = STATE_CALLSHUTTLE
-		if("callshuttle2")
+/* 		if("callshuttle2")
 			if(src.authenticated)
 				call_shuttle_proc(usr)
 				if(emergency_shuttle.online)
 					post_status("shuttle")
-			src.state = STATE_DEFAULT
+			src.state = STATE_DEFAULT */
 		if("cancelshuttle")
 			src.state = STATE_DEFAULT
 			if(src.authenticated)
@@ -333,17 +341,17 @@
 					dat += "<BR>\[ <A HREF='?src=\ref[src];operation=codegreen'>Lift code red</A> \]"
 				if(emergency_shuttle.location==0)
 					if (emergency_shuttle.online)
-						dat += "<BR>\[ <A HREF='?src=\ref[src];operation=cancelshuttle'>Cancel Shuttle Call</A> \]"
+						dat += "<BR>\[ Shuttle en-route! \]"
 					else
-						dat += "<BR>\[ <A HREF='?src=\ref[src];operation=callshuttle'>Call Emergency Shuttle</A> \]"
+						dat += "<BR>\[ <A HREF='?src=\ref[src];operation=callshuttle2'>Request Emergency Shuttle</A> \]"
 
 				dat += "<BR>\[ <A HREF='?src=\ref[src];operation=status'>Set Status Display</A> \]"
-				dat += "<BR>\[ <A HREF='?src=\ref[src];operation=callhiv'>Call Heavy Infantry Team</A> \]"
+				dat += "<BR>\[ <A HREF='?src=\ref[src];operation=callhiv'>Request Heavy Infantry Team</A> \]"
 			else
 				dat += "<BR>\[ <A HREF='?src=\ref[src];operation=login'>Log In</A> \]"
 			dat += "<BR>\[ <A HREF='?src=\ref[src];operation=messagelist'>Message List</A> \]"
-		if(STATE_CALLSHUTTLE)
-			dat += "Are you sure you want to call the shuttle? \[ <A HREF='?src=\ref[src];operation=callshuttle2'>OK</A> | <A HREF='?src=\ref[src];operation=main'>Cancel</A> \]"
+/* 		if(STATE_CALLSHUTTLE)
+			dat += "Are you sure you want to request the shuttle? \[ <A HREF='?src=\ref[src];operation=callshuttle2'>OK</A> | <A HREF='?src=\ref[src];operation=main'>Cancel</A> \]" */
 		if(STATE_CANCELSHUTTLE)
 			dat += "Are you sure you want to cancel the shuttle? \[ <A HREF='?src=\ref[src];operation=cancelshuttle2'>OK</A> | <A HREF='?src=\ref[src];operation=main'>Cancel</A> \]"
 		if(STATE_MESSAGELIST)
