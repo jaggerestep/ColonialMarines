@@ -215,6 +215,7 @@
 	verbs.Add(/mob/living/carbon/alien/humanoid/proc/resin)
 	pixel_y = -7
 	pixel_x = -16
+	verbs -= /atom/movable/verb/pull
 
 	var/matrix/M = matrix()
 	M.Scale(0.85,0.85)

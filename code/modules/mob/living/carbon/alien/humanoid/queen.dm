@@ -77,6 +77,7 @@
 	reagents = R
 	R.my_atom = src
 	hive_controller.active_queen = src
+	verbs -= /atom/movable/verb/pull
 	//there should only be one queen
 	for(var/mob/living/carbon/alien/humanoid/queen/Q in living_mob_list)
 		if(Q == src)		continue

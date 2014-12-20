@@ -39,6 +39,7 @@
 	real_name = name
 	verbs.Add(/mob/living/carbon/alien/humanoid/proc/corrosive_acid_super,/mob/living/carbon/alien/humanoid/proc/corrosive_acid,/mob/living/carbon/alien/humanoid/proc/neurotoxin,/mob/living/carbon/alien/humanoid/proc/super_neurotoxin)
 	verbs -= /mob/living/carbon/alien/verb/ventcrawl
+	verbs -= /atom/movable/verb/pull
 	//var/matrix/M = matrix()
 	//M.Scale(1.2,1.3)
 	//src.transform = M

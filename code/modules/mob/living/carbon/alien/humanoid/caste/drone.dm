@@ -42,6 +42,7 @@
 	src.real_name = src.name
 	verbs.Add(/mob/living/carbon/alien/humanoid/proc/resin,/mob/living/carbon/alien/humanoid/proc/weak_acid)
 	growJelly()
+	verbs -= /atom/movable/verb/pull
 	/*var/matrix/M = matrix()
 	M.Scale(0.9,0.9)
 	src.transform = M

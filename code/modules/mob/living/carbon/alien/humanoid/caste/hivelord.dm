@@ -25,6 +25,7 @@
 	src.real_name = src.name
 	verbs -= /mob/living/carbon/alien/verb/ventcrawl
 	verbs.Add(/mob/living/carbon/alien/humanoid/proc/resin,/mob/living/carbon/alien/humanoid/proc/corrosive_acid)
+	verbs -= /atom/movable/verb/pull
 	/*var/matrix/M = matrix()
 	M.Scale(0.9,0.9)
 	src.transform = M

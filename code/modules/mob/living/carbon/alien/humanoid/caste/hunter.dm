@@ -43,6 +43,7 @@
 	if(name == "alien warrior")
 		name = text("alien warrior ([rand(1, 1000)])")
 	real_name = name
+	verbs -= /atom/movable/verb/pull
 	growJelly()
 	..()
 

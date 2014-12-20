@@ -31,6 +31,7 @@
 	src.transform = M
 	pixel_y = 3
 	verbs -= /mob/living/carbon/alien/verb/ventcrawl
+	verbs -= /atom/movable/verb/pull
 	..()
 
 /mob/living/carbon/alien/humanoid/carrier/Stat()
