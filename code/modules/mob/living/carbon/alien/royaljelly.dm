@@ -58,7 +58,7 @@
 		drone.visible_message("[drone] drinks the royal jelly.")
 		del(src)
 		return
-	user << "\blue This is not for you."
+	user << "\blue You already feel the effects of the royal jelly flowing through your veins."
 
 /obj/royaljelly/attack_paw(user as mob) //can be picked up by aliens
 	if(isalien(user))
