@@ -621,6 +621,13 @@
 	item_state = "mantle-unathi"
 	body_parts_covered = UPPER_TORSO
 
+/obj/item/clothing/suit/armor/vest/fluff/red_hardsuit //deusdactyl
+	name = "A red hardsuit?"
+	desc = "A red hardsuit costume.  Could have fooled me."
+	icon = 'icons/mob/suit.dmi'
+	icon_state = "syndicate"
+	item_state = "syndicate"
+
 //////////// Uniforms ////////////
 
 /obj/item/clothing/under/fluff/milo_hachert //Field Dress Uniform - Milo Hachert - Commissar_Drew
