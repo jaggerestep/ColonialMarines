@@ -25,6 +25,7 @@
 	src.real_name = src.name
 	verbs -= /mob/living/carbon/alien/verb/ventcrawl
 	verbs.Add(/mob/living/carbon/alien/humanoid/proc/resin,/mob/living/carbon/alien/humanoid/proc/corrosive_acid)
+	verbs -= /atom/movable/verb/pull
 	/*var/matrix/M = matrix()
 	M.Scale(0.9,0.9)
 	src.transform = M
@@ -120,19 +121,20 @@
 	handle_regular_hud_updates()
 
 		..() //-Yvarov
+		var/AHF = maxHealth/5 //Alien Health Fraction
 
 		if (healths)
 			if (stat != 2)
 				switch(health)
-					if(264 to INFINITY)
+					if(AHF*4 to INFINITY)
 						healths.icon_state = "health0"
-					if(196 to 264)
+					if(AHF*3 to AHF*4)
 						healths.icon_state = "health1"
-					if(128 to 196)
+					if(AHF*2 to AHF*3)
 						healths.icon_state = "health2"
-					if(64 to 128)
+					if(AHF to AHF*2)
 						healths.icon_state = "health3"
-					if(0 to 64)
+					if(0 to AHF)
 						healths.icon_state = "health4"
 					else
 						healths.icon_state = "health5"

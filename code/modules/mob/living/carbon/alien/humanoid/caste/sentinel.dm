@@ -42,6 +42,7 @@
 		name = text("alien sentinel ([rand(1, 1000)])")
 	real_name = name
 	verbs.Add(/mob/living/carbon/alien/humanoid/proc/weak_acid,/mob/living/carbon/alien/humanoid/proc/weak_neurotoxin)
+	verbs -= /atom/movable/verb/pull
 	growJelly()
 	..()
 
@@ -84,19 +85,20 @@
 	handle_regular_hud_updates()
 
 		..() //-Yvarov
+		var/AHF = maxHealth/5 //Alien Health Fraction
 
 		if (healths)
 			if (stat != 2)
 				switch(health)
-					if(192 to INFINITY)
+					if(AHF*4 to INFINITY)
 						healths.icon_state = "health0"
-					if(144 to 192)
+					if(AHF*3 to AHF*4)
 						healths.icon_state = "health1"
-					if(96 to 144)
+					if(AHF*2 to AHF*3)
 						healths.icon_state = "health2"
-					if(48 to 96)
+					if(AHF to AHF*2)
 						healths.icon_state = "health3"
-					if(0 to 48)
+					if(0 to AHF)
 						healths.icon_state = "health4"
 					else
 						healths.icon_state = "health5"

@@ -45,6 +45,7 @@
 		name = "alien larva ([rand(1, 1000)])"
 	real_name = name
 	regenerate_icons()
+	verbs -= /atom/movable/verb/pull
 	//processing_objects.Add(src)
 	..()
 

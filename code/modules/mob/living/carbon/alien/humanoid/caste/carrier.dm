@@ -31,6 +31,7 @@
 	src.transform = M
 	pixel_y = 3
 	verbs -= /mob/living/carbon/alien/verb/ventcrawl
+	verbs -= /atom/movable/verb/pull
 	..()
 
 /mob/living/carbon/alien/humanoid/carrier/Stat()
@@ -92,18 +93,20 @@
 
 	..() //-Yvarov
 
+	var/AHF = maxHealth/5 //Alien Health Fraction
+
 	if (healths)
 		if (stat != 2)
 			switch(health)
-				if(160 to INFINITY)
+				if(AHF*4 to INFINITY)
 					healths.icon_state = "health0"
-				if(120 to 160)
+				if(AHF*3 to AHF*4)
 					healths.icon_state = "health1"
-				if(80 to 120)
+				if(AHF*2 to AHF*3)
 					healths.icon_state = "health2"
-				if(40 to 80)
+				if(AHF to AHF*2)
 					healths.icon_state = "health3"
-				if(0 to 40)
+				if(0 to AHF)
 					healths.icon_state = "health4"
 				else
 					healths.icon_state = "health5"

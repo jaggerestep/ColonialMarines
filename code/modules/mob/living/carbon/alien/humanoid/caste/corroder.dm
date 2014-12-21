@@ -215,6 +215,7 @@
 	verbs.Add(/mob/living/carbon/alien/humanoid/proc/resin)
 	pixel_y = -7
 	pixel_x = -16
+	verbs -= /atom/movable/verb/pull
 
 	var/matrix/M = matrix()
 	M.Scale(0.85,0.85)
@@ -283,19 +284,20 @@
 	handle_regular_hud_updates()
 
 		..() //-Yvarov
+		var/AHF = maxHealth/5 //Alien Health Fraction
 
 		if (healths)
 			if (stat != 2)
 				switch(health)
-					if(80 to INFINITY)
+					if(AHF*4 to INFINITY)
 						healths.icon_state = "health0"
-					if(60 to 80)
+					if(AHF*3 to AHF*4)
 						healths.icon_state = "health1"
-					if(40 to 60)
+					if(AHF*2 to AHF*3)
 						healths.icon_state = "health2"
-					if(20 to 40)
+					if(AHF to AHF*2)
 						healths.icon_state = "health3"
-					if(0 to 20)
+					if(0 to AHF)
 						healths.icon_state = "health4"
 					else
 						healths.icon_state = "health5"

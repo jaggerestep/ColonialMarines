@@ -42,6 +42,7 @@
 		name = text("alien spitter ([rand(1, 1000)])")
 	real_name = name
 	verbs.Add(/mob/living/carbon/alien/humanoid/proc/weak_neurotoxin,/mob/living/carbon/alien/humanoid/proc/neurotoxin,/mob/living/carbon/alien/humanoid/proc/weak_acid,/mob/living/carbon/alien/humanoid/proc/corrosive_acid)
+	verbs -= /atom/movable/verb/pull
 	//var/matrix/M = matrix()
 	//M.Scale(1.15,1.1)
 	//src.transform = M
@@ -91,19 +92,20 @@
 	handle_regular_hud_updates()
 
 		..() //-Yvarov
+		var/AHF = maxHealth/5 //Alien Health Fraction
 
 		if (healths)
 			if (stat != 2)
 				switch(health)
-					if(206 to INFINITY)
+					if(AHF*4 to INFINITY)
 						healths.icon_state = "health0"
-					if(162 to 206)
+					if(AHF*3 to AHF*4)
 						healths.icon_state = "health1"
-					if(108 to 162)
+					if(AHF*2 to AHF*3)
 						healths.icon_state = "health2"
-					if(54 to 108)
+					if(AHF to AHF*2)
 						healths.icon_state = "health3"
-					if(0 to 54)
+					if(0 to AHF)
 						healths.icon_state = "health4"
 					else
 						healths.icon_state = "health5"

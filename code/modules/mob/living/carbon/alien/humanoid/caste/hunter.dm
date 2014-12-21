@@ -43,6 +43,7 @@
 	if(name == "alien warrior")
 		name = text("alien warrior ([rand(1, 1000)])")
 	real_name = name
+	verbs -= /atom/movable/verb/pull
 	growJelly()
 	..()
 
@@ -52,19 +53,20 @@
 	handle_regular_hud_updates()
 
 		..() //-Yvarov
+		var/AHF = maxHealth/5 //Alien Health Fraction
 
 		if (healths)
 			if (stat != 2)
 				switch(health)
-					if(150 to INFINITY)
+					if(AHF*4 to INFINITY)
 						healths.icon_state = "health0"
-					if(100 to 150)
+					if(AHF*3 to AHF*4)
 						healths.icon_state = "health1"
-					if(50 to 100)
+					if(AHF*2 to AHF*3)
 						healths.icon_state = "health2"
-					if(25 to 50)
+					if(AHF to AHF*2)
 						healths.icon_state = "health3"
-					if(0 to 25)
+					if(0 to AHF)
 						healths.icon_state = "health4"
 					else
 						healths.icon_state = "health5"
@@ -145,29 +147,6 @@
 //Hunter procs
 
 //End hunter procs
-/*
-/mob/living/carbon/alien/humanoid/hunter/verb/invis()
-	set name = "Invisibility (50)"
-	set desc = "Makes you invisible for 15 seconds"
-	set category = "Alien"
-
-	if(alien_invis)
-		update_icons()
-	else
-		if(powerc(50))
-			adjustToxLoss(-50)
-			alien_invis = 1.0
-			update_icons()
-			src << "\green You are now invisible."
-			for(var/mob/O in oviewers(src, null))
-				O.show_message(text("\red <B>[src] fades into the surroundings!</B>"), 1)
-			spawn(250)
-				if(!isnull(src))//Don't want the game to runtime error when the mob no-longer exists.
-					alien_invis = 0.0
-					update_icons()
-					src << "\green You are no longer invisible."
-	return
-*/
 
 
 /mob/living/carbon/alien/humanoid/hunter/verb/evolve2() // -- TLE
