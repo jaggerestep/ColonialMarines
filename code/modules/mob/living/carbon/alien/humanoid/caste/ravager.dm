@@ -33,6 +33,7 @@
 	M.Scale(1.15,1.15)
 	src.transform = M
 	verbs -= /mob/living/carbon/alien/verb/ventcrawl
+	verbs -= /atom/movable/verb/pull
 	pixel_x = -18
 	..()
 
@@ -41,19 +42,20 @@
 	handle_regular_hud_updates()
 
 		..() //-Yvarov
+		var/AHF = maxHealth/5 //Alien Health Fraction
 
 		if (healths)
 			if (stat != 2)
 				switch(health)
-					if(400 to INFINITY)
+					if(AHF*4 to INFINITY)
 						healths.icon_state = "health0"
-					if(300 to 400)
+					if(AHF*3 to AHF*4)
 						healths.icon_state = "health1"
-					if(200 to 300)
+					if(AHF*2 to AHF*3)
 						healths.icon_state = "health2"
-					if(100 to 200)
+					if(AHF to AHF*2)
 						healths.icon_state = "health3"
-					if(0 to 100)
+					if(0 to AHF)
 						healths.icon_state = "health4"
 					else
 						healths.icon_state = "health5"

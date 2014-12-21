@@ -42,6 +42,7 @@
 	src.real_name = src.name
 	verbs.Add(/mob/living/carbon/alien/humanoid/proc/resin,/mob/living/carbon/alien/humanoid/proc/weak_acid)
 	growJelly()
+	verbs -= /atom/movable/verb/pull
 	/*var/matrix/M = matrix()
 	M.Scale(0.9,0.9)
 	src.transform = M
@@ -124,21 +125,22 @@
 	handle_regular_hud_updates()
 
 		..() //-Yvarov
+		var/AHF = maxHealth/5 //Alien Health Fraction
 
-		if (src.healths)
-			if (src.stat != 2)
+		if (healths)
+			if (stat != 2)
 				switch(health)
-					if(164 to INFINITY)
-						src.healths.icon_state = "health0"
-					if(123 to 164)
-						src.healths.icon_state = "health1"
-					if(82 to 123)
-						src.healths.icon_state = "health2"
-					if(41 to 82)
-						src.healths.icon_state = "health3"
-					if(0 to 41)
-						src.healths.icon_state = "health4"
+					if(AHF*4 to INFINITY)
+						healths.icon_state = "health0"
+					if(AHF*3 to AHF*4)
+						healths.icon_state = "health1"
+					if(AHF*2 to AHF*3)
+						healths.icon_state = "health2"
+					if(AHF to AHF*2)
+						healths.icon_state = "health3"
+					if(0 to AHF)
+						healths.icon_state = "health4"
 					else
-						src.healths.icon_state = "health5"
+						healths.icon_state = "health5"
 			else
-				src.healths.icon_state = "health6"
+				healths.icon_state = "health6"

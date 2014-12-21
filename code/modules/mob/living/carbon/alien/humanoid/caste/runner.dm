@@ -71,19 +71,20 @@
 	handle_regular_hud_updates()
 
 		..() //-Yvarov
+		var/AHF = maxHealth/5 //Alien Health Fraction
 
 		if (healths)
 			if (stat != 2)
 				switch(health)
-					if(100 to INFINITY)
+					if(AHF*4 to INFINITY)
 						healths.icon_state = "health0"
-					if(75 to 100)
+					if(AHF*3 to AHF*4)
 						healths.icon_state = "health1"
-					if(50 to 75)
+					if(AHF*2 to AHF*3)
 						healths.icon_state = "health2"
-					if(25 to 50)
+					if(AHF to AHF*2)
 						healths.icon_state = "health3"
-					if(0 to 25)
+					if(0 to AHF)
 						healths.icon_state = "health4"
 					else
 						healths.icon_state = "health5"

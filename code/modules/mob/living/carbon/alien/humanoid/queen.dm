@@ -77,6 +77,7 @@
 	reagents = R
 	R.my_atom = src
 	hive_controller.active_queen = src
+	verbs -= /atom/movable/verb/pull
 	//there should only be one queen
 	for(var/mob/living/carbon/alien/humanoid/queen/Q in living_mob_list)
 		if(Q == src)		continue
@@ -100,24 +101,25 @@
 	handle_regular_hud_updates()
 
 		..() //-Yvarov
+		var/AHF = maxHealth/5 //Alien Health Fraction
 
-		if (src.healths)
-			if (src.stat != 2)
+		if (healths)
+			if (stat != 2)
 				switch(health)
-					if(560 to INFINITY)
-						src.healths.icon_state = "health0"
-					if(420 to 560)
-						src.healths.icon_state = "health1"
-					if(280 to 420)
-						src.healths.icon_state = "health2"
-					if(140 to 280)
-						src.healths.icon_state = "health3"
-					if(0 to 140)
-						src.healths.icon_state = "health4"
+					if(AHF*4 to INFINITY)
+						healths.icon_state = "health0"
+					if(AHF*3 to AHF*4)
+						healths.icon_state = "health1"
+					if(AHF*2 to AHF*3)
+						healths.icon_state = "health2"
+					if(AHF to AHF*2)
+						healths.icon_state = "health3"
+					if(0 to AHF)
+						healths.icon_state = "health4"
 					else
-						src.healths.icon_state = "health5"
+						healths.icon_state = "health5"
 			else
-				src.healths.icon_state = "health6"
+				healths.icon_state = "health6"
 
 /mob/living/carbon/alien/humanoid/queen/Life()
 	..()
