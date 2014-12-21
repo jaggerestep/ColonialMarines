@@ -15,5 +15,5 @@ sasoperative: Joseph Skinner: /obj/item/clothing/head/helmet/swat/marine
 tophatpenguin: Osalaa Wooki: /obj/item/clothing/head/helmet/marine/fluff/santahat
 tophatpenguin: Osalaa Wooki: /obj/item/clothing/suit/storage/marine/fluff/santa
 docdemo: Kristofferson: /obj/item/clothing/head/helmet/marine/fluff/goldtrimberet
-obey_stylez: Marshall Mathers: /obj/item/clothing/suit/armor/vest/fluff/red_hardsuit
-obey_stylez: Marshall Mathers: /obj/item/clothing/mask/balaclava
+obeystylez: Marshall Mathers: /obj/item/clothing/suit/armor/vest/fluff/red_hardsuit
+obeystylez: Marshall Mathers: /obj/item/clothing/mask/balaclava
