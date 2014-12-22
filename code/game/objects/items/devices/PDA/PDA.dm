@@ -947,6 +947,8 @@ var/global/list/obj/item/device/pda/PDAs = list()
 					id_check(user, 2)
 					user << "<span class='notice'>You put the ID into \the [src]'s slot.</span>"
 					updateSelfDialog()//Update self dialog on success.
+					ownjob = id.assignment
+					name = "PDA-[owner] ([ownjob])"
 			return	//Return in case of failed check or when successful.
 		updateSelfDialog()//For the non-input related code.
 	else if(istype(C, /obj/item/device/paicard) && !src.pai)
