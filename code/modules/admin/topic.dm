@@ -1455,10 +1455,10 @@
 		var/input = input(src.owner, "Please enter a message to reply to [key_name(H)] via their headset.","Outgoing message from Centcomm", "")
 		if(!input)	return
 
-		src.owner << "You sent [input] to [H] via a secure channel."
-		log_admin("[src.owner] replied to [key_name(H)]'s Centcomm message with the message [input].")
+		src.owner << "<b>You sent to [H]: \"[input]\"</b>"
+		log_admin("[src.owner] replied to [key_name(H)]'s Centcomm message with: \"[input]\"")
 		message_admins("[src.owner] replied to [key_name(H)]'s Centcom message with: \"[input]\"")
-		H << "You hear something crackle in your headset for a moment before a voice speaks.  \"Please stand by for a message from Central Command.  Message as follows. <b>\"[input]\"</b>  Message ends.\""
+		H << "\red You hear something crackle in your headset before a voice speaks, \"Please stand by for a message from Central Command:\" \blue <b>\"[input]\"</b>"
 
 	else if(href_list["SyndicateReply"])
 		var/mob/living/carbon/human/H = locate(href_list["SyndicateReply"])
