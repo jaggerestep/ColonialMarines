@@ -127,6 +127,8 @@ proc/move_marine_b_shuttle()
 	var/hacked = 0
 	var/location = 0
 	var/disabled = 0
+	use_power = 0
+	unacidable = 1
 
 /obj/machinery/computer/marine_a_shuttle/attack_paw(user as mob)
 	if(..(user))
@@ -203,27 +205,27 @@ proc/move_marine_b_shuttle()
 		hacked = 1
 		usr << "You fried the consoles ID checking system. It's now available to everyone!"
 
-	else if(istype(W, /obj/item/weapon/screwdriver))
-		playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
-		if(do_after(user, 20))
-			var/obj/structure/computerframe/A = new /obj/structure/computerframe( src.loc )
-			var/obj/item/weapon/circuitboard/marine_a_shuttle/M = new /obj/item/weapon/circuitboard/marine_a_shuttle( A )
-			for (var/obj/C in src)
-				C.loc = src.loc
-			A.circuit = M
-			A.anchored = 1
+	// else if(istype(W, /obj/item/weapon/screwdriver))
+		// playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+		// if(do_after(user, 20))
+			// var/obj/structure/computerframe/A = new /obj/structure/computerframe( src.loc )
+			// var/obj/item/weapon/circuitboard/marine_a_shuttle/M = new /obj/item/weapon/circuitboard/marine_a_shuttle( A )
+			// for (var/obj/C in src)
+				// C.loc = src.loc
+			// A.circuit = M
+			// A.anchored = 1
 
-			if (src.stat & BROKEN)
-				user << "\blue The broken glass falls out."
-				new /obj/item/weapon/shard( src.loc )
-				A.state = 3
-				A.icon_state = "3"
-			else
-				user << "\blue You disconnect the monitor."
-				A.state = 4
-				A.icon_state = "4"
+			// if (src.stat & BROKEN)
+				// user << "\blue The broken glass falls out."
+				// new /obj/item/weapon/shard( src.loc )
+				// A.state = 3
+				// A.icon_state = "3"
+			// else
+				// user << "\blue You disconnect the monitor."
+				// A.state = 4
+				// A.icon_state = "4"
 
-			del(src)
+			// del(src)
 
 /obj/machinery/computer/marine_b_shuttle
 	name = "marine transport shuttle two console"
@@ -234,6 +236,8 @@ proc/move_marine_b_shuttle()
 	var/hacked = 0
 	var/location = 0
 	var/disabled = 0
+	use_power = 0
+	unacidable = 1
 
 /obj/machinery/computer/marine_b_shuttle/attack_paw(user as mob)
 	if(..(user))
@@ -245,9 +249,9 @@ proc/move_marine_b_shuttle()
 	if(istype(user,/mob/living/carbon/alien) && !istype(user,/mob/living/carbon/alien/humanoid/queen))
 		user << "\red You can't understand the markings. Only the queen can access this."
 		return
-	if(disabled)
-		user << "This shuttle has been disabled."
-		return
+	// if(disabled)
+		// user << "This shuttle has been disabled."
+		// return
 
 	src.add_fingerprint(usr)
 
@@ -312,27 +316,27 @@ proc/move_marine_b_shuttle()
 		hacked = 1
 		usr << "You fried the consoles ID checking system. It's now available to everyone!"
 
-	else if(istype(W, /obj/item/weapon/screwdriver))
-		playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
-		if(do_after(user, 20))
-			var/obj/structure/computerframe/A = new /obj/structure/computerframe( src.loc )
-			var/obj/item/weapon/circuitboard/marine_b_shuttle/M = new /obj/item/weapon/circuitboard/marine_b_shuttle( A )
-			for (var/obj/C in src)
-				C.loc = src.loc
-			A.circuit = M
-			A.anchored = 1
+	// else if(istype(W, /obj/item/weapon/screwdriver))
+		// playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+		// if(do_after(user, 20))
+			// var/obj/structure/computerframe/A = new /obj/structure/computerframe( src.loc )
+			// var/obj/item/weapon/circuitboard/marine_b_shuttle/M = new /obj/item/weapon/circuitboard/marine_b_shuttle( A )
+			// for (var/obj/C in src)
+				// C.loc = src.loc
+			// A.circuit = M
+			// A.anchored = 1
 
-			if (src.stat & BROKEN)
-				user << "\blue The broken glass falls out."
-				new /obj/item/weapon/shard( src.loc )
-				A.state = 3
-				A.icon_state = "3"
-			else
-				user << "\blue You disconnect the monitor."
-				A.state = 4
-				A.icon_state = "4"
+			// if (src.stat & BROKEN)
+				// user << "\blue The broken glass falls out."
+				// new /obj/item/weapon/shard( src.loc )
+				// A.state = 3
+				// A.icon_state = "3"
+			// else
+				// user << "\blue You disconnect the monitor."
+				// A.state = 4
+				// A.icon_state = "4"
 
-			del(src)
+			// del(src)
 
 /obj/item/weapon/circuitboard/marine_a_shuttle
 	name = "Circuit board (Marine Transport Shuttle One)"

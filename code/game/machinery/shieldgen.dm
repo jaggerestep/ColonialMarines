@@ -235,6 +235,10 @@
 	if(is_open)
 		user << "The panel must be closed before operating this machine."
 		return
+	if(istype(user, /mob/living/carbon/alien))
+		visible_message("\red [user] stares cluelessly at [src].")
+		return 1
+
 
 	if (src.active)
 		user.visible_message("\blue \icon[src] [user] deactivated the shield generator.", \
@@ -376,6 +380,10 @@
 	if(power != 1)
 		user << "\red The shield generator needs to be powered by wire underneath."
 		return 1
+	if(istype(user, /mob/living/carbon/alien))
+		visible_message("\red [user] stares cluelessly at [src].")
+		return 1
+
 
 	if(src.active >= 1)
 		src.active = 0
