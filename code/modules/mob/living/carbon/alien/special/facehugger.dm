@@ -36,7 +36,7 @@ var/const/MAX_ACTIVE_TIME = 250
 	healthcheck()
 
 
-/*    Huggers movement Temp Disabled
+// HUGGER MOVEMENT AI
 /obj/item/clothing/mask/facehugger/proc/targetting()
 	spawn while(1)
 		if(stat == DEAD || stat == UNCONSCIOUS)
@@ -82,7 +82,9 @@ var/const/MAX_ACTIVE_TIME = 250
 					findtarget()
 					return
 
-*/
+//END HUGGER MOVEMENT AI
+
+
 /obj/item/clothing/mask/facehugger/attack_paw(user as mob) //can be picked up by aliens
 	if(isalien(user))
 		attack_hand(user)
