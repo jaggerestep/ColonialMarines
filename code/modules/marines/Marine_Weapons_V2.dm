@@ -219,7 +219,7 @@
 	desc = "When shits gets serious! You can slide this knife into your boots."
 	flags = FPRINT | TABLEPASS | CONDUCT
 	sharp = 1
-	force = 25
+	force = 35
 	w_class = 1.0
 	throwforce = 20
 	throw_speed = 3
