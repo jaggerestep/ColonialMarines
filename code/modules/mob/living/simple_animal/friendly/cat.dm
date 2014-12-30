@@ -62,7 +62,7 @@
 
 //RUNTIME IS ALIVE! SQUEEEEEEEE~
 /mob/living/simple_animal/cat/Runtime
-	name = "Runtime"
+	name = "Jones"
 	desc = "Its fur has the look and feel of velvet, and it's tail quivers occasionally."
 
 
