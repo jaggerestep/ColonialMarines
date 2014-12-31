@@ -6,8 +6,8 @@ Gasfornuisje - Game Admin
 coroneljones - Game Admin
 minimike1220 - Trial Admin
 Caryl - Game Admin
-unknownmurder - Moderator
-Rahlzel - Coder
+unknownmurder - Trial Admin
+Rahlzel - Developer
 Infernus44 - Mapper
 speedybast - Moderator
 Chaznoodles - Moderator
