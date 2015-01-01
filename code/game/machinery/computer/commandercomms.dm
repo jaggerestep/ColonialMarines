@@ -86,14 +86,14 @@
 			var/input = stripped_input(usr, "What is the nature of your emergency?", "Request Heavy Infantry Team")
 			for(var/client/C in admins)
 				if(R_ADMIN & C.holder.rights)
-					C << "<span class=\"admin\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[usr] has requested a Heavy Infantry Team. Emergency: [input]</span>"
+					C << "<span class=\"adminlog\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[usr] has requested a Heavy Infantry Team. Emergency: [input]</span>"
 					C << 'sound/effects/sos-morse-code.ogg'
 					usr << "\blue Heavy Infantry request sent to CentCom Special Forces department."
 		if("callshuttle2")
 			var/input = stripped_input(usr, "What is the nature of your emergency?", "Request Emergency Shuttle")
 			for(var/client/C in admins)
 				if(R_ADMIN & C.holder.rights)
-					C << "<span class=\"admin\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[usr] has requested an emergency shuttle. Emergency: [input]</span>"
+					C << "<span class=\"adminlog\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[usr] has requested an emergency shuttle. Emergency: [input]</span>"
 					C << 'sound/effects/sos-morse-code.ogg'
 					usr << "\blue Emergency Shuttle request sent to CentCom."
 
