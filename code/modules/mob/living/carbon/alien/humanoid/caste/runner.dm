@@ -64,6 +64,12 @@
 	..()
 
 
+//Prevents Runner from pulling things
+/mob/living/carbon/alien/humanoid/start_pulling(var/atom/movable/AM)
+	src << "<span class='warning'>You don't have the dexterity to pull anything.</span>"
+	return
+
+
 
 /mob/living/carbon/alien/humanoid/runner
 
