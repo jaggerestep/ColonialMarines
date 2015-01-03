@@ -386,7 +386,7 @@ v
 	new /obj/item/ammo_magazine/m4a3(src)
 	new /obj/item/ammo_magazine/m4a3(src)
 
-
+/* SLATED TO BE DELETED 05JAN2014 IF FIX WORKS - APOPHIS
 /////////////TEMP DONOR ITEM STOAGE BECAUSE APOPHIS SUCKS
 
 ////SS13 DONATOR CUSTOM ITEM STORAGE ZONE OF MAGICAL HAPPINESS
@@ -412,3 +412,4 @@ v
 	blood_overlay_type = "armor"
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0
+*/
