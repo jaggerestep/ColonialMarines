@@ -1,19 +1,19 @@
 ////SS13 DONATOR CUSTOM ITEM STORAGE ZONE OF MAGICAL HAPPINESS
 
-/obj/item/clothing/under/fluff/turtleneck/Obey
+/obj/item/clothing/under/fluff/turtleneck/obey
 	name = "Black Ops Turtleneck"
 	desc = "A $900 black turtleneck woven from only the purest Azerbaijani cashmere wool."
 
-/obj/item/clothing/mask/balaclava/Obey
+/obj/item/clothing/mask/balaclava/obey
 	name = "Black Ops Balaclava"
 	desc = "The latest fashion, when your trying to hide your identity."
 	flags_inv = 0
 
-/obj/item/clothing/gloves/black/Obey
+/obj/item/clothing/gloves/black/obey
 	desc = "Black gloves, favored by Special Operations teams."
 	name = "Black Ops Black Gloves"
 
-/obj/item/clothing/suit/armor/fluff/Obey
+/obj/item/clothing/suit/armor/fluff/obey
 	name = "Black Ops Ablative Armor Vest"
 	desc = "Some fancy looking armor, that probably won't help in combat."
 	icon_state = "armor_reflec"
