@@ -57,7 +57,6 @@
 	real_name = name
 	growJelly()
 	verbs -= /atom/movable/verb/pull
-
 	//var/matrix/M = matrix()
 	//M.Scale(1.15,1.1)
 	//src.transform = M
