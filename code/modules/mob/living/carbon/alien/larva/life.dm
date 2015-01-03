@@ -219,6 +219,27 @@ FUCK YOU MORE FAT CODE -Hawk*/
 
 		return //TODO: DEFERRED
 
+	var/locating = 0
+	proc/queen_locator()
+		if(locate_queen)
+			for(var/mob/living/carbon/alien/humanoid/queen/M in mob_list)
+				if(M && M.stat != DEAD)
+					target = M
+				else
+					target = null
+		if(!target)
+			locate_queen.icon_state = "trackoff"
+			return
+
+		locate_queen.dir = get_dir(src,target)
+		if(target && target != src)
+			if(get_dist(src, target) != 0)
+				locate_queen.icon_state = "trackon"
+			else
+				locate_queen.icon_state = "trackondirect"
+
+		spawn(10) .()
+
 	proc/handle_regular_status_updates()
 		updatehealth()
 
