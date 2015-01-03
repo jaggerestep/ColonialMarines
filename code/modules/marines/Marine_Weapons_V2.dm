@@ -150,6 +150,7 @@
 	ammo_type = "/obj/item/ammo_casing/m39"
 	fire_delay = 0
 	force = 9.0
+	ejectshell = 0 //Caseless
 
 	isHandgun()
 		return 0
@@ -169,6 +170,7 @@
 	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
 	load_method = 2
 	force = 10.0
+	ejectshell = 0 //Caseless
 	fire_delay = 4
 	slot_flags = SLOT_BACK
 
