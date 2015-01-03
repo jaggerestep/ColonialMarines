@@ -187,6 +187,6 @@
 	usedpounce--
 
 //Stops runners from pulling APOPHIS775 03JAN2015
-/mob/living/carbon/alien/humanoid/start_pulling(var/atom/movable/AM)
+/mob/living/carbon/alien/humanoid/runner/start_pulling(var/atom/movable/AM)
 	src << "<span class='warning'>You don't have the dexterity to pull anything.</span>"
 	return
