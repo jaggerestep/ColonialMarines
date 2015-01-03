@@ -29,6 +29,11 @@
 	real_name = name
 	..()
 
+//Prevents aliens from pulling things - APOPHIS 02JAN2014
+/mob/living/carbon/alien/humanoid/start_pulling(var/atom/movable/AM)
+	src << "<span class='warning'>You don't have the dexterity to pull anything.</span>"
+	return
+
 //This is fine, works the same as a human
 /mob/living/carbon/alien/humanoid/Bump(atom/movable/AM as mob|obj, yes)
 	spawn( 0 )

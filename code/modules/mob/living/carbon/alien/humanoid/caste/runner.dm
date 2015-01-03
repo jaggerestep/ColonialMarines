@@ -71,10 +71,11 @@
 	handle_regular_hud_updates()
 
 		..() //-Yvarov
+		var/HP = (health/maxHealth)*100
 
 		if (healths)
 			if (stat != 2)
-				switch(health)
+				switch(HP)
 					if(80 to INFINITY)
 						healths.icon_state = "health0"
 					if(60 to 80)
