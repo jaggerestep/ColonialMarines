@@ -28,7 +28,7 @@
 	set desc = "Report a bug."
 	set hidden = 1
 	//src << browse(file(RULES_FILE), "window=rules;size=480x320")
-	src << link("http://newedenstation.com/forumdisplay.php?fid=70")
+	src << link("http://newedenstation.com/showthread.php?tid=555")
 
 
 #define RULES_FILE "config/rules.html"
