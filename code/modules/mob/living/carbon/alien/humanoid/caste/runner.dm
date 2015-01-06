@@ -9,8 +9,8 @@
 	plasma_rate = 5 //old was 10
 	damagemin = 23 //OLD DAMAGE WAS 26
 	damagemax = 28 //OLD DAMAGE WAS 29
-	tacklemin = 3 //OLD MIN WAS 2
-	tacklemax = 5
+	tacklemin = 2 //OLD MIN WAS 2
+	tacklemax = 4
 	tackle_chance = 80 //Should not be above 100%
 	heal_rate = 4
 	psychiccost = 8

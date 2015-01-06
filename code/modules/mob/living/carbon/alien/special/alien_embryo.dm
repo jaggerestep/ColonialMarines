@@ -108,7 +108,7 @@
 						affected_mob.updatehealth()
 			if(6)
 				stage = 4
-				stage_age = 37
+				stage_age = 57
 		sleep(20)
 
 /obj/item/alien_embryo/proc/AttemptGrow(var/gib_on_success = 1)
