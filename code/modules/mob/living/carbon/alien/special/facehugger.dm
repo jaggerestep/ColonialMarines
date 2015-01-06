@@ -191,6 +191,7 @@ var/const/MAX_ACTIVE_TIME = 250
 		Attach(hit_atom)
 
 /obj/item/clothing/mask/facehugger/proc/Attach(mob/living/M as mob)
+	var/preggers = rand(MIN_IMPREGNATION_TIME,MAX_IMPREGNATION_TIME)
 	if( (!iscorgi(M) && !iscarbon(M)) || isalien(M))
 		return
 	if(iscarbon(M) && M.status_flags & XENO_HOST)
@@ -245,7 +246,7 @@ var/const/MAX_ACTIVE_TIME = 250
 
 		target.equip_to_slot(src, slot_wear_mask)
 
-		if(!sterile) L.Sleeping(MAX_IMPREGNATION_TIME/10) //something like 25 ticks = 20 seconds with the default settings
+		if(!sterile) L.Sleeping((preggers/10)+10) //something like 25 ticks = 20 seconds with the default settings
 	else if (iscorgi(M))
 		var/mob/living/simple_animal/corgi/C = M
 		src.loc = C
@@ -255,7 +256,7 @@ var/const/MAX_ACTIVE_TIME = 250
 
 	GoIdle(150) //so it doesn't jump the people that tear it off
 
-	spawn(rand(MIN_IMPREGNATION_TIME,MAX_IMPREGNATION_TIME))
+	spawn(preggers)
 		Impregnate(L)
 
 	return

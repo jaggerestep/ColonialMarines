@@ -62,9 +62,9 @@
 /obj/item/projectile/energy/weak_neurotoxin
 	name = "neuro"
 	icon_state = "neurotoxin"
-	damage = 3
+	damage = 2
 	damage_type = TOX
-	weaken = 3
+	weaken = 2
 
 /obj/item/projectile/energy/super_neurotoxin
 	name = "neuro"
