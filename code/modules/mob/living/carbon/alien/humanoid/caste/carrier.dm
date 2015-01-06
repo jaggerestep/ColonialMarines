@@ -13,8 +13,8 @@
 	color = "#967d00"
 	damagemin = 20
 	damagemax = 30
-	tacklemin = 3
-	tacklemax = 5
+	tacklemin = 2
+	tacklemax = 4
 	tackle_chance = 60 //Should not be above 100%
 	var/THROWSPEED = 2
 	psychiccost = 32
