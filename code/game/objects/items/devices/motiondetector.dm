@@ -1,4 +1,4 @@
-/obj/item/weapon/motiondetector
+/obj/item/device/motiondetector
 	name = "motion detector"
 	icon = 'motiondetector.dmi'
 	icon_state = "off"
@@ -16,11 +16,11 @@
 mob/var/tracker_position = null
 mob/var/current_detector = null
 
-/obj/item/weapon/motiondetector/attack_self(mob/user as mob)
+/obj/item/device/motiondetector/attack_self(mob/user as mob)
 	CreateDetectorImage(user, 'detectorscreen.dmi')
 	ToggleDetector(user)
 
-/obj/item/weapon/motiondetector/proc/CreateDetectorImage(mob/user,image) //Creates the animated detector background
+/obj/item/device/motiondetector/proc/CreateDetectorImage(mob/user,image) //Creates the animated detector background
 	if(detector_image in user.client.screen)
 		return
 	else
@@ -29,7 +29,7 @@ mob/var/current_detector = null
 		user.client.screen+=detector_image
 	return
 
-/obj/item/weapon/motiondetector/proc/Redraw(mob/user)
+/obj/item/device/motiondetector/proc/Redraw(mob/user)
 	while(active && user.client)
 		var/mob/M = user
 		var/list/detected = list()
@@ -68,14 +68,15 @@ mob/var/current_detector = null
 				flick("blip", o)
 			detected = null
 			if(detector_ping)
-				playsound(src.loc, 'detector.ogg', 100) //If player isn't the only blip, play ping
+				playsound(src.loc, 'detector.ogg', 150) //If player isn't the only blip, play ping
 		flick("", detector_image)
 		sleep(4)
 	active = 0
 	icon_state = "off"
 	user.current_detector = null
+	winshow(user,"detectorwindow",0)
 
-/obj/item/weapon/motiondetector/proc/ToggleDetector(mob/user)
+/obj/item/device/motiondetector/proc/ToggleDetector(mob/user)
 	if(winget(user,"detectorwindow","is-visible")=="true" && user.current_detector == src) //Checks if radar window is already open and if radar is assigned
 		active = 0 //Sets the active state of the radar to off
 		icon_state = "off"
@@ -92,15 +93,15 @@ mob/var/current_detector = null
 		Redraw(user)
 	else user << "\red You're already using another tracker."
 
-/obj/item/weapon/motiondetector/verb/Toggle_Ping_Sound()
+/obj/item/device/motiondetector/verb/Toggle_Ping_Sound()
 	detector_ping = !detector_ping
 
-/obj/item/weapon/motiondetector/dropped(mob/user)
+/obj/item/device/motiondetector/dropped(mob/user)
 	if(active)
 		ToggleDetector(user) //Disables the radar if dropped
 		icon_state = "off"
 
-/obj/item/weapon/motiondetector/pickup(mob/user)
+/obj/item/device/motiondetector/pickup(mob/user)
 	if(active && user.current_detector == src) //If the radar on the floor is active and tied to the user
 		winshow(user,"detectorwindow",1)
 
