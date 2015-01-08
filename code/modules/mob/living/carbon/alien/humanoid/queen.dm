@@ -20,7 +20,7 @@
 /datum/hive_controller
 	var/mob/living/carbon/alien/humanoid/queen/active_queen
 	var/psychicstrength = 5
-	var/psychicstrengthmax = 250
+	var/psychicstrengthmax = 500
 	var/psychicstrengthused = 0
 	var/list/mob/living/carbon/alien/xenos = list()
 	var/count = 0

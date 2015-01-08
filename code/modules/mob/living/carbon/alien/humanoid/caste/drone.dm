@@ -1,15 +1,16 @@
+//ALIEN DRONE - UPDATED 07JAN2015 - APOPHIS
 /mob/living/carbon/alien/humanoid/drone
 	name = "alien drone"
 	caste = "Drone"
-	maxHealth = 205
-	health = 205
+	maxHealth = 170
+	health = 170
 	icon_state = "Drone Walking"
-	storedPlasma = 350   //OLD STORED: 100
-	max_plasma = 750 //OLD MAX: 500
-	damagemin = 20 //OLD MIN 26
-	damagemax = 20 //OLD MAX 32
-	heal_rate = 4
-	plasma_rate = 12
+	storedPlasma = 350
+	max_plasma = 750
+	damagemin = 12
+	damagemax = 16
+	heal_rate = 8
+	plasma_rate = 13
 	tacklemin = 2
 	tacklemax = 4 //old max 5
 	tackle_chance = 40 //Should not be above 100% old chance 50
@@ -35,6 +36,9 @@
 
 /mob/living/carbon/alien/humanoid/drone/New()
 	var/datum/reagents/R = new/datum/reagents(100)
+	src.frozen = 1
+	spawn (25)
+		src.frozen = 0
 	reagents = R
 	R.my_atom = src
 	if(src.name == "alien drone")
