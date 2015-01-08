@@ -1,18 +1,18 @@
 jaggerestep - Host
-Apophis775 - Developer
 sir octagon - Head Admin
+Apophis775 - Head Developer
 lucyz - Head Moderator
 Gasfornuisje - Game Admin
-coroneljones - Game Admin
-minimike1220 - Trial Admin
 Caryl - Game Admin
-unknownmurder - Trial Admin
+Felkvir - Game Admin
+coroneljones - Game Admin
 Rahlzel - Developer
+minimike1220 - Trial Admin
+unknownmurder - Trial Admin
 Infernus44 - Mapper
 speedybast - Moderator
 Chaznoodles - Moderator
 Allan1234 - Moderator
 Void00 - Moderator
-Dre9889 - Auditor
 SASoperative - Moderator
-Felkvir - Game Admin
+Dre9889 - Auditor
