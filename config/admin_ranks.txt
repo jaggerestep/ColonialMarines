@@ -36,6 +36,7 @@ Badmin 		+@
 Game Admin 	+@ 
 Head Moderator 	+@
 Head Admin 	+EVERYTHING
+Head Developer  +@
 Auditor 	+@
 Retired Admin 	+ADMIN +STEALTH
 Host 		+EVERYTHING 
