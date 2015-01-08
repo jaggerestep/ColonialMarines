@@ -17,7 +17,7 @@
 
 	var/hasJelly = 1
 	var/jellyProgress = 0
-	var/jellyProgressMax = 600
+	var/jellyProgressMax = 900
 	psychiccost = 25
 	Stat()
 		..()
@@ -38,13 +38,15 @@
 
 /mob/living/carbon/alien/humanoid/hunter/New()
 	var/datum/reagents/R = new/datum/reagents(100)
+	growJelly()
+	src.frozen = 1
+	spawn (50)
+		src.frozen = 0
 	reagents = R
 	R.my_atom = src
 	if(name == "alien warrior")
 		name = text("alien warrior ([rand(1, 1000)])")
 	real_name = name
-	verbs -= /atom/movable/verb/pull
-	growJelly()
 	..()
 
 /mob/living/carbon/alien/humanoid/hunter
