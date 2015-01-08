@@ -241,14 +241,15 @@
 	var/s = ""
 
 	if (config && config.server_name)
-		s += "<b>[config.server_name]</b> &#8212; "
+		s += "<a href=\"http://newedenstation.com/forumdisplay.php?fid=56\"><b>[config.server_name]</b> &#8212; "
 
-	s += "<b>NMV Sulaco</b> Now hosted by New Eden. ";
-	s += " ("
-	s += "" //Change this to wherever you want the hub to link to.
-	s += "[config.server_version]"
+	s += "<b>NMV Sulaco</b> | Hosted by New Eden";
+	//s += " ("
+	//s += "" //Change this to wherever you want the hub to link to.
+	//s += "[config.server_version]"
+	//s += ")"
+	s += "<br><img src=\"http://i.imgur.com/OQ5OIMJ.png\"><br>"
 	s += "</a>"
-	s += ")"
 
 	var/list/features = list()
 
