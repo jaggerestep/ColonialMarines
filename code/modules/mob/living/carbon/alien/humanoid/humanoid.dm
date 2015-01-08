@@ -63,39 +63,9 @@
 			now_pushing = null
 		return
 	return
-/*///////////////////////////////OLD MOVEMENT DELAY CODE - DELETE 14DEC2014 IF NEW CODE WORKS GOOD
-/mob/living/carbon/alien/humanoid/movement_delay(var/turf/T)   //EVENTUALLY GONNA TURN THIS INTO A BASIC RETURN, WITHOUT ALL THIS UNNECESSARY MATH poop.
-	var/tally = -0.6
-	T = src.loc
-	if ((locate(/obj/effect/alien/weeds) in T) && istype(src, /mob/living/carbon/alien/humanoid/queen))
-		tally += 2
-	else if (istype(src, /mob/living/carbon/alien/humanoid/queen))
-		tally += 3
 
-	if ((locate(/obj/effect/alien/weeds) in T) && istype(src, /mob/living/carbon/alien/humanoid/drone))
-		tally += -1
-	else if (istype(src, /mob/living/carbon/alien/humanoid/drone))
-		tally += -1
 
-	if (istype(src, /mob/living/carbon/alien/humanoid/sentinel))
-		tally += 0
-	if ((locate(/obj/effect/alien/weeds) in T) && istype(src, /mob/living/carbon/alien/humanoid/queen))
-		tally = 1
-	else if (istype(src, /mob/living/carbon/alien/humanoid/praetorian))
-		tally += 2
-	if (istype(src, /mob/living/carbon/alien/humanoid/ravager))
-		tally += 1.5
-	if (istype(src, /mob/living/carbon/alien/humanoid/hivelord))
-		tally += 1.5
-	if (istype(src, /mob/living/carbon/alien/humanoid/carrier))
-		tally += 0
-	if (istype(src, /mob/living/carbon/alien/humanoid/hunter))
-		tally = -1 // hunters go supersuperfast
-	return (tally + move_delay_add + config.alien_delay)  //OR, IT COULD JUST RETURN THE DELAY FROM HERE, AND THE PREVIOUS DELAY AS A NUMBER
-
-*////////////////////////
-
-///////////////////////////NEW MOVEMENT CODE OF SEX
+///////////////////////////NEW MOVEMENT CODE OF SEX - Apophis
 
 /mob/living/carbon/alien/humanoid/movement_delay(var/turf/T)
 	var/speed = 0
@@ -119,7 +89,7 @@
 	else if (istype(src, /mob/living/carbon/alien/humanoid/sentinel))
 		speed = -1
 	else if (istype(src, /mob/living/carbon/alien/humanoid/spitter))
-		speed = -1
+		speed = -0.5
 	else if (istype(src, /mob/living/carbon/alien/humanoid/corroder))
 		speed = 1
 	speed +=move_delay_add

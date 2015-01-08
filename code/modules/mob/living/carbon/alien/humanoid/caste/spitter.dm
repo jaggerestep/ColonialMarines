@@ -9,14 +9,14 @@
 	plasma_rate = 30
 	var/progress = 0
 	var/hasJelly = 1
-	var/progressmax = 900 //was 1500
-	damagemin = 35 //old min was 24
-	damagemax = 40 //old max was 27
+	var/progressmax = 900
+	damagemin = 20
+	damagemax = 26
 	tacklemin = 3
 	tacklemax = 5
 	tackle_chance = 60 //Should not be above 100% old was 65
 	heal_rate = 3
-	psychiccost = 20 //was 16
+	psychiccost = 25
 	Stat()
 		..()
 		stat(null, "Jelly Progress: [progress]/[progressmax]")
@@ -36,6 +36,9 @@
 
 /mob/living/carbon/alien/humanoid/spitter/New()
 	var/datum/reagents/R = new/datum/reagents(100)
+	src.frozen = 1
+	spawn (50)
+		src.frozen = 0
 	reagents = R
 	R.my_atom = src
 	if(name == "alien spitter")

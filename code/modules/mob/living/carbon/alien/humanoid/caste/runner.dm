@@ -1,26 +1,27 @@
+//ALIEN RUNNER - UPDATED 07JAN2015 - APOPHIS
 /mob/living/carbon/alien/humanoid/runner
 	name = "alien runner"
 	caste = "Runner"
-	maxHealth = 100
-	health = 100
+	maxHealth = 80
+	health = 80
 	storedPlasma = 50
 	max_plasma = 100
 	icon_state = "Runner Walking"
-	plasma_rate = 5 //old was 10
-	damagemin = 23 //OLD DAMAGE WAS 26
-	damagemax = 28 //OLD DAMAGE WAS 29
-	tacklemin = 2 //OLD MIN WAS 2
+	plasma_rate = 5
+	damagemin = 23
+	damagemax = 28
+	tacklemin = 2
 	tacklemax = 4
 	tackle_chance = 80 //Should not be above 100%
 	heal_rate = 4
-	psychiccost = 8
+	psychiccost = 25
 	var/usedpounce = 0
 
 
 	//RUNNERS NOW USE JELLY, SINCE THEY EVOLVE INTO HUNTERS
 	var/hasJelly = 0
 	var/jellyProgress = 0
-	var/jellyProgressMax = 500
+	var/jellyProgressMax = 750
 	Stat()
 		..()
 		stat(null, "Jelly Progress: [jellyProgress]/[jellyProgressMax]")
@@ -37,19 +38,11 @@
 			return 0
 		return 1
 
-//TEST fix of runners getting plasma without jelly
-/*
-/mob/living/carbon/alien/humanoid/runner/Stat()
-	..()
-	stat(null, "Progress: [jellyProgress]/[jellyProgressMax]")
-
-/mob/living/carbon/alien/humanoid/runner/adjustToxLoss(amount)
-	if(stat != DEAD)
-		jellyProgress = min(jellyProgress + 1, jellyProgressMax)
-	..(amount)*/
-
 /mob/living/carbon/alien/humanoid/runner/New()
 	var/datum/reagents/R = new/datum/reagents(100)
+	src.frozen = 1
+	spawn (25)
+		src.frozen = 0
 	reagents = R
 	R.my_atom = src
 	if(name == "alien runner")
@@ -107,6 +100,9 @@
 		return
 	if(src.stat != CONSCIOUS)
 		src << "You are unable to do that now."
+		return
+	if(health<maxHealth)
+		src << "\red You are too hurt to Evolve."
 		return
 	src << "\blue <b>You are growing into a Warrior!</b>"
 

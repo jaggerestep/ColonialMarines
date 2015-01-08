@@ -224,7 +224,7 @@ Doesn't work on other aliens/AI.*/
 			A.xo = targloc.x - curloc.x
 			adjustToxLoss(-100)
 			A.process()
-			usedneurotox = 2
+			usedneurotox = 6
 		else
 			src << "\red We see no prey.."
 	return
@@ -258,7 +258,7 @@ Doesn't work on other aliens/AI.*/
 			A.xo = targloc.x - curloc.x
 			adjustToxLoss(-100)
 			A.process()
-			usedneurotox = 5
+			usedneurotox = 3
 		else
 			src << "\red We see no prey.."
 	return

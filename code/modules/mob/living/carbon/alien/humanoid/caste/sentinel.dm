@@ -1,3 +1,4 @@
+//ALIEN SENTINEL - UPDATED 07JAN2015 - APOPHIS
 /mob/living/carbon/alien/humanoid/sentinel
 	name = "alien sentinel"
 	caste = "Sentinel"
@@ -6,17 +7,17 @@
 	storedPlasma = 100
 	max_plasma = 250
 	icon_state = "Sentinal Walking"
-	plasma_rate = 10
-	damagemin = 27 //old damage was 34
-	damagemax = 34 //old damage war 40
+	plasma_rate = 7
+	damagemin = 18
+	damagemax = 24
 	tacklemin = 2
-	tacklemax = 4 //old max was 5
-	tackle_chance = 50 //Should not be above 100% old was 60
-	heal_rate = 4
+	tacklemax = 4
+	tackle_chance = 50 //Should not be above 100%
+	heal_rate = 6
 	var/hasJelly = 0
 	var/jellyProgress = 0
-	var/jellyProgressMax = 500
-	psychiccost = 10
+	var/jellyProgressMax = 750
+	psychiccost = 25
 	Stat()
 		..()
 		stat(null, "Jelly Progress: [jellyProgress]/[jellyProgressMax]")
@@ -36,6 +37,9 @@
 
 /mob/living/carbon/alien/humanoid/sentinel/New()
 	var/datum/reagents/R = new/datum/reagents(100)
+	src.frozen = 1
+	spawn (25)
+		src.frozen = 0
 	reagents = R
 	R.my_atom = src
 	if(name == "alien sentinel")
@@ -62,6 +66,9 @@
 		return
 	if(src.stat != CONSCIOUS)
 		src << "You are unable to do that now."
+		return
+	if(health<maxHealth)
+		src << "\red You are too hurt to Evolve."
 		return
 	src << "\blue <b>You are growing into a Spitter!</b>"
 
