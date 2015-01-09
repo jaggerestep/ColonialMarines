@@ -10,8 +10,8 @@ commandercookies: Elliot Renold: /obj/item/clothing/head/helmet/marine/fluff/ell
 commandercookies: Elliot Renold: /obj/item/clothing/suit/storage/marine/fluff/armorammo
 sasoperative: Joseph Skinner: /obj/item/clothing/mask/gas/swat
 sasoperative: Joseph Skinner: /obj/item/clothing/under/fluff/turtleneck
-sasoperative: Joseph Skinner: /obj/item/clothing/suit/armor/reactive/deactive
-sasoperative: Joseph Skinner: /obj/item/clothing/head/helmet/swat/marine
+sasoperative: Joseph Skinner: /obj/item/clothing/suit/armor/fluff/sas
+sasoperative: Joseph Skinner: /obj/item/clothing/head/fluff/sas
 tophatpenguin: Osalaa Wooki: /obj/item/clothing/head/helmet/marine/fluff/santahat
 tophatpenguin: Osalaa Wooki: /obj/item/clothing/suit/storage/marine/fluff/santa
 docdemo: Kristofferson: /obj/item/clothing/head/helmet/marine/fluff/goldtrimberet
