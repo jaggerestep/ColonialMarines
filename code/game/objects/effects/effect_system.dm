@@ -155,6 +155,17 @@ steam.start() -- spawns the effect
 	anchored = 1.0
 	mouse_opacity = 0
 
+/obj/effect/effect/sparks/unpooled()
+	playsound(src.loc, "sparks", 100, 1)
+	var/turf/T = src.loc
+	if (istype(T, /turf))
+		T.hotspot_expose(1000,100)
+	spawn (100)
+		pool("spark", src)
+
+/obj/effect/effect/sparks/proc/init(newLoc)
+	loc = newLoc
+
 /obj/effect/effect/sparks/New()
 	..()
 	playsound(src.loc, "sparks", 100, 1)
@@ -200,7 +211,8 @@ steam.start() -- spawns the effect
 			spawn(0)
 				if(holder)
 					src.location = get_turf(holder)
-				var/obj/effect/effect/sparks/sparks = new /obj/effect/effect/sparks(src.location)
+				var/obj/effect/effect/sparks/sparks = unpool("spark", /obj/effect/effect/sparks)
+				sparks.init(src.location)
 				src.total_sparks++
 				var/direction
 				if(src.cardinals)
