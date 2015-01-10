@@ -1,4 +1,4 @@
-///**************NEW LORE COLONIAL MARINES WEAPON/VENDING06DEC2014 - BY APOPHIS**************///
+///**************NEW LORE COLONIAL MARINES WEAPON/VENDING 09JAN2015 - BY APOPHIS**************///
 
 
 
@@ -26,7 +26,7 @@
 	projectile_type = "/obj/item/projectile/bullet/m4a3"
 
 /obj/item/ammo_casing/m44m //44 Magnum Peacemaker
-	desc = "A 44 Magnul bullet casing."
+	desc = "A 44 Magnum bullet casing."
 	caliber = "38s"
 	projectile_type = "/obj/item/projectile/bullet/m44m"
 
@@ -50,7 +50,7 @@
 ///***Ammo Boxes***///
 
 /obj/item/ammo_magazine/m4a3 //45 Pistol
-	name = "Magazine (.45)"
+	name = "M4A3 Magazine (.45)"
 	desc = "A magazine with .45 ammo"
 	icon_state = ".45a"
 	ammo_type = "/obj/item/ammo_casing/m4a3"
@@ -66,7 +66,7 @@
 	return
 
 /obj/item/ammo_magazine/m44m // 44 Magnum Peacemaker
-	name = "Speed loader (44 Mag)"
+	name = "44 Magnum Speed Loader (.44)"
 	desc = "A 44 Magnum speed loader"
 	icon_state = "38"
 	ammo_type = "/obj/item/ammo_casing/m44m"
@@ -74,7 +74,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/m39 // M39 SMG
-	name = "Magazine (9mm-S)"
+	name = "M39 SMG Mag (9mm)"
 	desc = "A 9mm special magazine"
 	icon_state = "9x19p-8"
 	ammo_type = "/obj/item/ammo_casing/m39"
@@ -85,7 +85,7 @@
 	max_ammo = 0
 
 /obj/item/ammo_magazine/m41 //M41 Assault Rifle
-	name = "magazine (10mm-S)"
+	name = "M41A Magazine (10mm)"
 	desc = "A 10mm special magazine"
 	icon_state = "m309a"
 	ammo_type = "/obj/item/ammo_casing/m41"
@@ -97,7 +97,7 @@
 
 
 /obj/item/weapon/storage/box/m37 //M37 Shotgun
-	name = "box of shotgun shells"
+	name = "M37 Shotgun shells (box)"
 	desc = "It has a picture of a M37 shotgun on the side."
 	icon_state = "shells"
 	w_class = 2 //Can fit in belts
@@ -259,9 +259,9 @@
 					/obj/item/ammo_magazine/m41 = 25,
 					/obj/item/weapon/storage/box/m37 = 25,
 					/obj/item/ammo_magazine/a762 = 10,
-					/obj/item/ammo_magazine/a12mm = 25,
 
 
+					/obj/item/device/motiondetector = 5,
 					/obj/item/weapon/combat_knife = 5,
 					/obj/item/device/flashlight/flare = 10,
 					)

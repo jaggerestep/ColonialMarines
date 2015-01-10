@@ -1,5 +1,27 @@
-////SS13 DONATOR CUSTOM ITEM STORAGE ZONE OF MAGICAL HAPPINESS
+////SS13 DONATOR CUSTOM ITEM STORAGE ZONE OF MAGICAL HAPPINESS 09JAN2015 APOPHIS
 
+//General Donor Items
+/obj/item/clothing/suit/storage/marine/fluff/santa
+	name = "Santa's suit"
+	desc = "Festive!"
+	icon_state = "santa"
+	item_state = "santa"
+
+/obj/item/clothing/suit/storage/marine/fluff/cia
+	name = "CIA jacket"
+	desc = "An armored jacket with CIA on the back."
+	icon_state = "cia"
+	item_state = "cia"
+
+/obj/item/clothing/suit/storage/marine/fluff/armorammo
+	name = "marine armor w/ ammo"
+	desc = "A marine combat vest with ammunition on it."
+	icon_state = "bulletproofammo"
+	item_state = "bulletproofammo"
+	item_color = "bulletproofammo"
+
+
+//Specific Items for Specific People
 /obj/item/clothing/under/fluff/turtleneck/obey
 	name = "Black Ops Turtleneck"
 	desc = "A $900 black turtleneck woven from only the purest Azerbaijani cashmere wool.  DONOR ITEM"
