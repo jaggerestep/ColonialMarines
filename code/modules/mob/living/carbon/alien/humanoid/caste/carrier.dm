@@ -64,6 +64,11 @@
 	set name = "Throw Facehugger"
 	set desc = "Throw one of your facehuggers"
 	set category = "Alien"
+	if(health < 0)
+		src << "\red You can't throw huggers right now..."
+		if (health<-100)
+			src << "\red ...Because your dead."
+		return
 	if(facehuggers <= 0)
 		src << "\red You don't have any facehuggers to throw!"
 		return

@@ -163,6 +163,7 @@
 	icon_state = "hop"
 	item_color = "hop"
 
+//MARINE CLOTHING 09JAN2015 APOPHIS
 //ARMOR
 /obj/item/clothing/suit/storage/marine
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -178,22 +179,7 @@
 	armor = list(melee = 50, bullet = 80, laser = 50, energy = 10, bomb = 25, bio = 0, rad = 0)
 	siemens_coefficient = 0.7
 	allowed = list(/obj/item/weapon/gun/, /obj/item/weapon/tank/emergency_oxygen, /obj/item/device/flashlight,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/handcuffs,/obj/item/weapon/storage/fancy/cigarettes,/obj/item/weapon/lighter,/obj/item/weapon/grenade)
-/obj/item/clothing/suit/storage/marine/fluff/santa
-	name = "Santa's suit"
-	desc = "Festive!"
-	icon_state = "santa"
-	item_state = "santa"
-/obj/item/clothing/suit/storage/marine/fluff/cia
-	name = "CIA jacket"
-	desc = "An armored jacket with CIA on the back."
-	icon_state = "cia"
-	item_state = "cia"
-/obj/item/clothing/suit/storage/marine/fluff/armorammo
-	name = "marine armor w/ ammo"
-	desc = "A marine combat vest with ammunition on it."
-	icon_state = "bulletproofammo"
-	item_state = "bulletproofammo"
-	item_color = "bulletproofammo"
+
 /obj/item/clothing/suit/storage/marine/officer
 	name = "officer jacket"
 	desc = "The leather is fake, but the style is real."
@@ -349,14 +335,14 @@ v
 
 /obj/item/weapon/storage/belt/marine
 	name = "marine belt"
-	desc = "A standard issue toolbelt for Nanotrasen military forces."
+	desc = "A standard issue toolbelt for Colonial Marines."
 	icon_state = "securitybelt"
 	item_state = "security"//Could likely use a better one.
 	storage_slots = 7 //5
 	max_w_class = 3
 	max_combined_w_class = 10
 	can_hold = list(
-		"/obj/item/weapon/gun/projectile/m4a3",
+		"/obj/item/weapon/gun/projectile/pistol/m4a3",
 		"/obj/item/ammo_magazine/a12mm",
 		"/obj/item/ammo_magazine/c45",
 		"/obj/item/ammo_magazine/mc9mm",
@@ -385,31 +371,3 @@ v
 	new /obj/item/weapon/gun/projectile/pistol/m4a3(src)
 	new /obj/item/ammo_magazine/m4a3(src)
 	new /obj/item/ammo_magazine/m4a3(src)
-
-/* SLATED TO BE DELETED 05JAN2014 IF FIX WORKS - APOPHIS
-/////////////TEMP DONOR ITEM STOAGE BECAUSE APOPHIS SUCKS
-
-////SS13 DONATOR CUSTOM ITEM STORAGE ZONE OF MAGICAL HAPPINESS
-
-/obj/item/clothing/under/fluff/turtleneck/obey
-	name = "Black Ops Turtleneck"
-	desc = "A $900 black turtleneck woven from only the purest Azerbaijani cashmere wool."
-
-/obj/item/clothing/mask/balaclava/obey
-	name = "Black Ops Balaclava"
-	desc = "The latest fashion, when your trying to hide your identity."
-	flags_inv = 0
-
-/obj/item/clothing/gloves/black/obey
-	desc = "Black gloves, favored by Special Operations teams."
-	name = "Black Ops Black Gloves"
-
-/obj/item/clothing/suit/armor/fluff/obey
-	name = "Black Ops Ablative Armor Vest"
-	desc = "Some fancy looking armor, that probably won't help in combat."
-	icon_state = "armor_reflec"
-	item_state = "armor_reflec"
-	blood_overlay_type = "armor"
-	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
-	siemens_coefficient = 0
-*/
