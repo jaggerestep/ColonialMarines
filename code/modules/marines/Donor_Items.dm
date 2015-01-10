@@ -3,28 +3,29 @@
 //General Donor Items
 /obj/item/clothing/suit/storage/marine/fluff/santa
 	name = "Santa's suit"
-	desc = "Festive!"
+	desc = "Festive!  DONOR ITEM"
 	icon_state = "santa"
 	item_state = "santa"
 
 /obj/item/clothing/suit/storage/marine/fluff/cia
 	name = "CIA jacket"
-	desc = "An armored jacket with CIA on the back."
+	desc = "An armored jacket with CIA on the back.  DONOR ITEM"
 	icon_state = "cia"
 	item_state = "cia"
 
 /obj/item/clothing/suit/storage/marine/fluff/armorammo
 	name = "marine armor w/ ammo"
-	desc = "A marine combat vest with ammunition on it."
+	desc = "A marine combat vest with ammunition on it.  DONOR ITEM"
 	icon_state = "bulletproofammo"
 	item_state = "bulletproofammo"
 	item_color = "bulletproofammo"
 
-
-//Specific Items for Specific People
-/obj/item/clothing/under/fluff/turtleneck/obey
+/obj/item/clothing/under/fluff/turtleneck
 	name = "Black Ops Turtleneck"
 	desc = "A $900 black turtleneck woven from only the purest Azerbaijani cashmere wool.  DONOR ITEM"
+
+
+//Specific Items for Specific People
 
 /obj/item/clothing/mask/balaclava/obey
 	name = "Black Ops Balaclava"
