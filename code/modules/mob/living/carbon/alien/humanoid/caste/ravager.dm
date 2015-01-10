@@ -110,6 +110,12 @@
 	set desc = "Charge towards something."
 	set category = "Alien"
 
+	if(health<0)
+		src << "You can't charge while unconcious!"
+		return
+	if(stat == 2)
+		src << "You can't charge while dead!"
+
 	if(usedcharge <= world.time)
 		if(!T)
 			var/list/victims = list()

@@ -15,7 +15,8 @@ sasoperative: Joseph Skinner: /obj/item/clothing/head/fluff/sas
 tophatpenguin: Osalaa Wooki: /obj/item/clothing/head/helmet/marine/fluff/santahat
 tophatpenguin: Osalaa Wooki: /obj/item/clothing/suit/storage/marine/fluff/santa
 docdemo: Kristofferson: /obj/item/clothing/head/helmet/marine/fluff/goldtrimberet
-obeystylez: Marshall Mathers: /obj/item/clothing/under/fluff/turtleneck/obey
+obeystylez: Marshall Mathers: /obj/item/clothing/under/fluff/turtleneck
 obeystylez: Marshall Mathers: /obj/item/clothing/mask/balaclava/obey
 obeystylez: Marshall Mathers: /obj/item/clothing/gloves/black/obey
 obeystylez: Marshall Mathers: /obj/item/clothing/suit/armor/fluff/obey
+tophatpenguin: Osalaa Wooki: /obj/item/clothing/under/fluff/turtleneck
