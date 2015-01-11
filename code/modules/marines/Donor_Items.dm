@@ -48,16 +48,18 @@
 /obj/item/clothing/suit/armor/fluff/sas
 	name = "Juggernaut Armor"
 	desc = "Some fancy looking armor, that probably won't help in combat. DONOR ITEM"
-	icon_state = "syndicate"
-	item_state = "sydnicate"
+	icon_state = "rig-syndi"
+	item_state = "syndie_hardsuit"
 	blood_overlay_type = "armor"
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0
 
 /obj/item/clothing/head/fluff/sas
 	name = "Juggernaut Helmet"
-	icon_state = "syndicate"
-	item_state = "syndicate"
+	icon_state = "rig0-syndi"
+	item_state = "syndie_helm"
+	item_color = "syndi"
+
 	desc = "A red helmet, for pairing with JuggerNaut Armor. DONOR ITEM"
 	flags = FPRINT|TABLEPASS
 	siemens_coefficient = 0
