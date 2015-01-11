@@ -268,7 +268,7 @@
 //MARINE SUPPLY CRATES APOPHIS775 15JAN2015
 
 /obj/structure/closet/crate/large/marine/gear
-	name = "Marine Armor Crate"
+	name = "Marine Gear"
 	desc = "A crate containing standard issue Marine gear for 5 marines"
 	New()
 		..()
@@ -287,7 +287,7 @@
 	desc = "A crate with additional Alpha Squad Supplies"
 	New()
 		..()
-		for(var/c, c<5, c++)
+		for(var/c, c<10, c++)
 			new /obj/item/clothing/gloves/marine/alpha(src)
 			new /obj/item/device/radio/headset/malpha(src)
 		new /obj/item/device/radio/headset/malphal(src)
