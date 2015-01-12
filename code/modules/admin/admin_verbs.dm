@@ -233,6 +233,7 @@ var/list/admin_verbs_mod = list(
 	/client/proc/cmd_mod_pm_panel,	/*mod-pm list*/
 	/client/proc/debug_variables,		/*allows us to -see- the variables of any instance in the game.*/
 	/client/proc/editzoneair,
+	/client/proc/kill_air, //Mods can not kill the air processing
 	/client/proc/toggledebuglogs,
 	/datum/admins/proc/PlayerNotes,
 	/client/proc/admin_ghost,			/*allows us to ghost/reenter body at will*/
@@ -589,9 +590,24 @@ var/list/admin_verbs_donate = list(
 		for (var/mob/V in hearers(mob.control_object))
 			V.show_message("<b>[mob.control_object.name]</b> says: \"" + msg + "\"", 2)
 	feedback_add_details("admin_verb","OT") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
+/*
 /client/proc/kill_air() // -- TLE
 	set category = "Debug"
+	set name = "Kill Air"
+	set desc = "Toggle Air Processing"
+	if(air_processing_killed)
+		air_processing_killed = 0
+		usr << "<b>Enabled air processing.</b>"
+	else
+		air_processing_killed = 1
+		usr << "<b>Disabled air processing.</b>"
+	feedback_add_details("admin_verb","KA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	log_admin("[key_name(usr)] used 'kill air'.")
+	message_admins("\blue [key_name_admin(usr)] used 'kill air'.", 1)
+*/
+
+/client/proc/kill_air() // -- TLE
+	set category = "Admin"
 	set name = "Kill Air"
 	set desc = "Toggle Air Processing"
 	if(air_processing_killed)
