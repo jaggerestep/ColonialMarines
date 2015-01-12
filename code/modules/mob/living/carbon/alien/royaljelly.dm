@@ -81,8 +81,8 @@
 		growth += 1
 		desc = initial(desc)
 		desc += "\n It's [growth]% done"
-		var/matrix/M = matrix()
-		M.Scale(0.5 + (growth / 90),0.5 + (growth / 90))
+		var/matrix/M = src.transform
+		M.Scale(1.05, 1.05)
 		src.transform = M
 	else
 		ready = 1

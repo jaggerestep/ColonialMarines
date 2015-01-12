@@ -131,11 +131,17 @@ Please contact me on #coderbus IRC. ~Carn x
 #define TOTAL_LAYERS			23
 //////////////////////////////////
 
+var/matrix/lyingmatrix = matrix()
+
+
+var/matrix/standingmatrix = matrix()
+
 /mob/living/carbon/human
 	var/list/overlays_standing[TOTAL_LAYERS]
 	var/previous_damage_appearance // store what the body last looked like, so we only have to update it if something changed
 	var/icon/race_icon
 	var/icon/deform_icon
+
 
 //UPDATES OVERLAYS FROM OVERLAYS_LYING/OVERLAYS_STANDING
 //this proc is messy as I was forced to include some old laggy cloaking code to it so that I don't break cloakers
@@ -164,13 +170,11 @@ Please contact me on #coderbus IRC. ~Carn x
 			overlays += I
 
 	if(lying)
-		var/matrix/M = matrix()
-		M.Turn(90)
-		M.Translate(1,-6)
-		src.transform = M
+		src.transform = lyingmatrix
+		src.transform.Turn(90)
+		src.transform.Translate(1, -6)
 	else
-		var/matrix/M = matrix()
-		src.transform = M
+		src.transform = standingmatrix
 
 var/global/list/damage_icon_parts = list()
 proc/get_damage_icon_part(damage_state, body_part)
