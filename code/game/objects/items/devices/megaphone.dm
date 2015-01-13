@@ -38,8 +38,10 @@
 			else
 				user << "\red *BZZZZzzzzzt*"
 		else
-			for(var/mob/O in (viewers(user)))
+			for(var/mob/living/carbon/human/O in (viewers(user)))
 				O.show_message("<B>[user]</B> broadcasts, <FONT size=3>\"[message]\"</FONT>",2) // 2 stands for hearable message
+			for(var/mob/living/carbon/alien/O in (viewers(user)))
+				O.show_message("<B>[user]</B> shouts in the megaphone but you can't understand it.",2)
 
 		spamcheck = 1
 		spawn(20)
