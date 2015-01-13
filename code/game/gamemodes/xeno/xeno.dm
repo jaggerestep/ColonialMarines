@@ -47,6 +47,11 @@
 	if(num_players() > 30)
 		if(prob(90))
 			numsurvivors = 3
+	if(num_players() >50)
+		if(numsurvivors< 3)
+			numsurvivors = 3
+		else if (prob(90))
+			numsurvivors = 4
 	if(num_players() > 40)
 		if(prob(80))
 			numsurvivors = 4
@@ -54,6 +59,12 @@
 		numaliens = 2
 	if(num_players() > 20)
 		numaliens = 3
+	if(num_players() > 30)
+		numaliens = 4
+	if(num_players() >40)
+		numaliens = 5
+	if(num_players() > 50)
+		numaliens = 6
 	var/list/datum/mind/possible_survivors = get_players_for_survivor()
 	if(possible_survivors.len==0)
 		return 0

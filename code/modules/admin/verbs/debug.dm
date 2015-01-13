@@ -555,7 +555,9 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		"nanotrasen representative",
 		"nanotrasen officer",
 		"nanotrasen captain",
-		"marine (standard)",
+		"marine (pajamas)",
+		"logistics officer",
+		"military officer",
 		"marine commander"
 		)
 	var/dresscode = input("Select dress for [M]", "Robust quick dress shop") as null|anything in dresspacks
@@ -567,9 +569,76 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 			continue
 		del(I)
 	switch(dresscode)
-		if("marine (standard)")
+		if("marine (pajamas)")
+			M.equip_to_slot_or_del(new /obj/item/clothing/under/pj/red(M), slot_w_uniform)
+			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/slippers(M), slot_shoes)
+			M.equip_to_slot_or_del(new /obj/item/device/pda(M), slot_belt)
+			M.equip_to_slot_or_del(new /obj/item/device/radio/marine(M), slot_l_store)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(M), slot_back)
+			
+			var/obj/item/weapon/card/id/W = new(M)
+			W.name = "[M.real_name]'s ID Card"
+			W.access = list()
+			W.assignment = "Marine"
+			W.registered_name = M.real_name
+			M.equip_to_slot_or_del(W, slot_wear_id)
+
+
+		if("logistics officer")
+			M.equip_to_slot_or_del(new /obj/item/clothing/head/beret/marine/logisticsofficer(M), slot_head)
+			M.equip_to_slot_or_del(new /obj/item/device/radio/headset/mcom(M), slot_l_ear)
+			M.equip_to_slot_or_del(new /obj/item/clothing/under/marine/officer/logistics(M), slot_w_uniform)
+			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/marine(M), slot_shoes)
+			M.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/marine(M), slot_wear_suit)
+			M.equip_to_slot_or_del(new /obj/item/device/pda(M), slot_l_store)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/marine/full(M), slot_belt)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(M), slot_back)
+
+			var/obj/item/weapon/card/id/W = new(M)
+			W.icon_state = "silver"
+			W.name = "[M.real_name]'s ID Card"
+			W.access = list(access_logistics)
+			W.assignment = "Logistics Officer"
+			W.registered_name = M.real_name
+			M.equip_to_slot_or_del(W, slot_wear_id)
+			
+		if("military officer")
+			M.equip_to_slot_or_del(new /obj/item/device/radio/headset/mmpo(M), slot_l_ear)
+			M.equip_to_slot_or_del(new /obj/item/clothing/under/marine/mp(M), slot_w_uniform)
+			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/marine(M), slot_shoes)
+			M.equip_to_slot_or_del(new /obj/item/device/pda(M), slot_l_store)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/marine/full(M), slot_belt)
+			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/taser(M), slot_r_hand)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(M), slot_back)
+
+			var/obj/item/weapon/card/id/W = new(M)
+			W.icon_state = "silver"
+			W.name = "[M.real_name]'s ID Card"
+			W.access = list(access_logistics, access_sulaco_brig, access_sulaco_cells)
+			W.assignment = "Military Officer"
+			W.registered_name = M.real_name
+			M.equip_to_slot_or_del(W, slot_wear_id)
 
 		if("marine commander")
+			M.equip_to_slot_or_del(new /obj/item/device/radio/headset/mcom(M), slot_l_ear)
+			var/obj/item/clothing/under/U = new /obj/item/clothing/under/marine/officer/commander(M)
+			U.hastie = new /obj/item/clothing/tie/medal/gold/captain(U)
+			var/obj/item/weapon/storage/backpack/mcommander/BPK = new/obj/item/weapon/storage/backpack/mcommander(M)
+			new /obj/item/weapon/storage/box/survival(BPK)
+			M.equip_to_slot_or_del(BPK, slot_back,1)
+			M.equip_to_slot_or_del(U, slot_w_uniform)
+			M.equip_to_slot_or_del(new /obj/item/device/pda/captain(M), slot_l_store)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/marine/full(M), slot_belt)
+			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/marinechief/commander(M), slot_shoes)
+			M.equip_to_slot_or_del(new /obj/item/clothing/head/beret/marine/commander(M), slot_head)
+			
+			var/obj/item/weapon/card/id/W = new(M)
+			W.icon_state = "gold"
+			W.name = "[M.real_name]'s ID Card"
+			W.access = get_all_marine_accesses()
+			W.assignment = "Commander"
+			W.registered_name = M.real_name
+			M.equip_to_slot_or_del(W, slot_wear_id)
 
 		if ("strip")
 			//do nothing
@@ -920,7 +989,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	M.regenerate_icons()
 
 	log_admin("[key_name(usr)] changed the equipment of [key_name(M)] to [dresscode].")
-	message_admins("\blue [key_name_admin(usr)] changed the equipment of [key_name_admin(M)] to [dresscode]..", 1)
+	message_admins("\blue [key_name_admin(usr)] changed the equipment of [key_name_admin(M)] to [dresscode].", 1)
 	return
 
 /client/proc/startSinglo()
