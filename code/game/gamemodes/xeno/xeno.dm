@@ -22,7 +22,7 @@
 	var/aliensurvivors = 0
 	uplink_welcome = "Infestation Uplink Console:"
 	uplink_uses = 0
-	var/numaliens = 1
+	var/numaliens = 2
 	var/numsurvivors = 1
 
 ///////////////////////////
@@ -55,8 +55,6 @@
 	if(num_players() > 40)
 		if(prob(80))
 			numsurvivors = 4
-	if(num_players() > 10)
-		numaliens = 2
 	if(num_players() > 20)
 		numaliens = 3
 	if(num_players() > 30)
