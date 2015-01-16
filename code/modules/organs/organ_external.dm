@@ -354,6 +354,8 @@ This function completely restores a damaged organ to perfect condition.
 			//overdose of bicaridine begins healing IB
 			if(owner.reagents.get_reagent_amount("bicaridine") >= 30)
 				W.damage = max(0, W.damage - 0.2)
+		if(owner.reagents.get_reagent_amount("quickclot") >=1)
+			W.internal = 0;
 
 		// slow healing
 		var/heal_amt = 0
