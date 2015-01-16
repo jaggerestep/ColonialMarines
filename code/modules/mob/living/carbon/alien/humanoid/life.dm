@@ -323,7 +323,7 @@
 			blinded = 1
 			silent = 0
 		else				//ALIVE. LIGHTS ARE ON
-			if(health <= -100 || brain_op_stage == 4.0)
+			if(health <= -100 || brain_op_stage == 4.0 || (health<=-70 && caste == "Runner"))
 				death()
 				blinded = 1
 				stat = DEAD
