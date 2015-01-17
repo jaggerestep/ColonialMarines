@@ -59,7 +59,17 @@
 	icon_state = "rig0-syndi"
 	item_state = "syndie_helm"
 	item_color = "syndi"
-
 	desc = "A red helmet, for pairing with JuggerNaut Armor. DONOR ITEM"
 	flags = FPRINT|TABLEPASS
 	siemens_coefficient = 0
+
+
+/obj/item/clothing/suit/fluff/penguin
+	name = "Trenchcoat"
+	desc = "An 18th-century trenchcoat. Someone who wears this means serious business.  DONOR ITEM"
+	icon_state = "detective"
+	item_state = "det_suit"
+	blood_overlay_type = "coat"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	allowed = list()
+	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
