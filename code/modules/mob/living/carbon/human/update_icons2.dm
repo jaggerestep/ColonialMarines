@@ -131,16 +131,19 @@ Please contact me on #coderbus IRC. ~Carn x
 #define TOTAL_LAYERS			23
 //////////////////////////////////
 
-var/matrix/lyingmatrix = matrix()
-
-
-var/matrix/standingmatrix = matrix()
 
 /mob/living/carbon/human
 	var/list/overlays_standing[TOTAL_LAYERS]
 	var/previous_damage_appearance // store what the body last looked like, so we only have to update it if something changed
 	var/icon/race_icon
 	var/icon/deform_icon
+	var/matrix/lyingmatrix = matrix()
+	var/matrix/standingmatrix = matrix()
+	New()
+		..()
+		lyingmatrix.Turn(90)
+		lyingmatrix.Translate(1, -6)
+
 
 
 //UPDATES OVERLAYS FROM OVERLAYS_LYING/OVERLAYS_STANDING
@@ -171,8 +174,7 @@ var/matrix/standingmatrix = matrix()
 
 	if(lying)
 		src.transform = lyingmatrix
-		src.transform.Turn(90)
-		src.transform.Translate(1, -6)
+
 	else
 		src.transform = standingmatrix
 
