@@ -226,8 +226,3 @@
 	desc = "Machine gun ammo. It has 500 rounds remaining"
 	var/count = 500
 	w_class = 2
-	New()
-		..()
-		var/matrix/M = matrix()
-		M.Scale(0.8, 0.8)
-		src.transform = M
