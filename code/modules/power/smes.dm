@@ -11,6 +11,7 @@
 	density = 1
 	anchored = 1
 	use_power = 0
+	unacidable = 1
 	var/output = 50000
 	var/lastout = 0
 	var/loaddemand = 0
