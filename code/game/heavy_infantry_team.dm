@@ -279,6 +279,7 @@ proc/trigger_armed_infantry_team(var/force = 0)
 	W.icon_state = "centcom"
 	W.access = get_all_accesses()
 	W.access += get_all_centcom_access()
+	W.access += get_all_marine_accesses()
 	equip_to_slot_or_del(W, slot_wear_id)
 
 	return 1

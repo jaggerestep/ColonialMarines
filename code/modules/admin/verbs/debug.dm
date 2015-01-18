@@ -386,11 +386,11 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 				var/obj/item/device/pda/pda = H.wear_id
 				id = pda.id
 			id.icon_state = "gold"
-			id:access = get_all_accesses()+get_all_centcom_access()+get_all_syndicate_access()
+			id:access = get_all_accesses()+get_all_centcom_access()+get_all_syndicate_access()+get_all_marine_accesses()
 		else
 			var/obj/item/weapon/card/id/id = new/obj/item/weapon/card/id(M);
 			id.icon_state = "gold"
-			id:access = get_all_accesses()+get_all_centcom_access()+get_all_syndicate_access()
+			id:access = get_all_accesses()+get_all_centcom_access()+get_all_syndicate_access()+get_all_marine_accesses()
 			id.registered_name = H.real_name
 			id.assignment = "Captain"
 			id.name = "[id.registered_name]'s ID Card ([id.assignment])"
