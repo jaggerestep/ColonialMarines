@@ -242,36 +242,11 @@ proc/trigger_armed_infantry_team(var/force = 0)
 
 	//Replaced with new ERT uniform
 	equip_to_slot_or_del(new /obj/item/clothing/under/rank/centcom_officer(src), slot_w_uniform)
-	equip_to_slot_or_del(new /obj/item/clothing/shoes/swat(src), slot_shoes)
+	equip_to_slot_or_del(new /obj/item/clothing/shoes/marine(src), slot_shoes)
 	equip_to_slot_or_del(new /obj/item/clothing/gloves/swat(src), slot_gloves)
 	equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses(src), slot_glasses)
 	equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(src), slot_back)
-/*
 
-	//Old ERT Uniform
-	//Basic Uniform
-	equip_to_slot_or_del(new /obj/item/clothing/under/syndicate/tacticool(src), slot_w_uniform)
-	equip_to_slot_or_del(new /obj/item/device/flashlight(src), slot_l_store)
-	equip_to_slot_or_del(new /obj/item/weapon/clipboard(src), slot_r_store)
-	equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun(src), slot_belt)
-	equip_to_slot_or_del(new /obj/item/clothing/mask/gas/swat(src), slot_wear_mask)
-
-	//Glasses
-	equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses/sechud(src), slot_glasses)
-
-	//Shoes & gloves
-	equip_to_slot_or_del(new /obj/item/clothing/shoes/swat(src), slot_shoes)
-	equip_to_slot_or_del(new /obj/item/clothing/gloves/swat(src), slot_gloves)
-
-	//Removed
-//	equip_to_slot_or_del(new /obj/item/clothing/suit/armor/swat(src), slot_wear_suit)
-//	equip_to_slot_or_del(new /obj/item/clothing/head/helmet/space/deathsquad(src), slot_head)
-
-	//Backpack
-	equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/security(src), slot_back)
-	equip_to_slot_or_del(new /obj/item/weapon/storage/box/engineer(src), slot_in_backpack)
-	equip_to_slot_or_del(new /obj/item/weapon/storage/firstaid/regular(src), slot_in_backpack)
-*/
 	var/obj/item/weapon/card/id/W = new(src)
 	W.assignment = "Heavy Infantry Team[leader_selected ? " Leader" : ""]"
 	W.registered_name = real_name
