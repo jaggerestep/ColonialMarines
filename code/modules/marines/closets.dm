@@ -49,6 +49,32 @@
 		new /obj/item/device/radio/headset/mcom(src)
 		return
 
+/obj/structure/closet/secure_closet/marine/marine_lo
+	name = "Logistics Locker"
+	req_access = list()
+	icon_state = "hopsecure1"
+	icon_closed = "hopsecure"
+	icon_locked = "hopsecure1"
+	icon_opened = "hopsecureopen"
+	icon_broken = "hopsecurebroken"
+	icon_off = "hopsecureoff"
+
+	New()
+		sleep(2)
+		new /obj/item/clothing/head/beret/marine/logisticsofficer(src)
+		new /obj/item/clothing/head/beret/marine/logisticsofficer(src)
+		new /obj/item/device/radio/headset/mcom(src)
+		new /obj/item/device/radio/headset/mcom(src)
+		new /obj/item/clothing/under/marine/officer/logistics(src)
+		new /obj/item/clothing/under/marine/officer/logistics(src)
+		new /obj/item/clothing/shoes/marine(src)
+		new /obj/item/clothing/shoes/marine(src)
+		new /obj/item/clothing/suit/storage/marine(src)
+		new /obj/item/clothing/suit/storage/marine(src)
+		new /obj/item/weapon/storage/belt/marine(src)
+		new /obj/item/weapon/storage/belt/marine(src)
+		return
+
 
 
 
@@ -108,6 +134,8 @@
 		new /obj/item/weapon/shield/riot(src)
 		new /obj/item/weapon/melee/baton(src)
 		new /obj/item/weapon/gun/energy/taser(src)
+		new /obj/item/clothing/gloves/black(src)
+		new /obj/item/clothing/gloves/black(src)
 		return
 
 
