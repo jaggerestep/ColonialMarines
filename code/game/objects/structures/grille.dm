@@ -35,6 +35,7 @@
 	user.visible_message("<span class='warning'>[user] kicks [src].</span>", \
 						 "<span class='warning'>You kick [src].</span>", \
 						 "You hear twisting metal.")
+	src.add_fingerprint(user)
 
 	if(shock(user, 70))
 		return
@@ -51,7 +52,8 @@
 	user.visible_message("<span class='warning'>[user] mangles [src].</span>", \
 						 "<span class='warning'>You mangle [src].</span>", \
 						 "You hear twisting metal.")
-
+	src.add_fingerprint(user)
+	
 	if(!shock(user, 70))
 		health -= 5
 		healthcheck()

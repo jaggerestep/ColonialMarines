@@ -41,9 +41,9 @@
 
 			t1 += "<br>"
 
-			var/list/accesses = get_all_accesses()
+			var/list/accesses = get_all_marine_accesses()
 			for (var/acc in accesses)
-				var/aname = get_access_desc(acc)
+				var/aname = get_marine_access_desc(acc)
 
 				if (!conf_access || !conf_access.len || !(acc in conf_access))
 					t1 += "<a href='?src=\ref[src];access=[acc]'>[aname]</a><br>"
