@@ -1,9 +1,9 @@
 /obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp
 	name = "Hydraulic Clamp"
 	icon_state = "mecha_clamp"
-	equip_cooldown = 15
-	energy_drain = 10
-	var/dam_force = 20
+	equip_cooldown = 18
+	energy_drain = 20
+	var/dam_force = 45
 	var/obj/mecha/working/ripley/cargo_holder
 
 	can_attach(obj/mecha/working/ripley/M as obj)
@@ -55,10 +55,13 @@
 			if(M.stat>1) return
 			if(chassis.occupant.a_intent == "hurt")
 				M.take_overall_damage(dam_force)
-				M.adjustOxyLoss(round(dam_force/2))
+				M.adjustOxyLoss(round(dam_force/3))
 				M.updatehealth()
 				occupant_message("\red You squeeze [target] with [src.name]. Something cracks.")
 				chassis.visible_message("\red [chassis] squeezes [target].")
+				if (prob(20))
+					M.Weaken(rand(2,4))
+					chassis.visible_message("\red [chassis] pushed [target] on the ground!")
 			else
 				step_away(M,chassis)
 				occupant_message("You push [target] out of the way.")
