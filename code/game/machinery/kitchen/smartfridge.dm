@@ -45,28 +45,7 @@
 		return 1
 	return 0
 
-/obj/machinery/smartfridge/blood
-	name = "\improper Blood Pack Storage"
-	desc = "A refrigerated storage unit for blood packs"
 
-
-/obj/machinery/smartfridge/blood/accept_check(var/obj/item/O as obj)
-	if(istype(O,/obj/item/weapon/reagent_containers/blood))
-		return 1
-	return 0
-
-/obj/machinery/smartfridge/power_change()
-	if( powered() )
-		src.ispowered = 1
-		stat &= ~NOPOWER
-		if(!isbroken)
-			icon_state = icon_on
-	else
-		spawn(rand(0, 15))
-		src.ispowered = 0
-		stat |= NOPOWER
-		if(!isbroken)
-			icon_state = icon_off
 
 
 /*******************
