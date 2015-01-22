@@ -232,23 +232,23 @@ v
 
 /obj/item/clothing/gloves/marine/alpha
 	name = "alpha squad gloves"
-	icon_state = "red"
-	item_state = "redgloves"
+	icon_state = "marine-red"
+	item_state = "marine-rgloves"
 
 /obj/item/clothing/gloves/marine/bravo
 	name = "bravo squad gloves"
-	icon_state = "yellow"
-	item_state = "ygloves"
+	icon_state = "marine-yellow"
+	item_state = "marine-ygloves"
 
 /obj/item/clothing/gloves/marine/charlie
 	name = "charlie squad gloves"
-	icon_state = "purple"
-	item_state = "purplegloves"
+	icon_state = "marine-purple"
+	item_state = "marine-pgloves"
 
 /obj/item/clothing/gloves/marine/delta
 	name = "delta squad gloves"
-	icon_state = "blue"
-	item_state = "bluegloves"
+	icon_state = "marine-blue"
+	item_state = "marine-bgloves"
 
 /obj/item/clothing/gloves/marine/officer
 	name = "officer gloves"
