@@ -21,3 +21,5 @@ obeystylez: Marshall Mathers: /obj/item/clothing/mask/balaclava/obey
 obeystylez: Marshall Mathers: /obj/item/clothing/gloves/black/obey
 obeystylez: Marshall Mathers: /obj/item/clothing/suit/armor/fluff/obey
 tophatpenguin: Osalaa Wooki: /obj/item/clothing/under/fluff/turtleneck
+wrightthewrong: John Wright /obj/item/clothing/glasses/eyepatch/fluff/wright
+wrightthewrong: John Wright /obj/item/clothing/suit/armor/swat/fluff/wright
