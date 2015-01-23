@@ -1,4 +1,4 @@
-//MARINE VENDING - APOPHIS775 15JAN2015
+//MARINE VENDING - APOPHIS775 22JAN2015
 
 
 ///******MARINE VENDOR******///
@@ -36,27 +36,7 @@
 	premium = list(
 				/obj/item/ammo_magazine/a762 = 5,
 				)
-	prices = list(/*/obj/item/weapon/reagent_containers/food/snacks/donut/normal = 1,
-					/obj/item/ammo_magazine/c38 = 6,
-					/obj/item/weapon/storage/box/beanbags = 7,
-					/obj/item/ammo_magazine/mc9mm = 20,
-					/obj/item/weapon/storage/box/shotguns = 42,
-					/obj/item/ammo_magazine/a12mm = 50,
-					/obj/item/ammo_magazine/c45 = 60,
-					/obj/item/ammo_magazine/c9mm = 75,
-					/obj/item/weapon/gun/projectile/detective = 60,
-					/obj/item/weapon/gun/projectile/silenced = 200,
-					/obj/item/weapon/gun/projectile/pistol = 240,
-					/obj/item/weapon/gun/projectile/automatic/mini_uzi = 320,
-					/obj/item/weapon/gun/projectile/automatic = 450,
-					/obj/item/weapon/gun/projectile/automatic/c20r = 500,
-					/obj/item/weapon/gun/projectile/shotgun/pump = 40,
-					/obj/item/weapon/gun/projectile/shotgun/pump/combat = 480,
-					/obj/item/weapon/storage/fancy/donut_box = 7,
-					/obj/item/ammo_magazine/a357 = 42,
-					/obj/item/ammo_magazine/a50 = 42,
-					/obj/item/ammo_magazine/a762 = 125,*/
-				)
+	prices = list()
 
 //MARINE FOOD VENDOR APOPHIS775 10JAN2014
 /obj/machinery/vending/marineFood
@@ -85,3 +65,20 @@
 	products = list(/obj/item/weapon/reagent_containers/hypospray/autoinjector/tricord = 10,  /obj/item/weapon/reagent_containers/hypospray/autoinjector/quickclot = 10,
 					/obj/item/weapon/reagent_containers/hypospray/autoinjector/dexP =10)
 	contraband = list(/obj/item/weapon/reagent_containers/pill/tox = 3,/obj/item/weapon/reagent_containers/pill/stox = 4,/obj/item/weapon/reagent_containers/pill/antitox = 6)
+
+
+
+//NEW BLOOD VENDOR CODE - APOPHIS775 22JAN2015
+/obj/machinery/vending/MarineMed/Blood
+	name = "MM Blood Dispenser"
+	desc = "Marine Med brand Blood Pack Dispensery"
+	icon_state = "med"
+	icon_deny = "med-deny"
+	product_ads = "The best blood on the market!"
+	req_access_txt = "0"
+	products = list(/obj/item/weapon/reagent_containers/blood/APlus = 5, /obj/item/weapon/reagent_containers/blood/AMinus = 5,
+					/obj/item/weapon/reagent_containers/blood/BPlus = 5, /obj/item/weapon/reagent_containers/blood/BMinus = 5,
+					/obj/item/weapon/reagent_containers/blood/OPlus = 5, /obj/item/weapon/reagent_containers/blood/OMinus = 5,
+					/obj/item/weapon/reagent_containers/blood/ABPlus = 5, /obj/item/weapon/reagent_containers/blood/ABMinus = 5,
+					/obj/item/weapon/reagent_containers/blood/empty = 10)
+
