@@ -31,9 +31,8 @@
 Donator 	+COLOR
 Moderator 	+@ +MOD +SERVER +REJUV +BAN 
 Trial Admin 	+@ +ADMIN +SPAWN  +SOUND +POSSESS +BUILDMODE +FUN +STEALTH +VAREDIT
-Developer	+@ +DEBUG
-Badmin 		+@
 Game Admin 	+@ 
+Developer	+@ +DEBUG
 Head Moderator 	+@
 Head Admin 	+EVERYTHING
 Head Developer  +@
