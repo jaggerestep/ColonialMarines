@@ -537,7 +537,7 @@ datum
 				return
 
 		quickclot
-			name = "Quickclot"
+			name = "Quick clot"
 			id = "quickclot"
 			description = "A chemical designed to quickly stop internal bleeding"
 			reagent_state = LIQUID
