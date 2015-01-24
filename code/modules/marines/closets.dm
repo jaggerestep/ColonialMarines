@@ -354,3 +354,21 @@
 		new /obj/item/device/radio/headset/mdeltal(src)
 		return
 
+
+
+/obj/structure/closet/crate/plastic/marine/REBEL
+	name = "REBEL Supply Crate"
+	desc = "A crate with additional REBEL ALLIANCE Supplies"
+	New()
+		..()
+		for(var/c, c<5, c++)
+			new /obj/item/clothing/under/color/grey(src)
+			new /obj/item/clothing/head/helmet/swat(src)(src)
+			new /obj/item/clothing/suit/armor/vest(src)
+			new /obj/item/clothing/shoes/marine(src)
+			new /obj/item/weapon/storage/belt/marine(src)
+			new /obj/item/weapon/storage/belt/utility/full(src)
+			new /obj/item/device/multitool(src)
+			new /obj/item/weapon/storage/backpack(src)
+		return
+
