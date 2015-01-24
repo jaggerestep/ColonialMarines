@@ -1,4 +1,4 @@
-//MARINE SPECIAL CHEMICALS -APOPHIS 15JAN2015
+//MARINE SPECIAL CHEMICALS -APOPHIS - LAST UPDATE - 25JAN2015
 
 //Auto-injectors Items
 
@@ -26,6 +26,21 @@
 	amount_per_transfer_from_this = 10
 	volume = 10
 
+/obj/item/weapon/reagent_containers/hypospray/autoinjector/clonefix
+	name = "Clone-Fix"
+	desc = "An auto-injector loaded with special chemicals to aid in recovery after cloning, to be used in conjunction with Cryo."
+	icon_state = "autoinjector"
+	item_state = "autoinjector"
+	amount_per_transfer_from_this = 10
+	volume = 10
+
+/obj/item/weapon/reagent_containers/hypospray/autoinjector/chloralhydrate
+	name = "Anesthetic"
+	desc = "An anesthetic autoinjector, to aid with surgery"
+	icon_state = "autoinjector"
+	item_state = "autoinjector"
+	amount_per_transfer_from_this = 10
+	volume = 10
 
 
 //Auto-injector Generation Proc (to change the chemicals)
@@ -49,5 +64,23 @@
 
 	reagents.remove_reagent("inaprovaline", 5)
 	reagents.add_reagent("dexalinp", 10)
+	update_icon()
+	return
+
+/obj/item/weapon/reagent_containers/hypospray/autoinjector/clonefix/New()
+	..()
+
+	reagents.remove_reagent("inaprovaline", 5)
+	reagents.add_reagent("alkysine", 5)
+	reagents.add_reagent("ryetalyn", 5)
+	update_icon()
+	return
+
+/obj/item/weapon/reagent_containers/hypospray/autoinjector/chloralhydrate/New()
+	..()
+
+	reagents.remove_reagent("inaprovaline", 5)
+	reagents.add_reagent("chloralhydrate", 1)
+	reagents.add_reagent("stoxin", 9)
 	update_icon()
 	return
