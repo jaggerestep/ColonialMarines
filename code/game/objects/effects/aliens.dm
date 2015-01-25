@@ -28,7 +28,7 @@
 	density = 1
 	opacity = 1
 	anchored = 1
-	var/health = 80
+	var/health = 160
 	//var/mob/living/affecting = null
 
 /obj/effect/alien/resin/wall
@@ -41,7 +41,7 @@
 		desc = "Purple slime just thin enough to let light pass through."
 		icon_state = "Resin Membrane"
 		opacity = 0
-		health = 40
+		health = 80
 
 /obj/effect/alien/resin/New()
 	..()
