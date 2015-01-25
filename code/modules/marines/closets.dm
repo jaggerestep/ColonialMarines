@@ -363,7 +363,7 @@
 		..()
 		for(var/c, c<5, c++)
 			new /obj/item/clothing/under/color/grey(src)
-			new /obj/item/clothing/head/helmet/swat(src)(src)
+			new /obj/item/clothing/head/helmet/swat(src)
 			new /obj/item/clothing/suit/armor/vest(src)
 			new /obj/item/clothing/shoes/marine(src)
 			new /obj/item/weapon/storage/belt/marine(src)
