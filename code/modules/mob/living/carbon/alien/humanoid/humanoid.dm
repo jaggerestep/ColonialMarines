@@ -90,8 +90,8 @@
 		speed = -1
 	else if (istype(src, /mob/living/carbon/alien/humanoid/spitter))
 		speed = -0.5
-	else if (istype(src, /mob/living/carbon/alien/humanoid/corroder))
-		speed = 1
+/*	else if (istype(src, /mob/living/carbon/alien/humanoid/corroder))
+		speed = 1*/
 	speed +=move_delay_add
 	if (locate(/obj/effect/alien/weeds) in T)
 		if (speed >0)

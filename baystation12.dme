@@ -975,7 +975,6 @@
 #include "code\modules\mob\living\carbon\alien\humanoid\queen.dm"
 #include "code\modules\mob\living\carbon\alien\humanoid\update_icons.dm"
 #include "code\modules\mob\living\carbon\alien\humanoid\caste\carrier.dm"
-#include "code\modules\mob\living\carbon\alien\humanoid\caste\corroder.dm"
 #include "code\modules\mob\living\carbon\alien\humanoid\caste\drone.dm"
 #include "code\modules\mob\living\carbon\alien\humanoid\caste\hivelord.dm"
 #include "code\modules\mob\living\carbon\alien\humanoid\caste\hunter.dm"
