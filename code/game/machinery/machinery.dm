@@ -171,7 +171,7 @@ Class Procs:
 	if(usr.restrained() || usr.lying || usr.stat)
 		return 1
 
-	if(istype(usr, /mob/living/silicon) || istype(usr, /mob/living/carbon/monkey) && ticker && ticker.mode.name == "monkey")
+	if(istype(usr, /mob/living/carbon/monkey) && ticker && ticker.mode.name == "monkey")
 		usr << "\red You don't have the dexterity to do this!"
 		return 1
 
@@ -210,7 +210,7 @@ Class Procs:
 	if(istype(user, /mob/living/carbon/alien))
 		visible_message("\red [user] stares cluelessly at [src].")
 		return 1
-	if(istype(usr, /mob/living/silicon) || istype(usr, /mob/living/carbon/monkey) && ticker && ticker.mode.name == "monkey")
+	if(istype(usr, /mob/living/carbon/monkey) && ticker && ticker.mode.name == "monkey")
 		usr << "\red You don't have the dexterity to do this!"
 		return 1
 /*
