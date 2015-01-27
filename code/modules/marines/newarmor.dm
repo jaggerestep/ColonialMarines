@@ -6,11 +6,41 @@
 	siemens_coefficient = 0.9
 
 	icon = 'icons/marine_armor.dmi'
-	icon_state = "jumpsuit1_s"
-	item_state = "jumpsuit1"
-	item_color = "jumpsuit1"
-	var/sleeves = 1
+	icon_state = "jumpsuit2_s"
+	item_state = "jumpsuit2"
+	item_color = "jumpsuit2"
+	var/sleeves = 2
 	icon_override = 'icons/marine_armor.dmi'
+//Sleves 2 = long
+//Sleves 1 = short
+//Sleves 0 = none
+/obj/item/clothing/under/marine2/verb/sleeves()
+	set category = "Object"
+	set name = "Adjust sleeves"
+	set src in usr
+
+	if(usr.canmove && !usr.stat && !usr.restrained())
+		src.sleeves += 1
+		if(src.sleeves > 2)
+			src.sleeves = 0
+		switch(src.sleeves)
+			if(0)
+				icon_state = "jumpsuit0_s"
+				item_state = "jumpsuit0"
+				item_color = "jumpsuit0"
+				usr << "You roll up the sleves."
+			if(1)
+				icon_state = "jumpsuit1_s"
+				item_state = "jumpsuit1"
+				item_color = "jumpsuit1"
+				usr << "You roll down the sleves."
+			if(2)
+				icon_state = "jumpsuit2_s"
+				item_state = "jumpsuit2"
+				item_color = "jumpsuit2"
+				usr << "You roll down the sleves."
+		usr.update_inv_w_uniform()	//so our mob-overlays updates
+
 
 
 #define ALPHA		1
