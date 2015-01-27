@@ -1,3 +1,4 @@
+//Commander
 /datum/job/captain
 	title = "Commander"
 	flag = COMMANDER
@@ -37,6 +38,7 @@
 	get_access()
 		return get_all_marine_accesses()
 
+//Marine
 /datum/job/marine
 	title = "Marine"
 	flag = MARINE
@@ -57,7 +59,7 @@
 		H.equip_to_slot_or_del(new /obj/item/device/radio/marine(H), slot_l_store)
 		return 1
 
-
+//Millitary Police
 /datum/job/military_officer
 	title = "Military Police"
 	flag = MPOLICE
@@ -79,7 +81,7 @@
 		H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/marine/full(H), slot_belt)
 		return 1
 
-
+//Logistics Officer
 /datum/job/logistics_officer
 	title = "Logistics Officer"
 	flag = LOGISTICS
@@ -102,4 +104,25 @@
 		H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/marine(H), slot_wear_suit)
 		H.equip_to_slot_or_del(new /obj/item/device/pda(H), slot_l_store)
 		H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/marine/full(H), slot_belt)
+		return 1
+
+//Sulaco Medic
+/datum/job/sulmed
+	title = "Sulaco Medic"
+	flag = SULMED
+	department_flag = ENGSEC
+	faction = "Station"
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "the commander"
+	selection_color = "#ffeeee"
+	access = list(access_medical_bay, access_medical_chem, access_medical_surgery, access_medical_genetics, access_medical_storage)
+	minimal_access = list(access_medical_bay, access_medical_chem, access_medical_surgery, access_medical_genetics, access_medical_storage)
+	minimal_player_age = 7
+	equip(var/mob/living/carbon/human/H)
+		if(!H)	return 0
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/pj/red(H), slot_w_uniform)
+		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/slippers(H), slot_shoes)
+		H.equip_to_slot_or_del(new /obj/item/device/pda(H), slot_belt)
+		H.equip_to_slot_or_del(new /obj/item/device/radio/marine(H), slot_l_store)
 		return 1
