@@ -185,8 +185,8 @@
 //checks if projectile 'P' from turf 'from' can hit whatever is behind the table. Returns 1 if it can, 0 if bullet stops.
 /obj/structure/machinegun/proc/check_cover(obj/item/projectile/P, turf/from)
 	var/turf/cover = get_turf(src)
-	if(istype(P, /obj/item/projectile/energy/acid))
-		return 0
+/*	if(istype(P, /obj/item/projectile/energy/acid))
+		return 0*/
 	if (get_dist(P.starting, loc) <= 1) //Tables won't help you if people are THIS close
 		return 1
 	if (get_turf(P.original) == cover)
