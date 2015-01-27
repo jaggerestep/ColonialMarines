@@ -290,7 +290,7 @@
 		desc = "A reinforced window."
 		name = "reinforced window"
 		state = 2*anchored
-		health = 40
+		health = 160
 		if(opacity)
 			icon_state = "twindow"
 	else
