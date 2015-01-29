@@ -6,6 +6,7 @@ var/bomb_set
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "nuclearbomb0"
 	density = 1
+	anchored = 1
 	var/deployable = 0.0
 	var/extended = 0.0
 	var/timeleft = 60.0
@@ -115,10 +116,21 @@ var/bomb_set
 				return
 	..()
 
-/obj/machinery/nuclearbomb/attack_paw(mob/user as mob)
-	return src.attack_hand(user)
-
 /obj/machinery/nuclearbomb/attack_hand(mob/user as mob)
+	
+	if (ishuman(user))
+		if(world.time < 18000) // Deciseconds.  18000 = 30 minutes
+			user << "\red You can not use this yet. Please wait another [round((18000-world.time)/600)] minutes before trying again."
+			return
+			
+	if (src.deployable == 0)
+		if (src.anchored == 0)
+			src.anchored = 1
+			user << "The wheels on [src] have been locked."
+		else if (src.anchored == 1)
+			src.anchored = 0
+			user << "The wheels on [src] have been unlocked."
+
 	if (src.extended)
 
 		if (!ishuman(user))
