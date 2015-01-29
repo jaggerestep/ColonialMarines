@@ -1452,12 +1452,16 @@
 			usr << "The person you are trying to contact is not wearing a headset"
 			return
 
-		var/input = input(src.owner, "Please enter a message to reply to [key_name(H)] via their headset.","Outgoing message from Centcomm", "")
+		var/input = input(src.owner, "Please enter a message to reply to [key_name(H)] via their headset.","Outgoing message from CentComm", "")
 		if(!input)	return
 
-		src.owner << "<b>You sent to [H]: \"[input]\"</b>"
-		log_admin("[src.owner] replied to [key_name(H)]'s Centcomm message with: \"[input]\"")
-		message_admins("[src.owner] replied to [key_name(H)]'s Centcom message with: \"[input]\"")
+		// src.owner << "<b>You sent to [H]: \"[input]\"</b>"
+		log_admin("[src.owner] replied to [key_name(H)]'s CentComm message with: \"[input]\"")
+
+		for(var/client/X in admins)
+			if((R_ADMIN|R_MOD) & X.holder.rights)
+				X << "<b>MODS/ADMINS: \red [src.owner] replied to [key_name(H)]'s CentComm message with: \blue \"[input]\"</b>"
+		
 		H << "\red You hear something crackle in your headset before a voice speaks, \"Please stand by for a message from Central Command:\" \blue <b>\"[input]\"</b>"
 
 	else if(href_list["SyndicateReply"])
@@ -2639,7 +2643,7 @@
 	if(href_list["dibs"])
 		var/mob/ref_person = locate(href_list["dibs"])
 //		var/adminckey = href_list["ckey"]
-		var/msg = "\blue <b><font color=red>NOTICE: </font><font color=darkgreen>[usr.key]</font> is answering adminhelp from <font color=red>[ref_person.ckey]/([ref_person])</font>.</b>"
+		var/msg = "\blue <b><font color=red>NOTICE: </font><font color=darkgreen>[usr.key]</font> is responding to <font color=red>[ref_person.ckey]/([ref_person])</font>.</b>"
 
 		//send this msg to all admins
 		for(var/client/X in admins)
