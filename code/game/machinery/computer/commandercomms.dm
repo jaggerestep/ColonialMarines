@@ -209,7 +209,7 @@
 				if(centcomm_message_cooldown)
 					usr << "\red Arrays recycling.  Please stand by."
 					return
-				var/input = stripped_input(usr, "Please choose a message to transmit to CentComm via quantum entanglement. Please be aware that this process is expensive, and abuse will lead to termination. Transmission does not guarantee a response. There is a 30 second delay between messages. Be clear, full, and concise. (Optional) You may also request the Heavy Infantry Team (H.I.T.) or emergency shuttle.", "To abort, send an empty message.", "")
+				var/input = stripped_input(usr, "Please choose a message to transmit to Centcomm via quantum entanglement.  Please be aware that this process is very expensive, and abuse will lead to... termination.  Transmission does not guarantee a response. There is a 30 second delay before you may send another message, be clear, full and concise.", "To abort, send an empty message.", "")
 				if(!input || !(usr in view(1,src)))
 					return
 				Centcomm_announce(input, usr)
@@ -329,10 +329,9 @@
 			if (src.authenticated)
 				dat += "<BR>\[ <A HREF='?src=\ref[src];operation=logout'>Log Out</A> \]"
 				if (src.authenticated==2)
-					dat += "<BR>\[ <A HREF='?src=\ref[src];operation=announce'>Make an Announcement</A> \]"
+					dat += "<BR>\[ <A HREF='?src=\ref[src];operation=announce'>Make An Announcement</A> \]"
 					if(src.emagged == 0)
-						dat += "<BR>\[ <A HREF='?src=\ref[src];operation=MessageCentcomm'>Send a message to CentComm</A> \]"
-						// dat += "<BR><I>&nbsp;&nbsp;&nbsp;&nbsp;Note: The above can also be used to request a Heavy Infantry Team (H.I.T.) or the emergency shuttle.</I>"
+						dat += "<BR>\[ <A HREF='?src=\ref[src];operation=MessageCentcomm'>Send an emergency message to Centcomm</A> \]"
 					else
 						dat += "<BR>\[ <A HREF='?src=\ref[src];operation=MessageSyndicate'>Send an emergency message to \[UNKNOWN\]</A> \]"
 						dat += "<BR>\[ <A HREF='?src=\ref[src];operation=RestoreBackup'>Restore Backup Routing Data</A> \]"
@@ -340,14 +339,14 @@
 					dat += "<BR>\[ <A HREF='?src=\ref[src];operation=codered'>Declare code red</A> \]"
 				else
 					dat += "<BR>\[ <A HREF='?src=\ref[src];operation=codegreen'>Lift code red</A> \]"
-				// if(emergency_shuttle.location==0)
-					// if (emergency_shuttle.online)
-						// dat += "<BR>\[ Shuttle en-route! \]"
-					// else
-						// dat += "<BR>\[ <A HREF='?src=\ref[src];operation=callshuttle2'>Request Emergency Shuttle</A> \]"
+				if(emergency_shuttle.location==0)
+					if (emergency_shuttle.online)
+						dat += "<BR>\[ Shuttle en-route! \]"
+					else
+						dat += "<BR>\[ <A HREF='?src=\ref[src];operation=callshuttle2'>Request Emergency Shuttle</A> \]"
 
 				dat += "<BR>\[ <A HREF='?src=\ref[src];operation=status'>Set Status Display</A> \]"
-				// dat += "<BR>\[ <A HREF='?src=\ref[src];operation=callhiv'>Request Heavy Infantry Team</A> \]"
+				dat += "<BR>\[ <A HREF='?src=\ref[src];operation=callhiv'>Request Heavy Infantry Team</A> \]"
 			else
 				dat += "<BR>\[ <A HREF='?src=\ref[src];operation=login'>Log In</A> \]"
 			dat += "<BR>\[ <A HREF='?src=\ref[src];operation=messagelist'>Message List</A> \]"
