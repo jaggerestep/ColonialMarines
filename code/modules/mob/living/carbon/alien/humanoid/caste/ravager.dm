@@ -33,7 +33,7 @@
 	M.Scale(1.15,1.15)
 	src.transform = M
 	verbs -= /mob/living/carbon/alien/verb/ventcrawl
-	verbs -= /atom/movable/verb/pull
+	verbs -= /mob/living/carbon/alien/humanoid/verb/plant
 	pixel_x = -18
 	..()
 

@@ -37,6 +37,7 @@
 
 
 /mob/living/carbon/alien/humanoid/hunter/New()
+	..()
 	var/datum/reagents/R = new/datum/reagents(100)
 	growJelly()
 	src.frozen = 1
@@ -47,7 +48,8 @@
 	if(name == "alien warrior")
 		name = text("alien warrior ([rand(1, 1000)])")
 	real_name = name
-	..()
+	verbs -= /mob/living/carbon/alien/humanoid/verb/plant
+
 
 /mob/living/carbon/alien/humanoid/hunter
 
