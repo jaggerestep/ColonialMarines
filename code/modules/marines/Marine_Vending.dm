@@ -11,7 +11,7 @@
 
 					/obj/item/weapon/gun/projectile/pistol/m4a3 = 5,
 					/obj/item/weapon/gun/projectile/m44m = 5,
-					/obj/item/weapon/gun/projectile/automatic/m39 = 5,
+					/obj/item/weapon/gun/projectile/automatic/Assault/m39 = 5,
 					/obj/item/weapon/gun/twohanded/projectile/Assault/m41 = 5,
 					/obj/item/weapon/gun/twohanded/projectile/shotgun/pump/m37 = 5,
 					/obj/item/weapon/gun/projectile/twohanded/automatic/l6_saw = 2,

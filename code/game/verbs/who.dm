@@ -42,7 +42,13 @@
 	msg += "<b>Total Players: [length(Lines)]</b>"
 	src << msg
 
-/client/verb/adminwho()
+/client/verb/staffwho()
+	set category = "Staffwho"
+	set name = "Staffwho"
+	adminwho()
+	modwho()
+
+/client/proc/adminwho()
 	set category = "Admin"
 	set name = "Adminwho"
 
@@ -81,10 +87,9 @@
 				num_mods_online++
 
 	msg = "<b>Current Admins ([num_admins_online]):</b>\n" + msg
-	msg += "<b>There are also [num_mods_online] moderators online.</b> To view online moderators, type 'modwho'\n"
 	src << msg
 
-/client/verb/modwho()
+/client/proc/modwho()
 	set category = "Admin"
 	set name = "Modwho"
 
@@ -118,5 +123,4 @@
 				msg += "\t[C]\n"
 
 	msg = "<b>Current Moderators ([num_mods_online]):</b>\n" + msg
-	msg += "<b>There are also [num_admins_online] admins online.</b> To view online admins, type 'adminwho'\n"
 	src << msg
