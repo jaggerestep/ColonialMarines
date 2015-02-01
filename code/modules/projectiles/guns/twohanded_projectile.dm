@@ -57,7 +57,8 @@
 	loaded -= AC //Remove casing from loaded list.
 	if(isnull(AC) || !istype(AC))
 		return 0
-	AC.loc = get_turf(src) //Eject casing onto ground.
+	if(ejectshell == 1)
+		AC.loc = get_turf(src) //Eject casing onto ground.
 	if(AC.BB)
 		AC.desc += " This one is spent."	//descriptions are magic - only when there's a projectile in the casing
 		AC.spent = 1

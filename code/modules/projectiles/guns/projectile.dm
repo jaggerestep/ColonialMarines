@@ -36,7 +36,8 @@
 	loaded -= AC //Remove casing from loaded list.
 	if(isnull(AC) || !istype(AC))
 		return 0
-	AC.loc = get_turf(src) //Eject casing onto ground.
+	if(ejectshell == 1)
+		AC.loc = get_turf(src) //Eject casing onto ground.
 	if(AC.BB)
 		AC.spent = 1
 		AC.desc += " This one is spent."	//descriptions are magic - only when there's a projectile in the casing
@@ -116,3 +117,16 @@
 			bullets += 1
 	return bullets
 
+
+//FLASHLIGHT CODE FOR M39 APOPHIS775 31JAN2015
+
+/obj/item/weapon/gun/projectile/automatic/Assault/attackby(var/obj/item/A as obj, mob/user as mob)
+	..()
+	if(istype(A, /obj/item/device/flashlight))
+		var/obj/item/device/flashlight/F = A
+		if(F.attachable)
+			src.contents += A
+			user << "\red You attach [A] to [src]."
+			haslight = 1
+			del(A)
+	return
