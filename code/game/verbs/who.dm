@@ -43,7 +43,7 @@
 	src << msg
 
 /client/verb/staffwho()
-	set category = "Staffwho"
+	set category = "Admin"
 	set name = "Staffwho"
 	adminwho()
 	modwho()
