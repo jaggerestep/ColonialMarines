@@ -17,6 +17,7 @@
 	var/aistate = STATE_DEFAULT
 	var/message_cooldown = 0
 	var/centcomm_message_cooldown = 0
+	var/request_cooldown = 0
 	var/tmp_alertlevel = 0
 	unacidable = 1
 	var/const/STATE_DEFAULT = 1
@@ -82,20 +83,46 @@
 			for(var/area/A in world)
 				if(istype(A, /area/sulaco))
 					A.readyreset()
+				
 		if("callhiv")
-			var/input = stripped_input(usr, "What is the nature of your emergency?", "Request Heavy Infantry Team")
+			if(request_cooldown)
+				usr << "\red Assistance has already been requested. Please wait."
+				return
+			// var/input = stripped_input(usr, "What is the nature of your emergency?", "Request Heavy Infantry Team")
+			// if(!input || !(usr in view(1,src)))
+				// return
+			
+			var/confirm = alert(usr, "Are you sure? Requesting the HIT takes time. You won't be able to request anything else for 5 minutes.", "Confirm", "Yes", "No")
+			if(confirm != "Yes") return
+
 			for(var/client/C in admins)
-				if(R_ADMIN & C.holder.rights)
-					C << "<span class=\"adminlog\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[usr] has requested a Heavy Infantry Team. Emergency: [input]</span>"
+				if((R_ADMIN|R_MOD) & C.holder.rights)
+					C << "<span class=\"danger\">ADMINS/MODS: [usr] has used</span> <span class=\"name\">\"Request Heavy Infantry Team\"</span> (<A HREF='?_src_=holder;adminplayerobservejump=\ref[usr]'>JMP</A>)</span>"
 					C << 'sound/effects/sos-morse-code.ogg'
-					usr << "\blue Heavy Infantry request sent to CentCom Special Forces department."
+					usr << "\blue HIT request sent to CentComm Special Forces department."
+			request_cooldown = 1
+			spawn(3000)//5 minutes in deciseconds
+				request_cooldown = 0
+				
 		if("callshuttle2")
-			var/input = stripped_input(usr, "What is the nature of your emergency?", "Request Emergency Shuttle")
+			if(request_cooldown)
+				usr << "\red Assistance has already been requested. Please wait."
+				return
+			
+			// var/input = stripped_input(usr, "What is the nature of your emergency?", "Request Emergency Shuttle")
+			// if(!input || !(usr in view(1,src)))
+				// return
+			var/confirm = alert(usr, "Are you sure? Requesting an Emergency Shuttle takes time. You won't be able to request anything else for 5 minutes.", "Confirm", "Yes", "No")
+			if(confirm != "Yes") return
+				
 			for(var/client/C in admins)
-				if(R_ADMIN & C.holder.rights)
-					C << "<span class=\"adminlog\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[usr] has requested an emergency shuttle. Emergency: [input]</span>"
+				if((R_ADMIN|R_MOD) & C.holder.rights)
+					C << "<span class=\"danger\">ADMINS/MODS: [usr] has used</span> <span class=\"name\">\"Request Emergency Shuttle\"</span> (<A HREF='?_src_=holder;call_shuttle=1'>Call Shuttle</A>) (<A HREF='?_src_=holder;adminplayerobservejump=\ref[usr]'>JMP</A>)"
 					C << 'sound/effects/sos-morse-code.ogg'
-					usr << "\blue Emergency Shuttle request sent to CentCom."
+					usr << "\blue Emergency Shuttle request sent to CentComm."
+			request_cooldown = 1
+			spawn(3000)//5 minutes in deciseconds
+				request_cooldown = 0
 
 		if("swipeidseclevel")
 			var/mob/M = usr
@@ -216,7 +243,7 @@
 				usr << "\blue Message transmitted."
 				log_say("[key_name(usr)] has made an IA Centcomm announcement: [input]")
 				centcomm_message_cooldown = 1
-				spawn(300)//10 minute cooldown
+				spawn(300)//30 second cooldown
 					centcomm_message_cooldown = 0
 
 
@@ -331,7 +358,7 @@
 				if (src.authenticated==2)
 					dat += "<BR>\[ <A HREF='?src=\ref[src];operation=announce'>Make An Announcement</A> \]"
 					if(src.emagged == 0)
-						dat += "<BR>\[ <A HREF='?src=\ref[src];operation=MessageCentcomm'>Send an emergency message to Centcomm</A> \]"
+						dat += "<BR>\[ <A HREF='?src=\ref[src];operation=MessageCentcomm'>Send a message to CentComm</A> \]"
 					else
 						dat += "<BR>\[ <A HREF='?src=\ref[src];operation=MessageSyndicate'>Send an emergency message to \[UNKNOWN\]</A> \]"
 						dat += "<BR>\[ <A HREF='?src=\ref[src];operation=RestoreBackup'>Restore Backup Routing Data</A> \]"
@@ -344,9 +371,8 @@
 						dat += "<BR>\[ Shuttle en-route! \]"
 					else
 						dat += "<BR>\[ <A HREF='?src=\ref[src];operation=callshuttle2'>Request Emergency Shuttle</A> \]"
-
-				dat += "<BR>\[ <A HREF='?src=\ref[src];operation=status'>Set Status Display</A> \]"
 				dat += "<BR>\[ <A HREF='?src=\ref[src];operation=callhiv'>Request Heavy Infantry Team</A> \]"
+				// dat += "<BR>\[ <A HREF='?src=\ref[src];operation=status'>Set Status Display</A> \]"
 			else
 				dat += "<BR>\[ <A HREF='?src=\ref[src];operation=login'>Log In</A> \]"
 			dat += "<BR>\[ <A HREF='?src=\ref[src];operation=messagelist'>Message List</A> \]"
