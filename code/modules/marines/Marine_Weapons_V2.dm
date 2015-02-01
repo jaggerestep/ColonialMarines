@@ -1,5 +1,4 @@
-///**************NEW LORE COLONIAL MARINES WEAPON 15JAN2015 - BY APOPHIS**************///
-
+///**************NEW LORE COLONIAL MARINES WEAPON EDIT 31JAN2015 - BY APOPHIS**************///
 
 
 ///***Bullets***///
@@ -140,7 +139,7 @@
 
 ///***SMGS***///
 
-/obj/item/weapon/gun/projectile/automatic/m39 // M39 SMG
+/obj/item/weapon/gun/projectile/automatic/Assault/m39 // M39 SMG
 	name = "\improper M39 SMG"
 	desc = " Armat Battlefield Systems M39 SMG. Uses 9mm rounds."
 	icon_state = "smg"
@@ -150,10 +149,12 @@
 	ammo_type = "/obj/item/ammo_casing/m39"
 	fire_delay = 0
 	force = 9.0
-//	ejectshell = 0 //Caseless
+	ejectshell = 0 //Caseless
 
 	isHandgun()
 		return 0
+
+
 
 
 ///***RIFLES***///
@@ -170,7 +171,7 @@
 	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
 	load_method = 2
 	force = 10.0
-//	ejectshell = 0 //Caseless
+	ejectshell = 0 //Caseless
 	fire_delay = 4
 	slot_flags = SLOT_BACK
 
