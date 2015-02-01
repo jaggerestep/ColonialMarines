@@ -42,13 +42,61 @@
 	msg += "<b>Total Players: [length(Lines)]</b>"
 	src << msg
 
-/client/verb/staffwho()
-	set category = "Staffwho"
-	set name = "Staffwho"
-	adminwho()
-	modwho()
 
-/client/proc/adminwho()
+//New SEXY Staffwho verb, 01FEB2015 APOPHIS775
+/client/verb/staffwho()
+	set category = "Admin"
+	set name = "StaffWho"
+	var/adminwho = ""
+	var/modwho = ""
+	var/msg
+	var/admin_count = 0
+	var/mod_count = 0
+
+	if(holder)
+		for(var/client/C in admins)
+			if(R_ADMIN & C.holder.rights)
+				adminwho += "\t[C] is a [C.holder.rank]"
+				if(C.holder.fakekey)
+					msg += " <i>(as [C.holder.fakekey])</i>"
+				if(isobserver(C.mob))
+					msg += " - Observing"
+				else if(istype(C.mob,/mob/new_player))
+					msg += " - Lobby"
+				else
+					msg += " - Playing"
+				if(C.is_afk())
+					msg += " (AFK)"
+				adminwho += "\n"
+				admin_count++
+			else if (R_MOD & C.holder.rights & !R_ADMIN)
+				modwho += "\t[C] is a [C.holder.rank]"
+				if(C.holder.fakekey)
+					msg += " <i>(as [C.holder.fakekey])</i>"
+				if(isobserver(C.mob))
+					msg += " - Observing"
+				else if(istype(C.mob,/mob/new_player))
+					msg += " - Lobby"
+				else
+					msg += " - Playing"
+				if(C.is_afk())
+					msg += " (AFK)"
+				modwho += "\n"
+				mod_count++
+		msg = "<b>Current Admins ([admin_count]):</b>\n" + adminwho
+		src << msg
+		msg = ""
+		msg = "<b>Current Moderators ([mod_count]):</b>\n" + modwho
+		src << msg
+
+
+
+
+
+//OLD ADMIN AND MODWHO VERBS.  KEEP UNTIL 05FEB2015 in case i fucked something up...
+
+/*
+/client/verb/adminwho()
 	set category = "Admin"
 	set name = "Adminwho"
 
@@ -89,7 +137,7 @@
 	msg = "<b>Current Admins ([num_admins_online]):</b>\n" + msg
 	src << msg
 
-/client/proc/modwho()
+/client/verb/modwho()
 	set category = "Admin"
 	set name = "Modwho"
 
@@ -124,3 +172,4 @@
 
 	msg = "<b>Current Moderators ([num_mods_online]):</b>\n" + msg
 	src << msg
+*/
