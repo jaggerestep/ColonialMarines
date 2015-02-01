@@ -60,7 +60,7 @@
 /datum/organ/external/proc/emp_act(severity)
 	if(!(status & ORGAN_ROBOT))	//meatbags do not care about EMP
 		return
-	var/probability = 30
+	var/probability = 0
 	var/damage = 15
 	if(severity == 2)
 		probability = 1
@@ -81,12 +81,12 @@
 		burn *= 0.66 //~2/3 damage for ROBOLIMBS
 
 	//If limb took enough damage, try to cut or tear it off
-	if(body_part != UPPER_TORSO && body_part != LOWER_TORSO) //as hilarious as it is, getting hit on the chest too much shouldn't effectively gib you.
+/* 	if(body_part != UPPER_TORSO && body_part != LOWER_TORSO) //as hilarious as it is, getting hit on the chest too much shouldn't effectively gib you.
 		if(config.limbs_can_break && brute_dam >= max_damage * config.organ_health_multiplier)
 			if( (sharp && prob(5 * brute)) || (brute > 20 && prob(2 * brute)) )
 				droplimb(1)
 				return
-
+ */
 	// High brute damage or sharp objects may damage internal organs
 	if(internal_organs != null) if( (sharp && brute >= 5) || brute >= 10) if(prob(5))
 		// Damage an internal organ
@@ -272,7 +272,7 @@ This function completely restores a damaged organ to perfect condition.
 				trace_chemicals.Remove(chemID)
 
 	//Dismemberment
-	if(status & ORGAN_DESTROYED)
+/* 	if(status & ORGAN_DESTROYED)
 		if(!destspawn && config.limbs_can_break)
 			droplimb()
 		return
@@ -281,7 +281,7 @@ This function completely restores a damaged organ to perfect condition.
 			status |= ORGAN_DESTROYED
 			owner.update_body(1)
 			return
-
+ */
 	//Bone fracurtes
 	if(config.bones_can_break && brute_dam > min_broken_damage * config.organ_health_multiplier && !(status & ORGAN_ROBOT))
 		src.fracture()

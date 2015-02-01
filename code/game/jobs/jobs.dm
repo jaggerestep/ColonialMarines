@@ -16,6 +16,7 @@ var/const/MPOLICE			=(1<<11)
 var/const/MARINE			=(1<<12)
 var/const/BIOHAZ			=(1<<13)
 var/const/LOGISTICS			=(1<<14)
+var/const/SULMED			=(1<<15)
 
 var/const/MEDSCI			=(1<<1)
 

@@ -34,7 +34,7 @@ Moderator 	+@
 Trial Admin 	+@ +ADMIN +SPAWN +STEALTH +VAREDIT
 Game Admin 	+@ +POSSESS +BUILDMODE +FUN +SOUND
 Developer	+@ +DEBUG
-Head Moderator 	+@
+Head Moderator 	+@ +PERMISSIONS
 Head Admin 	+EVERYTHING
 Head Developer  +@
 Auditor 	+@
