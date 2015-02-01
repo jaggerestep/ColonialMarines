@@ -216,6 +216,7 @@
 				captain_announce("The emergency shuttle has been called. It will arrive in [round(emergency_shuttle.timeleft()/60)] minutes.")
 				log_admin("[key_name(usr)] called the Emergency Shuttle")
 				message_admins("\blue [key_name_admin(usr)] called the Emergency Shuttle to the station", 1)
+				world << sound('sound/AI/shuttlecalled.ogg')
 
 			if("2")
 				if ((!( ticker ) || emergency_shuttle.location || emergency_shuttle.direction == 0))
@@ -1455,9 +1456,12 @@
 		var/input = input(src.owner, "Please enter a message to reply to [key_name(H)] via their headset.","Outgoing message from Centcomm", "")
 		if(!input)	return
 
-		src.owner << "<b>You sent to [H]: \"[input]\"</b>"
+		// src.owner << "<b>You sent to [H]: \"[input]\"</b>"
 		log_admin("[src.owner] replied to [key_name(H)]'s Centcomm message with: \"[input]\"")
-		message_admins("[src.owner] replied to [key_name(H)]'s Centcom message with: \"[input]\"")
+		for(var/client/X in admins)
+			if((R_ADMIN|R_MOD) & X.holder.rights)
+				X << "<b>ADMINS/MODS: \red [src.owner] replied to [key_name(H)]'s CentComm message with: \blue \"[input]\"</b>"
+		// message_admins("[src.owner] replied to [key_name(H)]'s Centcom message with: \"[input]\"")
 		H << "\red You hear something crackle in your headset before a voice speaks, \"Please stand by for a message from Central Command:\" \blue <b>\"[input]\"</b>"
 
 	else if(href_list["SyndicateReply"])
@@ -2639,7 +2643,7 @@
 	if(href_list["dibs"])
 		var/mob/ref_person = locate(href_list["dibs"])
 //		var/adminckey = href_list["ckey"]
-		var/msg = "\blue <b><font color=red>NOTICE: </font><font color=darkgreen>[usr.key]</font> is answering adminhelp from <font color=red>[ref_person.ckey]/([ref_person])</font>.</b>"
+		var/msg = "\blue <b><font color=red>NOTICE: </font><font color=darkgreen>[usr.key]</font> is responding to <font color=red>[ref_person.ckey]/([ref_person])</font>.</b>"
 
 		//send this msg to all admins
 		for(var/client/X in admins)
