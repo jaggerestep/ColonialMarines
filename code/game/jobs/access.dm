@@ -455,7 +455,6 @@
 		return list(
 		"Commander",
 		"Logistics Officer",
-		"Military Officer",
 		"Military Police",
 		"Alpha Squad Leader",
 		"Alpha Squad Medic",
@@ -521,10 +520,8 @@
 			return list(access_xeno_containment, access_robotics)
 		if("Sulaco Medic")
 			return list(access_medical_bay, access_medical_surgery, access_medical_chem, access_medical_genetics, access_medical_storage)
-		if("Military Officer")
-			return list(access_logistics, access_sulaco_brig, access_sulaco_cells)
 		if("Military Police")
-			return list(access_sulaco_brig, access_sulaco_cells)
+			return list(access_sulaco_brig, access_sulaco_cells, access_logistics, access_xeno_containment, access_robotics, access_medical_bay, access_medical_surgery)
 
 
 /proc/get_marine_access_desc(A)

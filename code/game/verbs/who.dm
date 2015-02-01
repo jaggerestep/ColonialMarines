@@ -49,13 +49,15 @@
 	set name = "StaffWho"
 	var/adminwho = ""
 	var/modwho = ""
-	var/msg
+	var/msg = ""
 	var/admin_count = 0
 	var/mod_count = 0
 
 	if(holder)
 		for(var/client/C in admins)
-			if(R_ADMIN & C.holder.rights)
+			if(R_ADMIN & C.holder.rights || !(R_MOD & C.holder.rights))
+				if(C.holder.fakekey && (!R_ADMIN & holder.rights && !R_MOD & holder.rights))		//Mentors can't see stealthmins
+					continue
 				adminwho += "\t[C] is a [C.holder.rank]"
 				if(C.holder.fakekey)
 					adminwho += " <i>(as [C.holder.fakekey])</i>"
@@ -66,10 +68,10 @@
 				else
 					adminwho += " - Playing"
 				if(C.is_afk())
-					msg += " (AFK)"
+					adminwho += " (AFK)"
 				adminwho += "\n"
 				admin_count++
-			else if (R_MOD & C.holder.rights & !R_ADMIN)
+			else if (R_MOD & C.holder.rights)
 				modwho += "\t[C] is a [C.holder.rank]"
 				if(C.holder.fakekey)
 					modwho += " <i>(as [C.holder.fakekey])</i>"
@@ -80,9 +82,20 @@
 				else
 					modwho += " - Playing"
 				if(C.is_afk())
-					msg += " (AFK)"
+					modwho += " (AFK)"
 				modwho += "\n"
 				mod_count++
+
+	else
+		for(var/client/C in admins)
+			if(R_ADMIN & C.holder.rights || !R_MOD & C.holder.rights)
+				if(!C.holder.fakekey)
+					adminwho += "\t[C] is a [C.holder.rank]\n"
+					admin_count++
+			else if (R_MOD & C.holder.rights)
+				modwho += "\t[C] is a [C.holder.rank]\n"
+				mod_count++
+
 	src <<"<b>Current Admins ([admin_count]):</b>\n" + adminwho
 	msg = ""
 	msg = "<b>Current Moderators ([mod_count]):</b>\n" + modwho
