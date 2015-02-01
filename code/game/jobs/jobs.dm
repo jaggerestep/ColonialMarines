@@ -115,7 +115,7 @@ var/list/security_positions = list(
 
 
 var/list/marine_positions = list(
-	"Military Officer",
+	"Military Police",
 	"Logistics Officer",
 	"Marine"
 )

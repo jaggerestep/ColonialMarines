@@ -557,7 +557,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		"nanotrasen captain",
 		"marine (pajamas)",
 		"logistics officer",
-		"military officer",
+		"military Police",
 		"marine commander"
 		)
 	var/dresscode = input("Select dress for [M]", "Robust quick dress shop") as null|anything in dresspacks
@@ -575,7 +575,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 			M.equip_to_slot_or_del(new /obj/item/device/pda(M), slot_belt)
 			M.equip_to_slot_or_del(new /obj/item/device/radio/marine(M), slot_l_store)
 			M.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(M), slot_back)
-			
+
 			var/obj/item/weapon/card/id/W = new(M)
 			W.name = "[M.real_name]'s ID Card"
 			W.access = list()
@@ -601,8 +601,8 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 			W.assignment = "Logistics Officer"
 			W.registered_name = M.real_name
 			M.equip_to_slot_or_del(W, slot_wear_id)
-			
-		if("military officer")
+
+		if("military Police")
 			M.equip_to_slot_or_del(new /obj/item/device/radio/headset/mmpo(M), slot_l_ear)
 			M.equip_to_slot_or_del(new /obj/item/clothing/under/marine/mp(M), slot_w_uniform)
 			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/marine(M), slot_shoes)
@@ -615,7 +615,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 			W.icon_state = "silver"
 			W.name = "[M.real_name]'s ID Card"
 			W.access = list(access_logistics, access_sulaco_brig, access_sulaco_cells)
-			W.assignment = "Military Officer"
+			W.assignment = "Military Police"
 			W.registered_name = M.real_name
 			M.equip_to_slot_or_del(W, slot_wear_id)
 
@@ -631,7 +631,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 			M.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/marine/full(M), slot_belt)
 			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/marinechief/commander(M), slot_shoes)
 			M.equip_to_slot_or_del(new /obj/item/clothing/head/beret/marine/commander(M), slot_head)
-			
+
 			var/obj/item/weapon/card/id/W = new(M)
 			W.icon_state = "gold"
 			W.name = "[M.real_name]'s ID Card"
