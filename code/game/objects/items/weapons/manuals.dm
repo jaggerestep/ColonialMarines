@@ -872,21 +872,21 @@
 </tr>
 </table>
 <br>
-<b>Military Officers and military law enforcement agents are expects to use their best discretion when applying sentences and apprehending those who violate the above laws. Failure to do so will result in immediate contract termination at the discretion of Nanotrasen military officials.</b>
+<b>Military Police are expected to use their best discretion when applying sentences and apprehending those who violate the above laws. Failure to do so will result in immediate contract termination at the discretion of Nanotrasen military officials.</b>
 </html>
 </body>"}
 
 
 /obj/item/weapon/book/manual/milmanual
-	name = "Military officers manual"
+	name = "Military Police manual"
 	icon_state ="bookNuclear"
 	author = "Nanotrasen Military"
-	title = "Military Officers manual"
+	title = "Military Police manual"
 
 	dat = {"
-	<b><u>Being a military officer/military law enforcement agent 101</u></b>-<br>
+	<b><u>Being a Military Police officer 101</u></b>-<br>
 	<b>The job description:</b><br>
-	As a military officer or miliary law enforcement agent, you are there to provide security to the staff of, and the NMV Sulaco itself. You are there to act as a	means of ensuring the full saftey of both Command staff and non-essential personnel during your operations aboard the Sulaco. It should be noted that even military officers and military law enforcement agents are applicable to marine law, and are not above it.
+	As a Military Police Officer, you are there to provide security to the staff of, and the NMV Sulaco itself. You are there to act as a	means of ensuring the full saftey of both Command staff and non-essential personnel during your operations aboard the Sulaco. It should be noted that even military officers and military law enforcement agents are applicable to marine law, and are not above it.
 	<br>
 	<b>Additional responsibilities:</b><br>
 	<u>Calling or lifting code red</u>- Should the NMV Sulaco be assaulted or come under attack by hostile elements, such as boarding parties, enemies of the coproration, or xenomorphic lifeforms that have escaped containment or otherwise gained access to the vessel, code red should be declared. Code red acts as both a potential distress beacon, and as an immediate notification to all personnel that they need to be on alert and at their posts.<br>
