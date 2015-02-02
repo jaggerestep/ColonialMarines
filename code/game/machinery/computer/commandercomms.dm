@@ -18,6 +18,7 @@
 	var/message_cooldown = 0
 	var/centcomm_message_cooldown = 0
 	var/request_cooldown = 0
+	var/click_cooldown = 0
 	var/tmp_alertlevel = 0
 	unacidable = 1
 	var/const/STATE_DEFAULT = 1
@@ -92,12 +93,29 @@
 			// if(!input || !(usr in view(1,src)))
 				// return
 			
+			var/count_observers = 0
+			for(var/client/C in clients)
+				if(isobserver(C.mob) && !C.holder)		
+					count_observers++
+			
+			if(count_observers <= 4)
+				usr << "\red CentComm does not have enough resources to put together a HIT."
+				if(click_cooldown)
+					return
+				for(var/client/C in admins)
+					if((R_ADMIN|R_MOD) & C.holder.rights)
+						C << "<span class=\"name\">ADMINS/MODS: [usr] has used \"Request Heavy Infantry Team\" but the request has been auto-denied. (Non-Admin Observers: [count_observers]) (<A HREF='?_src_=holder;adminplayerobservejump=\ref[usr]'>JMP</A>)"
+				click_cooldown = 1
+				spawn(300) //deciseconds
+					click_cooldown = 0
+				return
+			
 			var/confirm = alert(usr, "Are you sure? Requesting the HIT takes time. You won't be able to request anything else for 5 minutes.", "Confirm", "Yes", "No")
 			if(confirm != "Yes") return
 
 			for(var/client/C in admins)
 				if((R_ADMIN|R_MOD) & C.holder.rights)
-					C << "<span class=\"danger\">ADMINS/MODS: [usr] has used</span> <span class=\"name\">\"Request Heavy Infantry Team\"</span> (<A HREF='?_src_=holder;adminplayerobservejump=\ref[usr]'>JMP</A>)</span>"
+					C << "<span class=\"danger\">ADMINS/MODS: [usr] has used</span> <span class=\"name\">\"Request Heavy Infantry Team\"</span> <span class=\"danger\">(Non-Admin Observers:</span> <span class=\"name\">[count_observers]</span><span class=\"danger\">)</span> <span class=\"name\">(<A HREF='?_src_=holder;adminplayerobservejump=\ref[usr]'>JMP</A>)</span>"
 					C << 'sound/effects/sos-morse-code.ogg'
 					usr << "\blue HIT request sent to CentComm Special Forces department."
 			request_cooldown = 1
