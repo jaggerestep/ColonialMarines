@@ -45,7 +45,7 @@
 		name = text("alien spitter ([rand(1, 1000)])")
 	real_name = name
 	verbs.Add(/mob/living/carbon/alien/humanoid/proc/weak_neurotoxin,/mob/living/carbon/alien/humanoid/proc/neurotoxin,/mob/living/carbon/alien/humanoid/proc/weak_acid,/mob/living/carbon/alien/humanoid/proc/corrosive_acid)
-	verbs -= /atom/movable/verb/pull
+	verbs -= /mob/living/carbon/alien/humanoid/verb/plant
 	//var/matrix/M = matrix()
 	//M.Scale(1.15,1.1)
 	//src.transform = M
