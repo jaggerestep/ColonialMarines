@@ -1144,6 +1144,8 @@ steam.start() -- spawns the effect
 
 			for(var/mob/M in viewers(8, location))
 				M << "\red The solution violently explodes."
+			devastation = -1
+			heavy = -1
 
 			explosion(location, devastation, heavy, light, flash)
 
