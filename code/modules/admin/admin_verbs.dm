@@ -71,9 +71,8 @@ var/list/admin_verbs_admin = list(
 	/datum/admins/proc/show_skills,
 	/client/proc/check_customitem_activity,
 	/client/proc/man_up,
-	/client/proc/global_man_up,
-	/client/proc/infantry_team // Response Teams admin verb
-)
+	/client/proc/global_man_up
+	)
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
 	/client/proc/jobbans,
@@ -229,6 +228,7 @@ var/list/admin_verbs_hideable = list(
 var/list/admin_verbs_mod = list(
 	/client/proc/admin_call_shuttle,
 	/client/proc/admin_cancel_shuttle,
+	/client/proc/infantry_team, // Response Teams admin verb
 	/client/proc/cmd_mod_pm_context,	/*right-click modPM interface*/
 	/client/proc/cmd_mod_pm_panel,	/*mod-pm list*/
 	/client/proc/debug_variables,		/*allows us to -see- the variables of any instance in the game.*/
