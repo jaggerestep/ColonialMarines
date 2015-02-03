@@ -22,8 +22,8 @@ datum
 
 		//I recommend you set the result amount to the total volume of all components.
 
-	//////POSTASSIUM EXPLOSION REMOVED TO PREVENT GRIEF
-	/*	explosion_potassium
+	//////POSTASSIUM EXPLOSION REMOVED TO PREVENT GRIEF - RESTORED
+		explosion_potassium
 			name = "Explosion"
 			id = "explosion_potassium"
 			result = null
@@ -40,7 +40,7 @@ datum
 						e.amount *= 0.5
 				e.start()
 				holder.clear_reagents()
-				return */
+				return
 
 		emp_pulse
 			name = "EMP Pulse"
