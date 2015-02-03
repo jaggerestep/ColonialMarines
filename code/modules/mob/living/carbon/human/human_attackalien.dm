@@ -55,8 +55,6 @@
 				if (prob(20))
 					playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 					Weaken(rand(M.tacklemin,M.tacklemax))//Min and max tackle strenght. They are located in individual caste files.
-					if (hallos <= 45)// Prevents from knocking them unconsious
-						apply_damage(7, HALLOSS)//Pain
 					for(var/mob/O in viewers(src, null))
 						if ((O.client && !( O.blinded )))
 							O.show_message(text("\red <B>[] has tackled down []!</B>", M, src), 1)
@@ -68,8 +66,6 @@
 				if (prob(M.tackle_chance)) //Tackle_chance is now a special var for each caste.
 					playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 					Weaken(rand(M.tacklemin,M.tacklemax))
-					if (hallos <= 45)// Prevents from knocking them unconsious
-						apply_damage(7, HALLOSS)//Pain
 					for(var/mob/O in viewers(src, null))
 						if ((O.client && !( O.blinded )))
 							O.show_message(text("\red <B>[] has tackled down []!</B>", M, src), 1)
