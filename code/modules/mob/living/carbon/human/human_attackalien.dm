@@ -23,7 +23,7 @@
 			visible_message(text("\red [] has grabbed [] passively!", M, src))
 
 		if("hurt")
-			if (prob(M.tackle_chance + 10))
+			//if (prob(M.tackle_chance + 10))
 				if (w_uniform)
 					w_uniform.add_fingerprint(M)
 				var/damage = rand(M.damagemin, M.damagemax)
@@ -46,16 +46,17 @@
 				apply_damage(damage, BRUTE, affecting, armor_block)
 
 				updatehealth()
-			else
+		/*	else
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
-				visible_message("\red <B>[M] has missed [src]!</B>")
+				visible_message("\red <B>[M] has missed [src]!</B>")	*/
 
 		if("disarm")
 			if(weakened)
 				if (prob(20))
 					playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 					Weaken(rand(M.tacklemin,M.tacklemax))//Min and max tackle strenght. They are located in individual caste files.
-					apply_damage(7, HALLOSS)//Pain
+					if (hallos <= 45)// Prevents from knocking them unconsious
+						apply_damage(7, HALLOSS)//Pain
 					for(var/mob/O in viewers(src, null))
 						if ((O.client && !( O.blinded )))
 							O.show_message(text("\red <B>[] has tackled down []!</B>", M, src), 1)
@@ -67,7 +68,8 @@
 				if (prob(M.tackle_chance)) //Tackle_chance is now a special var for each caste.
 					playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 					Weaken(rand(M.tacklemin,M.tacklemax))
-					apply_damage(7, HALLOSS)//Pain
+					if (hallos <= 45)// Prevents from knocking them unconsious
+						apply_damage(7, HALLOSS)//Pain
 					for(var/mob/O in viewers(src, null))
 						if ((O.client && !( O.blinded )))
 							O.show_message(text("\red <B>[] has tackled down []!</B>", M, src), 1)

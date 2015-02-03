@@ -133,14 +133,16 @@
 					src.canmove = 0
 					src.frozen = 1
 					target.Weaken(3)
-					target.apply_damage(20, HALLOSS)//Pain
+					if (target.hallos <= 45)// Prevents from knocking them unconsious
+						target.apply_damage(20, HALLOSS)//Pain
 					spawn(30)
 						src.frozen = 0
 			else
 				src.canmove = 0
 				src.frozen = 1
 				target.Weaken(3)
-				target.apply_damage(20, HALLOSS)//Pain
+				if (target.hallos <= 45)// Prevents from knocking them unconsious
+					target.apply_damage(20, HALLOSS)//Pain
 
 			spawn(30)
 				src.frozen = 0
