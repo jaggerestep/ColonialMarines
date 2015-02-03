@@ -75,6 +75,13 @@
 			adjustBruteLoss(-heal_rate)
 			adjustFireLoss(-heal_rate)
 			adjustOxyLoss(-heal_rate * 2)
+//Die if in space
+	if(istype(get_turf(src), /turf/space))
+		if(health > -100)
+			if (storedPlasma <= 0) //If you have no plasma, slowly die
+				adjustBruteLoss(6)
+			else
+				adjustToxLoss(-6)  //Else remove plasma untill you have none
 
 	if(!environment)
 		return
@@ -82,7 +89,14 @@
 	if(istype(loc, /obj/mecha))
 		var/obj/mecha/M = loc
 		loc_temp =  M.return_temperature()
+		/*
 	else if(istype(get_turf(src), /turf/space))
+		if(health > -100)
+			if (storedPlasma <= 0)
+				apply_damage(5, BRUTE)
+			else
+				adjustToxLoss(-5)
+		*/
 		var/turf/heat_turf = get_turf(src)
 		loc_temp = heat_turf.temperature
 	else if(istype(loc, /obj/machinery/atmospherics/unary/cryo_cell))

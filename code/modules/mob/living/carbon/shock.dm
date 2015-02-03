@@ -9,7 +9,7 @@
 	2.5	* src.getFireLoss() + 		\
 	1.5	* src.getBruteLoss() + 		\
 	2	* src.getCloneLoss() + 		\
-	1	* src.halloss
+	1.5	* src.halloss
 
 	if(reagents.has_reagent("alkysine"))
 		src.traumatic_shock -= 10
