@@ -202,7 +202,7 @@
 		edit_admin_permissions()
 
 	else if(href_list["call_shuttle"])
-		if(!check_rights(R_ADMIN))	return
+		if(!check_rights(R_MOD))	return
 
 		if( ticker.mode.name == "blob" )
 			alert("You can't call the shuttle during blob!")
