@@ -60,7 +60,7 @@ proc/move_marine_a_shuttle()
 				if(!M.buckled)
 					if (prob(70))
 						M.Weaken(3)
-						M.weakened(3)
+						M.weakened = 3
 
 		marine_a_shuttle_moving = 0
 	return
@@ -117,7 +117,7 @@ proc/move_marine_b_shuttle()
 				if(!M.buckled)
 					if (prob(70))
 						M.Weaken(3)
-						M.weakened(3)
+						M.weakened = 3
 
 		marine_b_shuttle_moving = 0
 	return
