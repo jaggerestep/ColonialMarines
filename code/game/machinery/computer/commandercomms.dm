@@ -86,12 +86,13 @@
 					A.readyreset()
 				
 		if("callhiv")
+			if(send_infantry_team)
+				usr << "\red Central Command has already dispatched the HIT!"
+				return
+				
 			if(request_cooldown)
 				usr << "\red Assistance has already been requested. Please wait."
 				return
-			// var/input = stripped_input(usr, "What is the nature of your emergency?", "Request Heavy Infantry Team")
-			// if(!input || !(usr in view(1,src)))
-				// return
 			
 			var/count_observers = 0
 			for(var/client/C in clients)
@@ -115,7 +116,7 @@
 
 			for(var/client/C in admins)
 				if((R_ADMIN|R_MOD) & C.holder.rights)
-					C << "<span class=\"danger\">ADMINS/MODS: [usr] has used</span> <span class=\"name\">\"Request Heavy Infantry Team\"</span> <span class=\"danger\">(Non-Admin Observers:</span> <span class=\"name\">[count_observers]</span><span class=\"danger\">)</span> <span class=\"name\">(<A HREF='?_src_=holder;adminplayerobservejump=\ref[usr]'>JMP</A>)</span>"
+					C << "<span class=\"danger\">ADMINS/MODS: [usr] has used</span> <span class=\"name\">\"Request Heavy Infantry Team\"</span> <span class=\"danger\">(Non-Admin Observers:</span> <span class=\"name\">[count_observers]</span><span class=\"danger\">)</span> <span class=\"name\">(<A HREF='?_src_=holder;dibs=\ref[usr]'>Mark</A>) (<A HREF='?_src_=holder;adminplayerobservejump=\ref[usr]'>JMP</A>) (<A HREF='?_src_=holder;CentcommReply=\ref[usr]'>RPLY</A>)</span>"
 					C << 'sound/effects/sos-morse-code.ogg'
 					usr << "\blue HIT request sent to CentComm Special Forces department."
 			request_cooldown = 1
@@ -135,7 +136,7 @@
 				
 			for(var/client/C in admins)
 				if((R_ADMIN|R_MOD) & C.holder.rights)
-					C << "<span class=\"danger\">ADMINS/MODS: [usr] has used</span> <span class=\"name\">\"Request Emergency Shuttle\"</span> (<A HREF='?_src_=holder;call_shuttle=1'>Call Shuttle</A>) (<A HREF='?_src_=holder;adminplayerobservejump=\ref[usr]'>JMP</A>)"
+					C << "<span class=\"danger\">ADMINS/MODS: [usr] has used</span> <span class=\"name\">\"Request Emergency Shuttle\"</span> <span class=\"name\">(<A HREF='?_src_=holder;dibs=\ref[usr]'>Mark</A>) (<A HREF='?_src_=holder;call_shuttle=1'>Call Shuttle</A>) (<A HREF='?_src_=holder;adminplayerobservejump=\ref[usr]'>JMP</A>) (<A HREF='?_src_=holder;CentcommReply=\ref[usr]'>RPLY</A>)</span>"
 					C << 'sound/effects/sos-morse-code.ogg'
 					usr << "\blue Emergency Shuttle request sent to CentComm."
 			request_cooldown = 1
