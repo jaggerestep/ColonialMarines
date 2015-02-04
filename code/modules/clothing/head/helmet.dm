@@ -24,11 +24,11 @@
 	desc = "It's a helmet specifically designed to protect against close range attacks."
 	icon_state = "riot"
 	item_state = "helmet"
-	flags = FPRINT|TABLEPASS|HEADCOVERSEYES
-	armor = list(melee = 82, bullet = 15, laser = 5,energy = 5, bomb = 5, bio = 2, rad = 0)
+	flags = FPRINT|TABLEPASS|HEADCOVERSEYES|HEADCOVERSMOUTH
+	armor = list(melee = 82, bullet = 65, laser = 25,energy = 5, bomb = 5, bio = 2, rad = 0)
 	flags_inv = HIDEEARS
 	siemens_coefficient = 0.7
-	health = 50
+	health = 10
 
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"
