@@ -43,10 +43,7 @@
 			src.attack_log += text("\[[time_stamp()]\] <font color='orange'>was attacked by [M.name] ([M.ckey])</font>")
 
 			apply_damage(damage, BRUTE, affecting, armor_block)
-/*			if (damage >= 20)
-				visible_message("\red <B>[M] has wounded [src]!</B>")
-				apply_effect(rand(0.5,3), WEAKEN, armor_block)
-*/
+
 			updatehealth()
 
 		if("disarm")

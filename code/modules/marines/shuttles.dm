@@ -1,7 +1,7 @@
 /**********************Shuttle Computers**************************/
 
-var/marine_a_shuttle_tickstomove = 10
-var/marine_b_shuttle_tickstomove = 10
+var/marine_a_shuttle_tickstomove = 15
+var/marine_b_shuttle_tickstomove = 15
 var/marine_a_shuttle_moving = 0
 var/marine_b_shuttle_moving = 0
 var/marine_a_shuttle_location = 0
@@ -58,7 +58,9 @@ proc/move_marine_a_shuttle()
 						shake_camera(M, 10, 1)
 			if(istype(M, /mob/living/carbon))
 				if(!M.buckled)
-					M.Weaken(3)
+					if (prob(70))
+						M.Weaken(3)
+						M.weakened = 3
 
 		marine_a_shuttle_moving = 0
 	return
@@ -113,7 +115,9 @@ proc/move_marine_b_shuttle()
 						shake_camera(M, 10, 1)
 			if(istype(M, /mob/living/carbon))
 				if(!M.buckled)
-					M.Weaken(3)
+					if (prob(70))
+						M.Weaken(3)
+						M.weakened = 3
 
 		marine_b_shuttle_moving = 0
 	return

@@ -54,7 +54,7 @@
 			if(1)
 				if(prob(5))
 					affected_mob << "\red You taste blood in your mouth."
-				if(prob(5))
+				if(prob(1))
 					affected_mob << "\red You feel cold."
 					affected_mob.emote("shiver")
 			if(2)
@@ -62,12 +62,13 @@
 					affected_mob.emote("sneeze")
 				if(prob(1))
 					affected_mob.emote("cough")
-				if(prob(1))
+				if(prob(5))
 					affected_mob << "\red Your throat feels sore."
+
 			if(3)
-				if(prob(1))
+				if(prob(10))
 					affected_mob << "\red Mucous runs down the back of your throat."
-				if(prob(1))
+				if(prob(5))
 					affected_mob << "\red Your chest feels tight."
 				if(prob(3))
 					affected_mob << "\red Your chest aches."
@@ -75,21 +76,21 @@
 						affected_mob.take_organ_damage(5)
 				if(prob(10))
 					affected_mob << "\red You feel hungry."
-					affected_mob.nutrition -= 50
-				if(prob(20))
+					affected_mob.nutrition -= 20
+				if(prob(25))
 					affected_mob << "\red <b>You black out.</b>"
-					affected_mob.paralysis += 5
+					affected_mob.paralysis = 5
 			if(4)
-				if(prob(1))
+				if(prob(50))
 					affected_mob.emote("sneeze")
-				if(prob(1))
+				if(prob(50))
 					affected_mob.emote("cough")
-				if(prob(2))
+				if(prob(20))
 					affected_mob << "\red Your chest hurts."
-					if(prob(20))
+					if(prob(70))
 						if(istype(affected_mob, /mob/living/carbon/human))
 							affected_mob.take_organ_damage(10)
-				if(prob(2))
+				if(prob(20))
 					affected_mob << "\red Your stomach hurts."
 					if(prob(20))
 						if(istype(affected_mob, /mob/living/carbon/human))
@@ -110,6 +111,7 @@
 				stage = 4
 				stage_age = 57
 		sleep(20)
+
 
 /obj/item/alien_embryo/proc/AttemptGrow(var/gib_on_success = 1)
 
