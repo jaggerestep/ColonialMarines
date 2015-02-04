@@ -221,8 +221,8 @@ v
 /obj/item/clothing/gloves/marine
 	name = "marine combat gloves"
 	desc = "Standard issue marine tactical gloves. It reads: 'knit by Marine Widows Association'."
-	icon_state = "gray"
-	item_state = "graygloves"
+	icon_state = "marine-white"
+	item_state = "marine-wgloves"
 	siemens_coefficient = 0.6
 	permeability_coefficient = 0.05
 	cold_protection = HANDS
