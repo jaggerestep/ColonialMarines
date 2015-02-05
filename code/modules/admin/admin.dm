@@ -991,6 +991,18 @@ var/global/floorIsLava = 0
 	log_admin("[key_name(usr)] spawned [chosen] at ([usr.x],[usr.y],[usr.z])")
 	feedback_add_details("admin_verb","SA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+//APOPHS BREACH FIXIN PROC 05FEB2015
+/datum/admins/proc/breach_fix()
+	set category = "Debug"
+	set desc = "Quickly repair a breach"
+	set name = "Breach Fix"
+
+	new /turf/simulated/wall/r_wall(usr.loc)
+
+	log_admin("[key_name(usr)] used the Breach Fix verb at ([usr.x],[usr.y],[usr.z])")
+	message_admins("\blue [key_name(usr)]Breach Fix verb at ([usr.x],[usr.y],[usr.z])", 1)
+
+
 
 /datum/admins/proc/show_traitor_panel(var/mob/M in mob_list)
 	set category = "Admin"

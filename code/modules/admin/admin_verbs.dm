@@ -226,6 +226,7 @@ var/list/admin_verbs_hideable = list(
 	/proc/release
 	)
 var/list/admin_verbs_mod = list(
+	/datum/admins/proc/breach_fix,			//Verb for quickly repairing breaches APOPHIS775 05FEB2015
 	/client/proc/admin_call_shuttle,
 	/client/proc/admin_cancel_shuttle,
 	/client/proc/infantry_team, // Response Teams admin verb
@@ -334,7 +335,6 @@ var/list/admin_verbs_donate = list(
 
 	src << "<span class='interface'>All of your adminverbs are now visible.</span>"
 	feedback_add_details("admin_verb","TAVVS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
 
 
 
@@ -784,3 +784,4 @@ var/list/admin_verbs_donate = list(
 
 	log_admin("[key_name(usr)] told everyone to man up and deal with it.")
 	message_admins("\blue [key_name_admin(usr)] told everyone to man up and deal with it.", 1)
+
