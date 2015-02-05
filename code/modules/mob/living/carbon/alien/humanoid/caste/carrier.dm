@@ -1,16 +1,15 @@
 /mob/living/carbon/alien/humanoid/carrier
 	name = "alien carrier"
-	caste = "Drone"
+	caste = "Carrier"
 	maxHealth = 200
 	health = 200
 	storedPlasma = 50
 	max_plasma = 50
-	icon_state = "Drone Walking"
+	icon_state = "Carrier Walking"
 	plasma_rate = 5
 	heal_rate = 2
 	var/facehuggers = 0
 	var/usedthrow = 0
-	color = "#967d00"
 	damagemin = 20
 	damagemax = 30
 	tacklemin = 2
@@ -125,3 +124,34 @@
 		..()
 	else
 		adjustToxLoss(-heal_rate)
+/*
+Todo: Overlays for facehuggers.
+
+//Update carrier icons
+/mob/living/carbon/alien/humanoid/carrier/update_icons()
+	lying_prev = lying	//so we don't update overlays for lying/standing unless our stance changes again
+	update_hud()		//TODO: remove the need for this to be here
+	overlays.Cut()
+	if(stat == DEAD)
+		//If we mostly took damage from fire
+		if(fireloss > 125)
+			icon_state = "[caste] Dead - [facehuggers]"
+		else
+			icon_state = "[caste] Dead - [facehuggers]"
+		for(var/image/I in overlays_lying)
+			overlays += I
+	else if(lying)
+		if(resting)
+			icon_state = "[caste] Sleeping - [facehuggers]"
+		else if(stat == UNCONSCIOUS)
+			icon_state = "[caste] Knocked Down - [facehuggers]"
+		else
+			icon_state = "[caste] Knocked Down - [facehuggers]"
+		for(var/image/I in overlays_lying)
+			overlays += I
+	else
+		if(m_intent == "run")		icon_state = "[caste] Running - [facehuggers]"
+		else						icon_state = "[caste] Walking - [facehuggers]"
+		for(var/image/I in overlays_standing)
+			overlays += I
+			*/
