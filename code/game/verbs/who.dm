@@ -2,6 +2,22 @@
 /client/verb/who()
 	set name = "Who"
 	set category = "OOC"
+	
+	var/count_observers = 0
+	for(var/client/C in clients)
+		if(isobserver(C.mob) && !C.holder)		
+			count_observers++
+	var/count_humans = 0
+	var/count_infectedhumans = 0
+	for(var/client/C in clients)
+		if(ishuman(C.mob) && (C.mob.stat == 0 || C.mob.stat == 1))
+			count_humans++
+		if(ishuman(C.mob) && C.mob.status_flags & XENO_HOST)
+			count_infectedhumans++
+	var/count_aliens = 0
+	for(var/client/C in clients)
+		if(isalien(C.mob) && (C.mob.stat == 0 || C.mob.stat == 1))
+			count_aliens++
 
 	var/msg = "<b>Current Players:</b>\n"
 
@@ -39,7 +55,13 @@
 	for(var/line in sortList(Lines))
 		msg += "[line]\n"
 
-	msg += "<b>Total Players: [length(Lines)]</b>"
+	if(holder)
+		msg += "<b>Total Players: [length(Lines)]</b>"
+		msg += "<br><b style=\"color:#777\">Total Non-Admin Observers: [count_observers]</b>"
+		msg += "<br><b style=\"color:#688944\">Total Alive Humans: [count_humans] \red(Infected: [count_infectedhumans])</b>"
+		msg += "<br><b style=\"color:#6161A1\">Total Alive Aliens: [count_aliens]</b>"
+	else
+		msg += "<b>Total Players: [length(Lines)]</b>"
 	src << msg
 
 
