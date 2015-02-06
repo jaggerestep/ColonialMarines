@@ -279,3 +279,15 @@
 		O.desc = "Your second grip on the [initial(name)]"
 		user.put_in_inactive_hand(O)
 		return
+
+//NEW RIOT SHOTGUN FLASHLIGHT CODE APOPHIS775 05FEB2015
+/obj/item/weapon/gun/twohanded/projectile/shotgun/pump/attackby(var/obj/item/A as obj, mob/user as mob)
+	..()
+	if(istype(A, /obj/item/device/flashlight))
+		var/obj/item/device/flashlight/F = A
+		if(F.attachable)
+			src.contents += A
+			user << "\red You attach [A] to [src]."
+			haslight = 1
+			del(A)
+	return

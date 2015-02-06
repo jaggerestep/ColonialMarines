@@ -76,46 +76,6 @@ Doesn't work on other aliens/AI.*/
 					src << "\green You need to be closer."
 	return
 
-/mob/living/carbon/alien/humanoid/proc/vault()
-	set name="Afterimage(110)"
-	set desc="Instantly side step behind an enemy"
-	set category="Alien"
-	if(powerc(110))
-		var/targets[] = list()
-		for(var/mob/living/carbon/human/M in oview())
-			if(M.stat)	continue//Doesn't target corpses or paralyzed persons.
-			targets.Add(M)
-
-		if(targets.len)
-			var/mob/living/carbon/human/target=pick(targets)
-			var/atom/targloc = get_turf(target)
-		//	var/turf/curloc = src.loc
-			if (!targloc || !istype(targloc, /turf) || get_dist(src.loc,targloc)>=rand(2,3))
-				src << "Not Close Enough!"
-				return
-			var/mob/living/silicon/decoy/Afterimage/afterimage = new /mob/living/silicon/decoy/Afterimage(src.loc)
-			visible_message("\red <B><I>You see [src] move faster than you could blink!</I></B>")
-			afterimage.dir=src.dir
-			var/fdir=target.dir
-			src.loc=target.loc
-			switch(fdir)
-				if(NORTH)
-					src.loc=get_step(src, SOUTH) //step opposite from target
-					src.dir=NORTH //face their dir
-				if(SOUTH)
-					src.loc=get_step(src, NORTH)
-					src.dir=SOUTH
-				if(EAST)
-					src.loc=get_step(src, WEST)
-					src.dir=EAST
-				if(WEST)
-					src.loc=get_step(src, EAST)
-					src.dir=WEST
-			adjustToxLoss(-110)
-			spawn(25) del(afterimage)
-		else
-			src<<"\red No one in sight..."
-	return
 
 /mob/living/carbon/alien/humanoid/proc/weak_acid(O as obj|turf in oview(1)) //If they right click to corrode, an error will flash if its an invalid target./N
 	set name = "Weak Acid (100)"
