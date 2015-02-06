@@ -93,15 +93,16 @@
 		charge(A)
 
 		return
-	var/mob/living/carbon/human/C = A
-
-	if(C)
-		if(src.nextattack <= world.time)
-			src.nextattack = world.time + ATTACKTIME * 10
-			if(get_dist(src, C) == 2)
-				face_atom(C)
-				C.attack_alien(src)
-				return
+	
+	// Give Ravagers 2x the reach (BUG: CAN ATTACK THROUGH WALLS)
+	// var/mob/living/carbon/human/C = A
+	// if(C)
+		// if(src.nextattack <= world.time)
+			// src.nextattack = world.time + ATTACKTIME * 10
+			// if(get_dist(src, C) == 2)
+				// face_atom(C)
+				// C.attack_alien(src)
+				// return
 
 	..()
 

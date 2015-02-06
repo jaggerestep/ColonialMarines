@@ -44,6 +44,7 @@
 
 			apply_damage(damage, BRUTE, affecting, armor_block)
 
+
 			updatehealth()
 
 		if("disarm")
