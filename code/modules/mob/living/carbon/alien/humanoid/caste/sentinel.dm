@@ -18,7 +18,6 @@
 	var/jellyProgress = 0
 	var/jellyProgressMax = 750
 	psychiccost = 25
-	var/spitting = 0
 	Stat()
 		..()
 		stat(null, "Jelly Progress: [jellyProgress]/[jellyProgressMax]")
